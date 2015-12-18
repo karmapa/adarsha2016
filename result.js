@@ -21,3 +21,19 @@ var displaytitles=function(titles){
     }
     document.getElementById("searchres").innerHTML=out;
 };
+
+var onBreadcrumbSelect=function(itemidx,vpos){
+    fetchText(vpos);
+}
+
+var displaybreadcrumb=function(vpos){
+    ksa.toc({db:db},function(err,data){
+        ReactDOM.render(
+            React.createElement(
+                ksana2015breadcrumbtoc.Component,
+                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,theme:theme_bootstrap,vpos:vpos}
+            ),
+            document.getElementById("breadcrumb")
+        );
+    });
+};

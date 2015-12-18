@@ -1,5 +1,6 @@
 console.log("running main.js");
 var db="jiangkangyur";
+var name="head";
 var uti="1.1a";
 var timer1,timer2,tf1,tf2;
 var toputi,bottomuti;
@@ -103,6 +104,9 @@ var fetchText=function(vpos){
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
             scrollTo(currentuti);
+            setTimeout(function(){
+                displaybreadcrumb(vpos);
+            },100);
         });
     });
 }
