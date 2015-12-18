@@ -1,0 +1,72 @@
+
+/*=================================================================
+		     UTRUST RESPOND CSS - All Rights Reserved.
+==================================================================*/
+@media (min-width: 1200px){
+    /*.container {width: 1024px;}*/
+}
+
+@media (min-width: 768px){
+	/*HEADER*/
+	.container>.navbar-header, 
+	.container>.navbar-collapse {
+		width: 100%; 
+		text-align: center;
+	}
+	/*LOGO*/
+	.navbar-default .navbar-brand {
+		display: block;
+	    float: initial;
+	}
+
+	/*Button hanburger*/
+	.navbar-toggle { display:block;}
+
+	/*main menu*/
+	.navbar-nav {
+	    margin: 0;
+	    width: 100%;
+	    float: inherit;
+	}
+	.navbar2-collapse.collapse { 
+		display: none;
+	    height: auto!important;
+	    padding-bottom: 0;
+	    overflow: visible!important;
+	}
+	
+	.container>.navbar-header, .container>.navbar-collapse {
+	    margin-right: 0;
+	    margin-left: 0;
+	}
+	.navbar2-collapse.collapsing{
+		position:relative;
+		height:0;
+		overflow:hidden;
+		-webkit-transition:height .35s ease;
+		transition:height .35s ease
+	}
+	.navbar2-collapse.in {
+    	display: block;
+	}
+    .navbar2-collapse {
+	    width: auto;
+	    border-top: 0;
+	    box-shadow: none;
+	}
+
+	
+	
+
+
+}
+
+
+
+@media(max-width:1024px){
+	.wrap { width: 80%;}
+	.modal-body>iframe { min-height: 99%;}
+
+	.btnPage { left: inherit; right: 60px;}
+}
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/> 
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>ADARSHA</title>
+
+<!--CSS-->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/respond.css">
+<link rel="shortcut icon" href="images/favicon.ico"/> 
+<!--[if lt ie 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
+<![endif]--> 
+<!--[if IE 7]>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+
+
+</head>
+<body class="welcome">
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        
+        <div class="navbar-header">
+        	
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand logo" href="hp.html">ADARSHA</a>
+			<ul class="nav nav-pills navbar-right">
+				<li class="advanced" title="Advanced Search"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="advanced.html">Advanced Search</a></li>
+                <li class="ka" title="Toggle Wylie Transliteration"><a href="#" title="homepage ka content">ka</a></li>
+				<li class="home" title="Contact US"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="http://www.dharma-treasure.org/en/contact-us/">home</a></li>
+                <li class="login" title="Login"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="login.html">login</a></li>
+			</ul>
+
+            
+        </div><!--/.navbar-header-->
+
+        <div class="container"></div><!---->
+
+    	<div id="navbar" class="navbar2-collapse collapse">
+    		<div class="container">
+				<ul class="nav navbar-nav mainMenu">
+                    <li class="col-lg-4 active">
+                        <a href="content.html" title="Jangkangyur 108 vol.">
+                        བཀའ་འགྱུར།<em>甘珠爾</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+                    <li class="col-lg-4 active">
+                        <a href="content.html" title="Jangkangyur 108 vol.">
+                        བསྟན་འགྱུར།<em>丹珠爾</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+                    <li class="col-lg-4 active">
+                        <a href="content.html" title="Jangkangyur 108 vol.">
+                        བོད་མ།<em>藏傳佛典</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<!--<li class="col-lg-4 active">
+                        <a href="content.html" title="Jangkangyur 108 vol.">
+                        འཇང་བཀའ་འགྱུར། པོད་བརྒྱ་དང་བརྒྱད།<em>Jangkangyur 108 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Tengyur 225 vol.">
+                        བསྟན་འགྱུར། པོད་ཉིས་བརྒྱ་དང་ལྔ།<em>Tengyur 225 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Mahamudra Indian text 3 vol.">
+                        ཕྱག་ཆེན་སྐོར། རྒྱ་འགྲེལ། པོད་གསུམ།<em>Mahamudra Indian text 3 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Karmapa’s text collection more than 100 vol.">ཀ་རབས། པོད་བརྒྱ་ལས་ལྷག<em>Karmapa’s text collection more than 100 vol.</em></a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Kagyupa">བཀའ་བརྒྱུད་པའི་གཞུང་།<em>Kagyupa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Nyingmapa">རྙིང་མ་པའི་གཞུང་།<em>Nyingmapa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Sakyapa">ས་སྐྱ་པའི་གཞུང་།<em>Sakyapa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Gelukpa">དགེ་ལུགས་པའི་གཞུང་།<em>Gelukpa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Bonpo">བོན་པོའི་གཞུང་།<em>Bonpo</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>-->
+				</ul>
+
+			</div>
+        </div><!--/.nav-collapse -->
+
+    </nav>
+
+    <div class="container">
+		    
+
+		<div class="mainContent" style="text-align: center;">
+        	
+        	<h1>Reflecting Ancient Texts in New Way.</h1>
+        	<div href="#" class="quote">
+        		<h2>Daily Quote</h2>
+        		<p>བསྐྱེད་མོས་ཚལ་གྱི་གཞིར་གཤེགས་སོ་ཞེས་གསུང་བར་འགྱུར་བས། དེ་ནས་བྱང་ཆུབ་སེམས་དཔས་ཁ་ལོ་སྒྱུར་བ་ལ་གསུངས་པ། ཁ་ལོ་སྒྱུར་བ་རེ་ཤིག་བཞོན་པ་བཟང་པོ་མྱུར་དུ་ཤོམས་ཤིག །དེར་ང་ཞུགས་ནས་ བསྐྱེད་མོས་ཚལ་གྱི་གཞིར་གཤེགས་སོ། །ལྷ་བཀའ་བཞིན་འཚལ་ཞེས་ཁ་ལོ་སྒྱུར་བས་བྱང་ཆུབ་སེམས་དཔའ་ཤཱཀྱ་ཐུབ་པའི་ལྟར་མཉན་...ནས་བཞོན་པ་བཟང་པོ་བཤམས་ནས་བྱང་ཆུབ་སེམས་དཔའ་ཤཱཀྱ་ཐུབ་ པ་གང་ན་བ་དེར་སོང་ནས་ཕྱིན་པ་དང་། བྱང་ཆུབ་སེམས་དཔའ་ཤཱཀྱ་ཐུབ་པ་ལ་འདི་སྐད་ཅེས་གསོལ་ཏོ། །ལྷ་བཅིབས་པ་བཟང་པོ་བཤམས་ལགས་ཀྱིས། ལྷ་ད་དེའི་དུས་ལ་བབ་པར་དགོངས་སུ་གསོལ། དེ་ནས་  ....</p>
+				<a href="content.html">go to this page</a>
+        	</div><!--/.daily-->
+			<!--<a style="display: block;" href="content.html"><img src="images/img-welcome.jpg" height="344" width="768"></a>-->
+
+			
+		</div><!--/.mainContent-->
+
+		<!-- Modal -->
+        <div class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                </div><!--/.modal-content-->
+            </div>
+        </div><!-- myModal -->
+
+    </div> <!-- /container -->
+
+
+
+
+
+
+
+
+
+
+<!--JS--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/respond.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

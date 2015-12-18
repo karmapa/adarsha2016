@@ -1,0 +1,49 @@
+/**
+*	Basic Layout Theme
+*/
+.ui-layout-pane { /* all 'panes' */ 
+	border: 1px solid #D6D6D6; 
+} 
+.ui-layout-pane-center { /* IFRAME pane */ 
+	padding: 0;
+	margin:  0;
+} 
+.ui-layout-pane-west { /* west pane */ 
+	padding: 0 10px; 
+	background-color: #EEE !important;
+	overflow: auto;
+} 
+
+.ui-layout-resizer { /* all 'resizer-bars' */ 
+	background: #F5F5F5; /*#EFEFEF #D7DCC7*/
+} 
+.ui-layout-resizer-open:hover,
+.ui-layout-resizer-open:focus { /* mouse-over */
+	background: #EFEFEF;/*#BAC396*/ 
+}
+
+.ui-layout-toggler { /* all 'toggler-buttons' */ 
+	background: #EFEFEF; /*AAA*/
+} 
+.ui-layout-toggler-closed { /* closed toggler-button */ 
+	background: #CCC; 
+	border-bottom: 1px solid #D6D6D6; 
+} 
+.ui-layout-toggler .content { /* toggler-text */ 
+	font: 14px bold Verdana, Verdana, Arial, Helvetica, sans-serif;
+}
+.ui-layout-toggler:hover { /* mouse-over */ 
+	background: #DCA; 
+} 
+.ui-layout-toggler:hover .content { /* mouse-over */ 
+	color: #009; 
+}
+.ui-layout-west ul { /* basic menu styling */
+	margin:		1ex 0;
+	padding:	0;
+	list-style:	none;
+	position:	relative;
+}
+.ui-layout-west ul li {
+	padding: 0.15em 1em 0.3em 5px;
+}

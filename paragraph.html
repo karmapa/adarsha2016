@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/> 
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>ADARSHA</title>
+<!--CSS-->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+<link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.com/demos/css/complex.css" />
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/respond.css">
+<link rel="shortcut icon" href="images/favicon.ico"/> 
+<!--[if lt ie 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
+<![endif]--> 
+<!--[if IE 7]>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+</head>
+<body>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        
+        <div class="navbar-header">
+        	
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand logo" href="hp.html">ADARSHA</a>
+            <ul class="nav nav-pills navbar-right">
+                <li class="advanced" title="Advanced Search"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="advanced.html">Advanced Search</a></li>
+                <li class="ka" title="Toggle Wylie Transliteration"><a href="ka-content.html">ka</a></li>
+                <li class="home" title="Contact US"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="http://www.dharma-treasure.org/en/contact-us/">home</a></li>
+                <li class="login" title="Login"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="login.html">login</a></li>
+            </ul>
+
+            
+        </div><!--/.navbar-header-->
+
+        <div class="container"></div><!---->
+
+    	<div id="navbar" class="navbar2-collapse collapse">
+    		<div class="container">
+				<ul class="nav navbar-nav mainMenu">
+					<li class="col-lg-4 active">
+                        <a href="content.html" title="Jangkangyur 108 vol.">
+                        འཇང་བཀའ་འགྱུར། པོད་བརྒྱ་དང་བརྒྱད།<em>Jangkangyur 108 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Tengyur 225 vol.">
+                        བསྟན་འགྱུར། པོད་ཉིས་བརྒྱ་དང་ལྔ།<em>Tengyur 225 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Mahamudra Indian text 3 vol.">
+                        ཕྱག་ཆེན་སྐོར། རྒྱ་འགྲེལ། པོད་གསུམ།<em>Mahamudra Indian text 3 vol.</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<!--<li class="col-lg-4">
+                        <a href="#" title="Karmapa’s text collection more than 100 vol.">ཀ་རབས། པོད་བརྒྱ་ལས་ལྷག<em>Karmapa’s text collection more than 100 vol.</em></a>
+                    </li>-->
+					<li class="col-lg-4">
+                        <a href="#" title="Kagyupa">བཀའ་བརྒྱུད་པའི་གཞུང་།<em>Kagyupa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Nyingmapa">རྙིང་མ་པའི་གཞུང་།<em>Nyingmapa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Sakyapa">ས་སྐྱ་པའི་གཞུང་།<em>Sakyapa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Gelukpa">དགེ་ལུགས་པའི་གཞུང་།<em>Gelukpa</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+					<li class="col-lg-4">
+                        <a href="#" title="Bonpo">བོན་པོའི་གཞུང་།<em>Bonpo</em>
+                        <span class="icon-chevron-right"></span>
+                        </a>
+                    </li>
+				</ul>
+
+			</div>
+        </div><!--/.nav-collapse -->
+
+    </nav>
+
+    <div class="inner-header">
+
+		<ol class="breadcrumb">
+            <li><a href="#" class="home" title="home">home</a></li>
+			<li><a href="#">འཇང་བཀའ་འགྱུར།</a></li>
+			<li><a href="#">འདུལ་བ།</a></li>
+			<li><a href="#">ཀ</a></li>
+			<li><a href="#">འདུལ་བ་གཞི། ༼ཀ༽</a></li>
+			<li><a href="#">རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</a></li>
+			<li class="active"><a href="#">ཤཱ་རིའི་བུའི་སྡེ་ཚན།།</a></li>
+		</ol>
+        
+	</div><!--/.inner-header -->  
+    
+	<div class="inner-Content">
+        <!--<a data-toggle="collapse" data-parent="#side" href="#sideCont1" class="btn-search">BTN #1</a>
+        <a data-toggle="collapse" data-parent="#side" href="#sideCont2" class="btn-tree">BTN #2</a>-->
+
+        <ul id="sideTab" class="nav nav-tabs">
+            <li>
+                <a href="#search" class="btn-search" data-toggle="tab">btn-search</a>
+            </li>
+            <li class="active">
+                <a href="#tree" class="btn-tree" data-toggle="tab">btn-tree</a>
+            </li>
+        </ul><!--#sideTab-->
+
+        <ul class="nav nav-pills tool" role="tablist">
+
+            <!--<li>
+                <input class="fullScreen" type="button" value="fullscreen" onclick="toggleFullScreen()">
+            </li>-->
+
+            <li>
+                <a href="#" class="fullPage" title="full Page">full Page</a>
+            </li>
+
+            <li class="active">
+                <a href="content.html" class="paragraph" title="paragraph mode">paragraph</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle pageInfo" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                  <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu sutra">
+                    <div class="container">
+                        <table class="table table-condensed">
+                          <tbody>
+                            <tr>
+                              <th>མདོ་མིང་།</th>
+                              <td>འཕགས་པ་བསྐལ་པ་བཟང་པོ་པ་ཞེས་བྱ་བ་ཐེག་པ་ཆེན་པོའི་མདོ།</td>
+                            </tr>
+                            <tr>
+                              <th>མདོ་མིང་གཞན།</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>རྒྱ་གར་མདོ་མིང་།</th>
+                              <td>མདོ་སྡེའི་སྡེ་སྣོད།</td>
+                            </tr>
+
+                            <tr>
+                              <th>རྒྱ་ནག་མདོ་མིང་།</th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>བསྒྱུར་ཕྱག</th>
+                              <td>སངས་རྒྱས་དང་། བྱང་ཆུབ་སེམས་དཔའ་ཐམས་ཅད་ལ་ཕྱག་འཚལ་ལོ། །</td>
+                            </tr>
+                            <tr>
+                              <th>བརྗོད་བྱ། </th>
+                              <td>མདོ་སྡེའི་སྡེ་སྣོད།</td>
+                            </tr>
+                            <tr>
+                              <th>ཐེག་པ།</th>
+                              <td>ཐེག་ཆེན།</td>
+                            </tr>
+                            <tr>
+                              <th>དཀའ། འཁོར་ལོ། </th>
+                              <td>ཐ་མ། གསུམ་པ།</td>
+                            </tr>
+                            <tr>
+                              <th>སྟོན་པ་ཕུན་སུམ་ཚོགས་པ།</th>
+                              <td>རྒྱལ་བ་ཤཱཀྱ་ཐུབ་པ།</td>
+                            </tr>
+                            <tr>
+                              <th>གནས་ཕུན་སུམ་ཚོགས་པ།</th>
+                              <td>མཉན་ཡོད་ན་བཞུགས་ཏེ། དབྱར་གནས་པར་བཞུགས་བཞུགས་ནས། དབྱར་ཟླ་གསུམ་འདས་པ་དང་། ཡངས་པ་ཅན་གྱི་གྲོང་ཁྱེར་ག་ལ་བ་དེར། </td>
+                            </tr>
+                            <tr>
+                              <th>འཁོར་ཕུན་སུམ་ཚོགས་པ།</th>
+                              <td>དགེ་སློང་འབུམ་དང་ཐབས་གཅིག བྱང་ཆུབ་སེམས་དཔའ་བྱེ་བ་ཕྲག་བརྒྱད་བཅུ་སྙེད་དང་ཡང་ཐབས་གཅིག།</td>
+                            </tr>
+                            <tr>
+                              <th>ཞུ་བ་པོ་ཕུན་སུམ་ཚོགས་པ།</th>
+                              <td>བྱང་ཆུབ་སེམས་དཔའ་མཆོག་ཏུ་དགའ་བའི་རྒྱལ་པོ།</td>
+                            </tr>
+
+                            <tr>
+                              <th>ཆོས་ཕུན་སུམ་ཚོགས་པ།</th>
+                              <td>དེ་ནས་བཅོམ་ལྡན་འདས་ལ་བྱང་ཆུབ་སེམས་དཔའ་མཆོག་ཏུ་དགའ་བའི་རྒྱལ་པོས་འདི་སྐད་ཅེས་གསོལ་ཏོ་ཞེས་པ་ནས། ། གཞུང་ཡོངས་སུ་རྫོགས་པའི་བར།</td>
+                            </tr>
+                            <tr>
+                              <th>ཆོས་ཀྱི་དགོས་དོན།</th>
+                              <td>བྱང་ཆུབ་སེམས་དཔའ་མཆོག་ཏུ་དགའ་བའི་རྒྱལ་པོས། བཅོམ་ལྡན་འདས་ལ་ཇི་ལྟར་ཞུས་པའི་དོན་རྣམས་འཁོར་ཆེན་པོ་རྣམས་ལ་སོགས་པ་སེམས་ཅན་ཐམས་ཅད་ཀྱིས་རྟོགས་ཤིང་མངོན་པར་འདོད་པའི་དོན་རྣམས་དངོས་དང་རྒྱུད་པའི་སྒོ་ནས་ཐོབ་པའོ།།</td>
+                            </tr>
+                            <tr>
+                              <th>བསྡུས་པའི་དོན། ལེའུ།</th>
+                              <td>ཆོས་ཐམས་ཅད་ཀྱི་ཚུལ་ངེས་པར་སྟོནཔ་ཞེས་བྱ་བའི་ཏིང་ངེ་འཛིན་ཕན་ཡོན་དང་བཅས་པ་དང་། ཡོངས་སུ་སྦྱོང་བར་བྱེད་པའི་ཕ་རོལ་ཏུ་ཕྱིན་པ་དྲུག་ནས། རིང་བསྲེལ་རྣམ་པར་འབྱེདཔའི་ཕ་རོལ་ཏུ་ཕྱིན་པ་དྲུག་གི་བར་དུ། ཕ་རོལ་ཏུ་ཕྱིན་པ་དྲུག་ཚན་བརྒྱ་དང་ཉི་ཤུ་རྩ་གཅིག་གི་མདོར་བསྟན་དང་། རྒྱས་པར་བཤད་པ་གཉིས་ཀྱིས་གཏན་ལ་ཕབ་ཅིང་ཞར་ལ་ཏིང་ངེ་འཛིན་གྱི་སྒོ་བརྒྱད་ཁྲི་བཞི་སྟོང་དང་། གཟུངས་ཀྱི་སྒོ་བརྒྱད་ཁྲི་བཞི་སྟོང་གིས་མཚོན་ནས་རྣམ་པར་བྱང་བ་རེ་རེ་ལའང་བརྒྱད་ཁྲི་བཞི་སྟོང་དུ་དབྱེར་ཡོད་པ་ལ་སོགས་བསྟན་ཏེ། 98a.4 ངས་ཀྱང་ཆོས་ཀྱི་འཁོར་ལོ་རབ་ཏུ་བསྐོར། །ཞེས་པའི་བར་གྱིས་ཉམས་སུ་ལེན་པའི་ཚུལ་དང་། དེ་སྐད་ཅེས་བཀའ་སྩལ་པ་དང་། བྱང་ཆུབ་སེམས་དཔའ་མཆོག་ཏུ་དགའ་བའི་རྒྱལ་པོས་བཅོམ་ལྡན་འདས་ལ་འདི་སྐད་ཅེས་གསོལ་ཏོ་ཞེས་པ་ནས། ། གཞུང་ཡོངས་སུ་རྫོགས་པའི་བར་གྱིས་བསྐལ་པ་བཟང་པོ་འདི་ལ་སངས་རྒྱས་འབྱུང་ཚུལ་གྱི་འབྲས་བུ་རྒྱས་པར་བསྟན་པ་ཡིན་ནོ།།</td>
+                            </tr>
+                            <tr>
+                              <th>བམ་པོ། ཤོ་ལོ་ཀ</th>
+                              <td>བམ་པོ་ཉེར་དྲུག ཤོ་ལོ་ཀ་བདུན་སྟོང་བརྒྱད་བརྒྱ།</td>
+                            </tr>
+                            <tr>
+                              <th>མཚམས་སྦྱར་བའི་གོ་རིམ།</th>
+                              <td>གླེང་གཞི་ཕུན་སུམ་ཚོགས་པ་ལྔ་ཡིས་ནི། སྐྱབས་སུ་འགྲོ་བའི་ཡུལ་བསྟན་པས་སྐྱབས་འགྲོ་བ་ནས་བཟུང་ནས་ཆོས་ཐམས་ཅད་ཀྱི་ཚུལ་ངེས་པར་བསྟན་པའི་ཏིང་ངེ་འཛིན་བསྒོམ་པའི་ཚུལ་དང་། ཕ་རོལ་ཏུ་ཕྱིན་པ་དྲུག་ཚན་བརྒྱ་ཉི་ཤུ་རྩ་གཅིག་དང་། ཏིང་ངེ་འཛིན་དང་། གཟུངས་ཀྱི་སྒོ་ལྟ་བུ་རེ་རེ་ལའང་བརྒྱད་ཁྲི་བཞི་སྟོང་དུ་དབྱེ་བ་ཉམས་སུ་ལེན་པའི་ཚུལ་ནི་རྒྱུའི་གནས་སྐབས་སུ་ལམ་ཉམས་སུ་ལེན་ཚུལ་ཡིན་པས་སྔོན་དུ་བསྟན་ལ། དེ་ཐོབ་པའི་གང་ཟག་གིས་མཚན་བཞིར་བསྐལ་པ་བཟང་པོའི་སངས་རྒྱས་བཞི་དང་ལྷག་མ་</td>
+                            </tr>
+                            <tr>
+                              <th>རྒལ་ལན།</th>
+                              <td>བསྐལ་པ་བཟང་པོ་འདི་ལ་སངས་རྒྱས་སྟོང་པོ་འདི་ལས་མང་བ་འབྱོན་པ་ཡོད་དམ་མེད། དེ་ལས་མང་བ་བྱོན་ན་ནི། བསྐལ་པ་བཟང་པོའི་སངས་རྒྱས་སྟོང་ཞེས་གྲགས་པ་དང་འགལ་ལ། སྟོང་པོ་འདིར་ངེས་ན་ནི་འདུལ་བའི་སྨན་བཞི་ལས་བྱམས་པ་གཉིས་འབྱོན་པར་གསུངས་པ་དང་། སྙིང་རྗེ་པད་དཀར་གྱི་མདོ་ལས། བསྐ་ལ་པ་བཟང་པོ་འདི་ལ་སངས་རྒྱས་སྟོང་དང་ལྔ་འབྱུང་བར་གསུངས་པ་དང་འགལ་ལོ་ཞེ་ན། སྐྱོན་མེད་དེ། བསྐལ་པ་འདི་ལ་སངས་རྒྱས་སྟོང་འབྱུང་བར་ངེས་པ་ལྟ་བུ་ནི། གདུལ་བྱ་ཉེ་བའི་བསམ་པ་ལ་ལྟོས་ནས་རགས་པའི་རྣམ་བཞག་ཏུ་གསུངས་པ་དྲང་བའི་དོན་ཡིན་ལ། ཕྱི་མ་གདུལ་བྱ་རྣམ་པར་དཔྱོད་པ་ཞིབ་པ་འགའ་ཞིག་ལ་ཞིབ་པར་རྩིས་ན། སངས་རྒྱས་སྟོང་ལས་ལྷག་པ་འབྱུང་བར་བསྟན་པ་ནི་ངེས་པའི་དོན་ཡིན་པས་དོན་ལ་འགལ་བ་མེད་དོ།།</td>
+                            </tr>
+                            <tr>
+                              <th>རྒྱ་འགྲེལ། </th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>བོད་འགྲེལ། </th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>རྒྱ་ནག་འགྲེལ་པ། </th>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th>ལོ་ཙཱ་བ། </th>
+                              <td>རྒྱ་གར་གྱི་མཁན་པོ་བིདྱཱ་ཀ་ར་སིང་ཧ་དང་། ལོཙྪ་བ་བན་དེ་དཔལ་གྱི་དབྱངས་ཀྱིས་བསྒྱུར། </td>
+                            </tr>
+                            <tr>
+                              <th>ཞུ་དག་པ། </th>
+                              <td>ཞུ་ཆེན་གྱི་ལོཙྪ་བ་བན་དེ་དཔལ་བརྩེགས་ཀྱིས་ཞུས་ཏེ་གཏན་ལ་ཕབ་པ།། </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                        
+                    </div>
+                </div><!--/.sutra-->
+                <!--<ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                  <li><img src="images/img-info.jpg" height="1520" width="841"></li>
+                </ul>-->
+            </li>
+
+            <li>
+                <a href="#" class="fontToggle" role="button" data-click-state="1">
+                  Dropdown
+                  <span class="caret"></span>
+                </a>
+                <ul id="menu_font" class="dropdown-menu">
+                  <!--<li><img src="images/img-tool.jpg" height="176" width="193"></li>-->
+                    <li>size
+                        <a id="jfontsize-p" href="#">+</a>
+                        <a id="jfontsize-m" href="#">-</a>
+                    </li>
+                    <li>spacing
+                        <a href="#">+</a>
+                        <a href="#">-</a>
+                    </li>
+                    <!--<li><a id="jfontsize-d" href="#">A</a></li> -->
+        
+                </ul>
+            </li>
+
+        </ul><!--/.tool-->
+
+        <div class="ui-layout-west">           
+            
+            <div id="sideTabCont" class="tab-content">
+
+                <div class="tab-pane fade" id="search">
+                    <h2><span class="logo"></span>བཀའ་འགྱུར།</h2>
+                    <input type="text" class="form-control" placeholder="ཚེག་">
+
+                    <ul id="searchTab" class="nav nav-tabs row">
+                        <li class="active">
+                            <a href="#catalog" class="col-lg-4 col-md-4 col-sm-4" id="tab1" data-toggle="tab">catalog</a>
+                        </li>
+                        <li>
+                            <a href="#sutra" class="col-lg-4 col-md-4 col-sm-4" id="tab2" data-toggle="tab">title</a>
+                        </li>
+                        <li>
+                            <a href="#content" class="col-lg-4 col-md-4 col-sm-4" id="tab3" data-toggle="tab">content</a>
+                        </li>
+                    </ul><!--#searchTab-->
+
+                    <div id="searchTabCont" class="tab-content">
+
+                        <div class="tab-pane fade active in" id="catalog">
+                            <ul>
+                                <!--<li><img src="images/img-catalog.jpg" height="202" width="321"></img></li>-->
+                                <li><a href="#">བཅྭ་བརྒྱད་པ། དེ་ཁོ་ན་ཉིད་ཐམས་ཅད་ངེས་པའི་ཚེག་གི་རྟོག་པ།</a></li>
+                                <li><a href="#">དྲུག་ཅུ་དགུ་པ། ལས་ཕྲན་ཚེགས་བསྟན་པ་དང་སྤྱོད་པ་བསྟན་པའི་ལེའུ།</a></li>
+                            </ul>
+                        </div><!--/#catalog -->
+
+                        <div class="tab-pane fade" id="sutra">
+                            <ul>
+                                <!--<li><img src="images/img-sutra.jpg" height="150" width="321"></img></li>-->
+                                <li><a href="#"><span class="sutra"></span>བཅྭ་བརྒྱད་པ། དེ་ཁོ་ན་ཉིད་ཐམས་ཅད་ངེས་པའི་ཚེག་གི་རྟོག་པ།</a></li>
+                                <li><a href="#"><span class="sutra"></span>དྲུག་ཅུ་དགུ་པ། ལས་ཕྲན་ཚེགས་བསྟན་པ་དང་སྤྱོད་པ་བསྟན་པའི་ལེའུ།</a></li>
+                            </ul>
+                        </div><!--/#sutra -->
+
+                        <div class="tab-pane fade" id="content">
+                            <ul>
+                                <!--<li><img src="images/img-content.jpg" height="691" width="322"></img></li>-->
+                                <li><a href="#"><span>7.93b</span>...གལ་ཏེ་མི་བཙེམ་བར་ཚེག་པའི་གཡར་ཚུལ་ཀྱང་མི་གཏེར་བར་འགྱུར་བས་འདི་...</a></li>
+                                <li><a href="#"><span>59.257b</span>...པ་སྤྲིན་ཆེན་པོའི་མདོ་ཚེག་བར་བརྒྱད་པར་སྦྱར་བའི་ལེའུ་འབུམ་པ་ལས་ལུང་...</a></li>
+                                <li><a href="#"><span>71.173a</span>...གཞན་དུ་ན་ཡི་གེའི་ཚེག་བར་བཅུ་དྲུག་ལ་ཚིགས་སུ་བཅད་པ་ཕྱེད་དོ། །ཡི་གེའི་ཚེག་བར་སུམ་བཅུ་རྩ་གཉིས་ལ་ཚིགས་སུ་བཅད་པ་......རིང་ཐུང་ལས་ཡི་གེའི་ཚེག་བར་བཞི་བཅུ་རྩ་གཉིས་ལ་ཚིགས་སུ་བཅད་པ་...</a></li>
+                                <li><a href="#"><span>84.201b</span>...ཟླ་བ་ཁམ་པ་དང་། །ཚེག་གཉིས་ཟླ་བ་གཉིས་སུ་བྱ། །འདི་ནི་སངས་རྒྱས་...</a></li>
+                                <li><a href="#"><span>84.214a</span>...ཟླ་ཚེས་དང་ལྡན་པར། །ཚེག་དྲག་ཟླ་བ་གཉིས་ཡིན་ཏེ། །ཨ་ཡིག་མི་འགྱུར་...</a></li>
+                                <li><a href="#"><span>84.214b</span>...ཞེས་པ་ལས། །གནས་པ་ཚེག་དྲག་དང་ལྡན་པ། །རེའུ་མིག་ཉི་ཤུ་རྩ་བཞིར་......རྩ་བཞི་ལ། །གནས་པ་ཚེག་དྲག་སྦྱོར་བ་བྱ། །སུམ་ཅུ་རྩ་བརྒྱད་སྦྱོར་བ་......རྩ་བཞི་ལ། །གནས་པ་ཚེག་དྲག་སྦྱོར་བའོ། །རེའུ་མིག་གཉིས་པ་ལ་བཀོད་པའི། །...</a></li>
+                            </ul>
+                            
+                        </div><!--/#content -->
+
+                    </div><!--#searchTabCont-->
+                </div><!--/#search -->
+
+                <div class="tab-pane fade active in" id="tree">
+                    <h2><span class="logo"></span>བཀའ་འགྱུར།</h2>
+                    <div id="navtree">
+                        <ul class="tree" style="display: block;">
+                            <li><span class="branch"><span class="icon tree1"></span>འདུལ་བ།</span>
+                                <ul class="tree" style="display: block;">
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཀ</span>
+                                        <ul class="tree" style="display: block;">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree" style="display: block;">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree" style="display: block;">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">ཤཱ་རིའི་བུའི་སྡེ་ཚན།</a></span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</a></span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</a></span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</a></span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</a></span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span><a href="#">ལག་རྡུམ་གྱི་སྡེ་ཚན།</a></span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཁ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ག</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ང</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཅ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཆ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཇ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཉ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཏ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ཐ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ད</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>ན</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="branch"><span class="icon tree2"></span>པ</span>
+                                        <ul class="tree">
+                                            <li>
+                                                <span class="branch"><span class="icon tree3"></span>འདུལ་བ་གཞི། ༼ཀ༽</span>
+                                                <ul class="tree">
+                                                    <li><span class="branch"><span class="icon tree4"></span>རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</span>
+                                                        <ul class="tree">
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ཤཱ་རིའི་བུའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> མུ་སྟེགས་ཅན་གྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགེ་ཚུལ་གཉིས་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> བྱ་རོག་སྐྲོད་ཀྱི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> དགྲ་བཅོམ་བསད་པའི་སྡེ་ཚན།</span></li>
+                                                            <li><span class="Leaf"><span class="icon tree5"></span> ལག་རྡུམ་གྱི་སྡེ་ཚན།</span></li>
+                                                        </ul>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!--
+                                    <li><span class="Leaf"><span class="icon tree3"></span> File-1</span></li>
+                                    <li><span class="Leaf"><span class="icon tree3"></span> File-2</span></li>
+                                    <li><span class="Leaf"><span class="icon tree3"></span> File-3</span></li>
+                                    <li><span class="Leaf"><span class="icon tree3"></span> File-4</span></li>
+                                    <li><span class="Leaf"><span class="icon tree3"></span> File-5</span></li>-->
+                                </ul>
+                            </li>
+                            
+                            
+                        </ul><!--/.tree-->
+                
+                    </div><!--/#navtree -->
+                </div><!--/#tree -->
+
+            </div><!--#sideTabCont-->
+
+			<!--<ul>
+				<li><a target="mainFrame" href="http://plugins.jquery.com/layout#jq-siteContain">Top of Page</a></li>
+				<li><a target="mainFrame" href="http://plugins.jquery.com/layout#jq-primaryContent">Content Start</a></li>
+				<li><a target="mainFrame" href="http://plugins.jquery.com/layout#jq-footer">Footer</a></li>
+			</ul>-->
+
+		</div><!--/.ui-layout-west-->
+
+		<div id="mainContent">
+
+            <div class="reader-nav">
+                <a href="#" class="reader-prev">prev</a>
+                <a href="#" class="reader-next">next</a>
+            </div><!--/.reader-nav-->
+
+            <div class="wrap paragraph">
+                <!--<h1 class="font-ctrc">ཤཱ་རིའི་བུའི་སྡེ་ཚན།</h1>-->
+
+                <div class="head-content">
+
+                    <div class="t">
+                        <span class="1.1a title">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.1a</a>
+                            <span class="content">༼ཀ༽ ༄༅། ༈ །འདུལ་བ་ལུང<button class="note" href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="བཞུགས་" data-content="tiṣṭhati,<br>坐<br>bzhugs, བཞུགས་">་བཞུགས་</button>སོ། །</span>
+                            <span>(黃)  律師戒行經第一部</span>
+                        </span>
+                    </div><!--/.t-->
+
+                    <div class="p">
+                        <span class="1.1b">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.1b</a>
+                            <span class="content">༄༅༅། །རྒྱ་གར་སྐད་དུ། བི་ན་ཡ་བསྟུ། བོད་སྐད་དུ། འདུལ་བ་གཞི། བམ་པོ་དང་པོ། དཀོན་མཆོག་གསུམ་ལ་ཕྱག་འཚལ་ལོ། །གང་གིས་འཆིང་རྣམས་ཡང་ དག་རབ་བཅད་ཅིང་། །མུ་སྟེགས་ཚོགས་རྣམས་ཐམས་ཅད་རབ་བཅོམ་སྟེ། །སྡེ་དང་བཅས་ པའི་བདུད་རྣམས་ངེས་བཅོམ་ནས། །བྱང་ཆུབ་འདི་བརྙེས་དེ་ལ་ཕྱག་འཚལ་ལོ། །ཁྱིམ་དོན་ཆེ་ ཆུང་སྤངས་ཏེ་དང་པོ་རབ་འབྱུང་དཀའ། །རབ་བྱུང་ཐོབ་ནས་ཡུལ་སྤྱད་དག་གིས་དགའ་ཐོབ་དཀའ། ། མངོན་དགའ་ཇི་བཞིན་དོན་བསྐྱེད་ཡང་དག་བྱེད་པ་དཀའ། །ངུར་སྨྲིག་གོས་འཆང་མཁས་པ་ཚུལ་ ལས་ཉམས་པ་དཀའ། །གཞི་རྣམས་ཀྱི་སྤྱི་སྡོམ་ལ། རབ་འབྱུང་གསོ་སྦྱོང་གཞི་དང་ནི། །</span>
+                        </span>
+                        <span class="1.2a">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.2a</a>
+                            <span class="content">དགག་དབྱེ་དབྱར་དང་ཀོ་ལྤགས་གཞི། །སྨན་དང་གོས་དང་སྲ་བརྐྱང་དང་། །ཀཽ་ཤམ་བི་དང་ལས་ཀྱི་གཞི། །དམར་སེར་ཅན་དང་གང་ཟག་དང་། །སྤོ་དང་གསོ་སྦྱོང་བཞག་པ་དང་། །གནས་ མལ་དང་ནི་རྩོད་པ་དང་། །དགེ་འདུན་དབྱེན་རྣམས་བསྡུས་པ་ཡིན། །རབ་ཏུ་བྱུང་བའི་སྤྱི་སྡོམ་ལ། ཤཱ་རིའི་བུ་དང་མུ་སྟེགས་ཅན། །དགེ་ཚུལ་གཉིས་དང་བྱ་རོག་སྐྲོད། །དགྲ་བཅོམ་བསད་དང་ ལག་རྡུམ་གྱི། །སྡེ་ཚན་ཡང་དག་བསྡུས་པ་ཡིན། །སྡོམ་ལ་ཤཱ་རིའི་བུ་དང་རབ་འབྱུང་དང་། །བསྙེན་པར་རྫོགས་པར་གནང་བ་དང་། །ཉེ་སྡེས་ཚོགས་ནི་བསྡུས་པ་དང་། །ལྔ་པའི་སྡེ་ཚན་བསྡུས་ པ་ཡིན། །བྱང་ཆུབ་སེམས་དཔའ་དགའ་ལྡན་གྱི་གནས་ན་བཞུགས་པ་ན། ཡུལ་ཨང་ག་དག་ན་ཨང་གའི་རྒྱལ་པོ་ཞེས་བྱ་བས་རྒྱལ་སྲིད་འབྱོར་པ་རྒྱས་པ་བདེ་བ་ལོ་ལེགས་པ་སྐྱེ་བོ་དང་མི་མང་པོས་ གང་བ་བྱེད་དུ་བཅུག་གོ། །།ཡུལ་མ་ག་དྷ་དག་ན་ཡང་རྒྱལ་པོ་པད་མ་ཆེན་པོ་ཞེས་བྱ་བས། རྒྱལ་སྲིད་འབྱོར་པ་རྒྱས་པ་བདེ་བ་ལོ་ལེགས་པ་སྐྱེ་བོ་དང་མི་མང་པོས་གང་བ་བྱེད་དུ་བཅུག་གོ། རེས་འགའ་ནི་ཨང་གའི་རྒྱལ་པོ་དཔུང་དང་མཐུ་ཆེ་བ་ཡིན་ལ། རེས་འགའ་ནི་རྒྱལ་པོ་པད་མ་ཆེན་པོ་དཔུང་དང་མཐུ་ཆེ་བ་ཡིན་ནོ། །གང་གི་ཚེ་ཨང་གའི་རྒྱལ་པོ་དཔུང་དང་མཐུ་ཆེ་བ་དེའི་ཚེ་ན། དེས་དཔུང་གི་ཚོགས་ཡན་ལག་བཞི་པ། གླང་པོ་ཆེ་པའི་ཚོགས་དང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་གོ་བསྐོན་ཏེ། ཡུལ་མ་ག་དྷ་རྒྱལ་པོའི་ ཁབ་མ་གཏོགས་པ་བཅོམ་ནས་ཕྱིར་ལྡོག་པར་བྱེད་དོ། །གང་གི་ཚེ་རྒྱལ་པོ་པད་མ་ཆེན་པོ་དཔུང་དང་མཐུ་ཆེ་བ་དེའི་ཚེ་ན། དེས་ཀྱང་དཔུང་གི་ཚོགས་ཡན་ལག་བཞི་པ། གླང་པོ་ཆེ་པའི་</span>
+                        </span>
+
+                    </div><!--/.p-->
+
+                    <div class="p">
+                        <span class="1.2b">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.2b</a>
+                            <span class="content">ཚོགས་དང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་གོ་བསྐོན་ཏེ། ཡུལ་ཨང་ག་ཙམ་པ་མ་གཏོགས་པ་བཅོམ་ནས་ཕྱིར་ལྡོག་པར་བྱེད་དོ། །དེ་ནས་དུས་གཞན་ཞིག་ན་ཨང་ གའི་རྒྱལ་པོ་དཔུང་དང་མཐུ་ཆེ་བར་གྱུར་ནས་དེས་དཔུང་གི་ཚོགས་ཡན་ལག་བཞི་པ་གླང་པོ་ཆེ་པའི་ཚོགས་དང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་གོ་བསྐོན་ཏེ་ཡུལ་མ་ ག་དྷ་གཞོམ་པར་བརྩམས་པ་དང་། མ་ག་དྷ་ན་གནས་པའི་སྐྱེ་བོའི་ཚོགས་ཀྱིས་རྒྱལ་པོ་པད་མ་ཆེན་པོ་ལ་ལྷ་ཨང་གའི་རྒྱལ་པོས་དཔུང་གི་ཚོགས་ཡན་ལག་བཞི་པ་གླང་པོ་ཆེ་པའི་ཚོགས་དང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་གོ་བསྐོན་ཏེ་ཡུལ་མ་ག་དྷ་འཇོམས་པར་བགྱིད་དོ་ཞེས་སྦྲོན་པ་དག་བཏང་ངོ་། །རྒྱལ་པོ་པད་མ་ཆེན་པོས་ཀྱང་ཐོས་ནས་དཔུང་གི་ ཚོགས་ཡན་ལག་བཞི་པ་གླང་པོ་ཆེ་པའི་ཚོགས་དང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་གོ་བསྐོན་ཏེ་ཨང་གའི་རྒྱལ་པོ་དང་གཡུལ་སྤྲད་པའི་ཕྱིར་འཕགས་སོ། ། དེ་ནས་ཨང་གའི་རྒྱལ་པོས་རྒྱལ་པོ་པད་མ་ཆེན་པོའི་གླང་པོ་ཆེའི་ཚོགས་ཐམས་ཅད་ཕྲོགས་ཤིང་། རྟ་པའི་ཚོགས་དང་། ཤིང་རྟ་པའི་ཚོགས་དང་། དཔུང་བུ་ཆུང་གི་ཚོགས་ཐམས་ཅད་ཀྱང་ཕྲོགས་སོ། ། རྒྱལ་པོ་པད་མ་ཆེན་པོ་ཡང་ཕམ་པ་དང་། སྐྲག་པ་དང་། བཅོམ་པ་དང་། གཞན་རྒྱལ་བ་དང་། རྒྱབ་ཀྱིས་ཕྱོགས་པར་བྱས་ཏེ། རྒྱལ་པོའི་ཁབ་ཏུ་ཞུགས་ནས་སྒོ་བཅད་དེ། ར་བ་དག་གི་ཁར་སྦྲེངས་ནས་ འདུག་གོ ཨང་གའི་རྒྱལ་པོས་རྒྱལ་པོ་པད་མ་ཆེན་པོ་ལ་ཕོ་ཉ་བཏང་སྟེ། གལ་ཏེ་ཕྱིར་འབྱུང་ན་དེ་ལྟ་ན་ལེགས། གལ་ཏེ་ཕྱིར་མི་འབྱུང་ན་ཇི་སྟེ་སྟེང་གི་ནམ་མཁའ་ལ་འགྲོ་ན་ནི་མདའ་བརྒྱུད་པས་</span>
+                        </span>
+                        
+                    </div><!--/.p-->
+
+                    <div class="p">
+                        <span class="1.3a">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.3a</a>
+                            <span class="content">ཁྱོད་ལྟུང་བར་བྱའོ། །ཇི་སྟེ་སའི་འོག་ཏུ་འགྲོ་ན་ནི་མཆིལ་པ་དང་དྲང་བའི་ཚུལ་གྱིས་དྲང་བར་བྱའོ། །ཇི་སྟེ་རིའི་རྩེ་མོར་འཛེག་ན་ནི་དེར་ཡང་ཁྱོད་ཐར་པ་མེད་དོ་ཞེས་སྤྲིང་ངོ་། །རྒྱལ་པོ་པད་མ་ ཆེན་པོས་ཕྲིན་ཡིག་གླགས་ནས་དེ་མི་བདེ་བར་གྱུར་ཏེ། ལག་པ་ལ་འགྲམ་པ་གཏད་ནས་སེམས་ཁོང་སུ་ཆུད་ཅིང་འདུག་འདུག་ནས་དེས་བློན་པོ་རྣམས་ལ་སྨྲས་པ། ཤེས་ལྡན་དག་ཨང་གའི་རྒྱལ་པོ་ འདི་ནི་གདུག་པ། ཕ་རོལ་གནོན་པ། དཔུང་དང་མཐུ་ཆེ་བར་གྱུར་ལ། དེས་ཡུ་བུ་ཅག་ལ་འདི་དང་འདི་སྐད་ཅེས་སྤྲིང་ན། དེ་ལ་ཡུ་བུ་ཅག་གིས་ཇི་ལྟར་བསྒྲུབ་པར་བྱ། དེ་དག་གིས་ཚིགས་སུ་བཅད་པ་ སྨྲས་པ། ཡུལ་དང་སྲོག་ལ་གནོད་གྱུར་ན། །སྐྱེས་བུས་ཀུན་དུ་སྲོག་བསྲུང་བྱ། །བློ་ཡིས་གཉིས་ཀ་དཔྱད་བྱས་ན། །ཡུལ་ནི་ཡང་རྙེད་སྲོག་རྣམས་མིན། །ལྷ་རྣམ་པ་ཐམས་ཅད་དུ་སླར་ འབྱུང་བར་བགྱིའོ། །དེ་རལ་གྲི་མགུལ་དུ་ཐོགས་ཏེ་ཕྱིར་བྱུང་བ་དང་། ཨང་གའི་རྒྱལ་པོས་དེ་ལ་ལོ་ཐང་དང་བཅའ་ཕབ་སྟེ་དེ་ཉིད་དུ་བཞག་གོ །གང་གི་ཚེ་བཅོམ་ལྡན་འདས་བྱང་ཆུབ་སེམས་ དཔའ་དགའ་ལྡན་གྱི་གནས་ན་བཞུགས་པས་གཟིགས་པ་ལྔ་པོ་དག་ལ་གཟིགས་ནས་འདོད་པ་ན་སྤྱོད་པའི་ལྷ་དྲུག་པོ་དག་ལ་ལན་གསུམ་བསྒོ་བ་མཛད་དེ། གླང་པོ་ཆེ་ལྟར་སྣང་བར་བསྒྱུར་ཏེ། ཡུམ་གྱི་ལྷུམས་སུ་ཞུགས་པ་དེའི་ཚེ་ན་ས་ཆེན་པོ་ཤིན་ཏུ་གཡོས་པར་གྱུར་ཅིང་འཇིག་རྟེན་འདི་ཐམས་ཅད་ཀྱང་སུམ་བཅུ་རྩ་གསུམ་པའི་ལྷ་རྣམས་ཀྱི་ཁ་དོག་གི་མཐུ་བས་ལྷག་པའི་སྣང་བ་རྒྱ་ཆེན་པོས་ཁྱབ་ པར་གྱུར་ཅིང་། འཇིག་རྟེན་གྱི་འཇིག་རྟེན་གྱི་བར་གང་ན་ཉི་མ་དང་ཟླ་བ་འདི་ལྟར་རྫུ་འཕྲུལ་ཆེ་བ། འདི་ལྟར་མཐུ་ཆེ་བ་འདི་གཉིས་ཀྱི་འོད་དག་ཉམས་སུ་མི་མྱོང་བའི་མུན་པ་མུན་གནག་མུན་པར་བྱེད་</span>
+                        </span>
+                        <span class="1.3b">
+                            <a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="modal-pic.html">1.3b</a>
+                            <span class="content">པས། གནག་པར་གྱུར་པ་གང་དག་ཡིན་པ་དེ་དག་ཀྱང་དེའི་ཚེ་ན་སྣང་བ་རྒྱ་ཆེན་པོས་ཁྱབ་པར་གྱུར་ནས། སེམས་ཅན་གང་དག་དེར་སྐྱེས་པ་དག་གིས་རང་གི་ལག་པ་བརྐྱང་བ་ཡང་མི་མཐོང་བ་དེ་དག་གིས་ ཀྱང་འོད་དེས་སེམས་ཅན་གཅིག་གིས་གཅིག་མཐོང་ནས་ཤེས་ལྡན་དག་སེམས་ཅན་གཞན་ཡང་འདིར་སྐྱེས་སོ། །ཤེས་ལྡན་དག་སེམས་ཅན་གཞན་ཡང་འདིར་སྐྱེས་སོ་ཞེས་ཤེས་པར་གྱུར་ཏོ། །གང་གི་ཚེ་ བཅོམ་ལྡན་འདས་བྱང་ཆུབ་སེམས་དཔའ་བལྟམས་པ་དེའི་ཚེ་ན་གྲོང་ཁྱེར་ཆེན་པོ་བཞི་པོ་དག་ཏུ་རྒྱལ་པོ་ཆེན་པོ་བཞི་དག་གི་བུ་ཡང་བཙས་པར་གྱུར་ཏེ། རྒྱལ་པོའི་ཁབ་ཏུ་རྒྱལ་པོ་པད་མ་ཆེན་པོའི་བུ་བཙས་སོ། ། མཉན་ཡོད་དུ་ནི་རྒྱལ་པོ་རྩིབས་ཀྱིས་འཕུར་ཚངས་བྱིན་གྱི་བུ་བཙས་སོ། །འཕགས་རྒྱལ་དུ་ནི་རྒྱལ་པོ་མུ་ཁྱུད་མཐའ་ཡས་ཀྱི་བུ་བཙས་སོ། །ཀཽ་ཤམ་བིར་ནི་རྒྱལ་པོ་དམག་བརྒྱ་པའི་བུ་བཙས་སོ། །བཅོམ་ལྡན་ འདས་བྱང་ཆུབ་སེམས་དཔའ་བལྟམ་པ་ན་འཇིག་རྟེན་ཐམས་ཅད་སུམ་བཅུ་རྩ་གསུམ་པའི་ལྷ་རྣམས་ཀྱི་ཁ་དོག་གི་མཐུ་བས་ལྷག་པའི་སྣང་བ་རྒྱ་ཆེན་པོས་ཁྱབ་པར་གྱུར་ཅིང་འཇིག་རྟེན་གྱི་འཇིག་རྟེན་གྱི་བར་ གང་ན་ཉི་མ་དང་ཟླ་བ་འདི་ལྟར་རྫུ་འཕྲུལ་ཆེ་བ། འདི་ལྟར་མཐུ་ཆེ་བ་འདི་གཉིས་ཀྱི་འོད་དག་ཉམས་སུ་མི་མྱོང་བའི་མུན་པ་མུན་གནག་མུན་པར་བྱེད་པས་གནག་པར་གྱུར་པ་གང་དག་ཡིན་པ་དེ་དག་ཀྱང་དེའི་ཚེ་ན་ སྣང་བ་རྒྱ་ཆེན་པོས་ཁྱབ་པར་གྱུར་ནས། སེམས་ཅན་གང་དག་དེར་སྐྱེས་པ་དག་གིས་རང་གི་ལག་པ་བརྐྱང་བ་ཡང་མི་མཐོང་བ་དེ་དག་གིས་ཀྱང་འོད་དེས་སེམས་ཅན་གཅིག་གིས་གཅིག་མཐོང་ནས་ཤེས་ལྡན་དག་ སེམས་ཅན་གཞན་ཡང་འདིར་སྐྱེས་སོ། །ཤེས་ལྡན་དག་སེམས་ཅན་གཞན་ཡང་འདིར་སྐྱེས་སོ་ཞེས་ཤེས་པར་གྱུར་ཏོ། །རྒྱལ་པོ་པད་མ་ཆེན་པོས་བསམས་པ། བདག་གི་བུ་བཙས་པ་ན་འཇིག་རྟེན་ཉི་མའི་</span>
+                        </span>
+                    </div>
+
+
+
+
+                </div><!--/.head-content-->
+
+            
+                
+
+            </div><!--/.wrap -->
+
+        </div><!--/#mainContent-->
+
+		<!--<iframe id="mainFrame" name="mainFrame" class="ui-layout-center embed-responsive-item" width="100%" height="600" frameborder="0" scrolling="auto" src="1-1a.html"></iframe>-->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                </div><!--/.modal-content-->
+            </div>
+        </div><!-- myModal -->
+
+
+	</div><!--/.inner-Content-->
+    
+
+
+
+
+
+<!--JS--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.jfontsize.js"></script><!--font-->
+<script src="js/respond.js"></script>
+<script src="js/script.js"></script>
+
+<script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery-latest.js"></script>
+<script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery-ui-latest.js"></script>
+<script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="http://layout.jquery-dev.com/demos/js/complex.js"></script>
+<script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/debug.js"></script>
+
+
+
+
+
+
+</body>
+</html>
