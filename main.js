@@ -1,7 +1,8 @@
 console.log("running main.js");
 var db="jiangkangyur";
 var uti="1.1a";
-var timer1,timer2;
+var timer1,timer2,tf1,tf2;
+var prevtoputi;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -23,36 +24,15 @@ var trimtext=function(t){
     if (t.length<10) return t;
     else return t.substr(0,5)+"..."+t.substr(t.length-5);
 }
-var displayresult=function(result){
-    var out="";
-    for (var i=0;i<result.length;i++) {
-
-
-    var t=ksa.renderHits(result[i].text,result[i].hits,function(obj,text){
-        //this is for React.js , convert to HTML
-        return obj.className?"<span style='color:red'>"+text+"</span>":trimtext(text);
-    }).join("");
-
-        out+="<h5>"+result[i].uti+"<br>"+t+"</h5>";
-    }
-    document.getElementById("searchres").innerHTML=out;
-}
-var displaytitles=function(titles){
-    var out="";
-    for(var i=0;i<titles.length;i++){
-        if(i>100)break;
-        out+="<h2>"+titles[i].text+"/<h2>";
-    }
-    document.getElementById("searchres").innerHTML=out;
-};
 
 var search=function() {
     var tofind1=document.getElementById("tofind1").value;
     var tofind2=document.getElementById("tofind2").value;
-    tofind1=wylie.fromWylie(tofind1);
-    tofind2=wylie.fromWylie(tofind2);
+    tf1=wylie.fromWylie(tofind1);
+    tf2=wylie.fromWylie(tofind2);
 
-    ksa.filter({db:db,regex:tofind1,q:tofind2,field:"head"},function(err,data){
+
+    ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
         console.log("match count",data.length)
         var uti=[];
         for (var i=0;i<data.length;i++) {
@@ -60,8 +40,8 @@ var search=function() {
             if (i>9) break;
         }
 
-        if(tofind2){//有全文摘要
-            ksa.fetch({db:db,q:tofind2,uti:uti},function(err,res){
+        if(tf2){//有全文摘要
+            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
                 displayresult(res);
             });
         }
@@ -85,6 +65,7 @@ var tofind2input=function(e){
 };
 
 var scrollTo=function(uti){
+    $("#mainContent").scrollTop(0);
     console.log("scrollingTo:" + uti);
     /*$("#uti_" + uti.replace(".","_")).scrollTop();*/
     var to=$("#uti_" + uti.replace(".","_")).offset().top;
@@ -92,18 +73,34 @@ var scrollTo=function(uti){
     $("#mainContent").scrollTop(to-250);
 };
 
+var highlightText=function(text,hits){
+    console.log("highlightText");
+    if(!hits || !hits.length)return text;
+    console.log("hits:",hits);
+    return ksa.renderHits(text,hits,function(obj,text){
+        //this is for React.js , convert to HTML
+        return obj.className?"<span style='color:red'>"+text+"</span>":text;
+    }).join("");
+}
+
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         var currentuti=res.sibling[res.idx];
-        ksa.fetch({db:db,uti:res.sibling},function(err,data){
+        if(prevtoputi==res.sibling[0]){
+            scrollTo(currentuti);
+            return;
+        }
+        ksa.fetch({db:db,uti:res.sibling,q:tf2},function(err,data){
             var output="";
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
                 output+="<h2 id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
-                output+="<p>"   + data[i].text  + "</p>";
+                //output+="<p>" + data[i].text  + "</p>";
+                output+="<p>" + highlightText(data[i].text,data[i].hits)  + "</p>";
                 output+="</div>";
             }
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
+            prevtoputi=res.sibling[0];
             scrollTo(currentuti);
         });
     });
