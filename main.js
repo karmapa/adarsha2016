@@ -2,7 +2,7 @@ console.log("running main.js");
 var db="jiangkangyur";
 var uti="1.1a";
 var timer1,timer2,tf1,tf2;
-var prevtoputi;
+var toputi,bottomuti;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -79,14 +79,14 @@ var highlightText=function(text,hits){
     console.log("hits:",hits);
     return ksa.renderHits(text,hits,function(obj,text){
         //this is for React.js , convert to HTML
-        return obj.className?"<span style='color:red'>"+text+"</span>":text;
+        return obj.className?"<span style='background:red;color:yellow'>"+text+"</span>":text;
     }).join("");
 }
 
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         var currentuti=res.sibling[res.idx];
-        if(prevtoputi==res.sibling[0]){
+        if(toputi==res.sibling[0]){
             scrollTo(currentuti);
             return;
         }
@@ -100,7 +100,8 @@ var fetchText=function(vpos){
                 output+="</div>";
             }
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
-            prevtoputi=res.sibling[0];
+            toputi=res.sibling[0];
+            bottomuti=res.sibling[res.sibling.length-1];
             scrollTo(currentuti);
         });
     });
