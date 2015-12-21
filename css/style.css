@@ -176,6 +176,7 @@ body.welcome>.container{
 	background-color: transparent;/*#fff*/
 	border-color: transparent; 
 	margin-left: 15px;
+	display: block;
 }
 .navbar-default .navbar-toggle:hover, 
 .navbar-default .navbar-toggle:focus {
