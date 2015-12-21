@@ -98,7 +98,12 @@ var highlightText=function(text,hits){
         return obj.className?"<span style='background:red;color:yellow'>"+text+"</span>":text;
     }).join("");
 }
-
+var text4image=function(e) {
+    var uti=e.target.id.substr(4).replace("_",".");
+    $('#text4imagemodal').modal({
+        show: 'true'
+    });
+}
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         var currentuti=res.sibling[res.idx];
@@ -110,7 +115,7 @@ var fetchText=function(vpos){
             var output="";
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
-                output+="<h2 id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
+                output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
                 //output+="<p>" + data[i].text  + "</p>";
                 output+="<p>" + highlightText(data[i].text,data[i].hits)  + "</p>";
                 output+="</div>";

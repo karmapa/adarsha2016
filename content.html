@@ -18,10 +18,13 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="http://layout.jquery-dev.com/demos/css/complex.css" />
+<link rel="stylesheet" type="text/css" href="css/complex.css" />
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/respond.css">
 <link rel="shortcut icon" href="images/favicon.ico"/>
+<link rel="stylesheet" href="css/resize.css">
+<link rel="stylesheet" href="css/iviewer.css">
+
 <!--[if lt ie 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -358,13 +361,13 @@
 		<!--<iframe id="mainFrame" name="mainFrame" class="ui-layout-center embed-responsive-item" width="100%" height="600" frameborder="0" scrolling="auto" src="1-1a.html"></iframe>-->
 
         <!-- Modal -->
-        <div class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div id="text4imagemodal" class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="modal-body">
-                        ...
-                    </div>
+                    <div class="modal-body" >
+                      <div id="image4text"></div>
+                    </div><!--/.modal-body-->
                 </div><!--/.modal-content-->
             </div>
         </div><!-- myModal -->
@@ -375,23 +378,16 @@
 
 
 
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.layout-latest.js"></script>
 
-
-<!--JS-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.jfontsize.js"></script><!--font-->
 <script src="js/respond.js"></script>
 <script src="js/script.js"></script>
 
-<script src="http://layout.jquery-dev.com/lib/js/jquery-latest.js"></script>
-<script src="http://layout.jquery-dev.com/lib/js/jquery-ui-latest.js"></script>
-<script src="http://layout.jquery-dev.com/lib/js/jquery.layout-latest.js"></script>
-<script src="http://layout.jquery-dev.com/demos/js/complex.js"></script>
-<script src="http://layout.jquery-dev.com/lib/js/debug.js"></script>
-
 <script src="ksana-vanilla.js"></script>
+<script src="text4image.js"></script>
 <script src="abridge.js"></script>
 <script src="result.js"></script>
 <script src="nav.js"></script>
