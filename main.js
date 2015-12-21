@@ -4,6 +4,9 @@ var name="head";
 var uti="1.1a";
 var timer1,timer2,tf1,tf2;
 var toputi,bottomuti;
+var batchstart=0;
+var BATCHSIZE=30;
+var searchresult;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -21,9 +24,30 @@ ksa.toc({db:db},function(err,data){
     );
 });
 
-var trimtext=function(t){
-    if (t.length<10) return t;
-    else return t.substr(0,5)+"..."+t.substr(t.length-5);
+var showtotal=function(total){
+    document.getElementById("totalfound").innerHTML=total;
+}
+
+var showbatch=function(){
+    console.log("match count",searchresult.length)
+        if(tf2){//有全文摘要
+            var uti=[];
+            for (var i=batchstart;i<searchresult.length;i++) {
+                uti.push(searchresult[i].uti);
+                if (uti.length>BATCHSIZE) break;
+            }
+            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
+                displayresult(res);
+            });
+            batchstart+=uti.length;
+        }
+        else{//無全文，只列目錄
+            displaytitles(searchresult);
+        };
+}
+
+var updateControls=function(){
+    document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE)?'visible':'hidden';
 }
 
 var search=function() {
@@ -34,21 +58,12 @@ var search=function() {
 
 
     ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
-        console.log("match count",data.length)
-        var uti=[];
-        for (var i=0;i<data.length;i++) {
-            uti.push(data[i].uti);
-            if (i>9) break;
-        }
-
-        if(tf2){//有全文摘要
-            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
-                displayresult(res);
-            });
-        }
-        else{//無全文，只列目錄
-            displaytitles(data);
-        };
+        batchstart=0;
+        searchresult=data||[];
+        showbatch(searchresult);
+        console.log(searchresult.length);
+        showtotal(searchresult.length);
+        updateControls();
     });
 }
 
