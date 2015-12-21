@@ -98,12 +98,6 @@ var highlightText=function(text,hits){
         return obj.className?"<span style='background:red;color:yellow'>"+text+"</span>":text;
     }).join("");
 }
-var text4image=function(e) {
-    var uti=e.target.id.substr(4).replace("_",".");
-    $('#text4imagemodal').modal({
-        show: 'true'
-    });
-}
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         var currentuti=res.sibling[res.idx];
