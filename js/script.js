@@ -270,7 +270,8 @@ function toggleFullScreen() {
         // options.defaults apply to ALL PANES - but overridden by pane-specific settings
     ,   defaults: {
             size:                   "auto"
-        ,   minSize:                50
+        ,   minSize:                300
+        ,   maxSize:                450
         ,   paneClass:              "pane"      // default = 'ui-layout-pane'
         ,   resizerClass:           "resizer"   // default = 'ui-layout-resizer'
         ,   togglerClass:           "toggler"   // default = 'ui-layout-toggler'
@@ -302,8 +303,8 @@ function toggleFullScreen() {
         ,   resizerTip_open:        "Resize Sidebar"
         ,   slideTrigger_open:      "click"     // default
         ,   initClosed:             false
-        //  add 'bounce' option to default 'slide' effect
-        ,   fxSettings_open:        { easing: "easeOutBounce" }
+        //  add 'Cubic' option to default 'slide' effect
+        ,   fxSettings_open:        { easing: "easeOutCubic" }
         }
     
     ,   center: {
