@@ -50,21 +50,50 @@ var updateControls=function(){
     document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE)?'visible':'hidden';
 }
 
+/* 使用頁碼搜尋 */
+var searchUti=function(tofind1){
+    var searchUti = tofind1;
+    var isLong = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]$)/);
+    if(!isLong)searchUti=searchUti+"a";//如果不是完整頁碼則補a
+
+    ksa.fetch({db:db,uti:searchUti,q:tf2},function(err,data){
+        if(data.length>0){
+            console.log("isUti uti:" + searchUti + " vpos:" + data[0].vpos);
+            if(data[0].vpos!=undefined){
+                fetchText(data[0].vpos);
+            }
+            else{
+                console.log("invalidUti");
+            }
+        }
+        else{
+            console.log("invalidUti");
+        }
+    });
+}
+
+/* 搜尋總函式 */
 var search=function() {
     var tofind1=document.getElementById("tofind1").value;
     var tofind2=document.getElementById("tofind2").value;
     tf1=wylie.fromWylie(tofind1);
     tf2=wylie.fromWylie(tofind2);
 
+    var isUti = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
 
-    ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
-        batchstart=0;
-        searchresult=data||[];
-        showbatch(searchresult);
-        console.log(searchresult.length);
-        showtotal(searchresult.length);
-        updateControls();
-    });
+    if(!isUti){//如果不是輸入頁碼
+        ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
+            batchstart=0;
+            searchresult=data||[];
+            showbatch(searchresult);
+            console.log(searchresult.length);
+            showtotal(searchresult.length);
+            updateControls();
+        });
+    }
+    else{//如果是輸入頁碼
+        searchUti(tofind1);
+    }
 }
 
 var tofind1input=function(e){
@@ -100,6 +129,7 @@ var highlightText=function(text,hits){
 }
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
+        console.log("fetchText:" + vpos);
         var currentuti=res.sibling[res.idx];
         if(toputi==res.sibling[0]){
             scrollTo(currentuti);
