@@ -7,6 +7,7 @@ var toputi,bottomuti;
 var batchstart=0;
 var BATCHSIZE=30;
 var searchresult;
+var E = React.createElement;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -19,12 +20,26 @@ var onHitClick=function(e,treenode,seq,toc){
     fetchText(treenode.firstvpos);
 }
 
+var openicon=E("img",{src:"images/tree-open.png"});
+var closeicon=E("img",{src:"images/tree-close.png"});
+var nodeicons=[
+    E("img",{src:"images/tree-lv0.png"}),
+    E("img",{src:"images/tree-lv1.png"}),
+    E("img",{src:"images/tree-lv2.png"}),
+    E("img",{src:"images/tree-lv3.png"}),
+    E("img",{src:"images/tree-lv4.png"})
+]
+
 var reloadToc=function(){
     ksa.toc({db:db,q:tf2},function(err,data){
         ReactDOM.render(
-            React.createElement(
+            E(
                 ksana2015treetoc.Component,
-                {toc:data.toc,hits:data.hits,treename:"jiangkangyur",onSelect:onSelect
+                {toc:data.toc,hits:data.hits,treename:"jiangkangyur"
+                    ,opened:openicon
+                    ,closed:closeicon
+                    ,nodeicons:nodeicons
+                    ,onSelect:onSelect
                     ,onHitClick:onHitClick}
             ),
             document.getElementById("tree")
@@ -40,15 +55,17 @@ var showtotal=function(total){
 var showbatch=function(){
     console.log("match count",searchresult.length)
     if(tf2){//有全文摘要
-        var uti=[];
-        for (var i=batchstart;i<searchresult.length;i++) {
-            uti.push(searchresult[i].uti);
-            if (uti.length>BATCHSIZE) break;
+        if((searchresult.length-batchstart)>0){//如果下一頁內容
+            var uti=[];
+            for (var i=batchstart;i<searchresult.length;i++) {
+                uti.push(searchresult[i].uti);
+                if (uti.length>BATCHSIZE) break;
+            }
+            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
+                displayresult(res);
+            });
+            batchstart+=uti.length;
         }
-        ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
-            displayresult(res);
-        });
-        batchstart+=uti.length;
     }
     else{//無全文，只列目錄
         displaytitles(searchresult);
@@ -87,8 +104,10 @@ var searchUti=function(tofind1){
 var search=function() {
     var tofind1=document.getElementById("tofind1").value;
     var tofind2=document.getElementById("tofind2").value;
-    tf1=wylie.fromWylie(tofind1);
-    tf2=wylie.fromWylie(tofind2);
+    tf1=wylie.fromWylieWithWildcard(tofind1);
+    tf2=wylie.fromWylieWithWildcard(tofind2);
+
+    console.log("tf2:" + tf2);
 
     var isUti = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
 
