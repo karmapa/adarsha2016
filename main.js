@@ -14,15 +14,24 @@ var onSelect=function(e,treenode,seq,toc){
     /*console.log(arguments)*/
 }
 
-ksa.toc({db:db},function(err,data){
-    ReactDOM.render(
-        React.createElement(
-            ksana2015treetoc.Component,
-            {toc:data.toc,treename:"jiangkangyur",onSelect:onSelect}
-        ),
-        document.getElementById("tree")
-    );
-});
+var onHitClick=function(e,treenode,seq,toc){
+    console.log("onHitClick:" + treenode.firstvpos);
+    fetchText(treenode.firstvpos);
+}
+
+var reloadToc=function(){
+    ksa.toc({db:db,q:tf2},function(err,data){
+        ReactDOM.render(
+            React.createElement(
+                ksana2015treetoc.Component,
+                {toc:data.toc,hits:data.hits,treename:"jiangkangyur",onSelect:onSelect
+                    ,onHitClick:onHitClick}
+            ),
+            document.getElementById("tree")
+        );
+    });
+}
+reloadToc();
 
 var showtotal=function(total){
     document.getElementById("totalfound").innerHTML=total;
@@ -90,6 +99,7 @@ var search=function() {
             showbatch(searchresult);
             console.log(searchresult.length);
             showtotal(searchresult.length);
+            reloadToc();
             //updateControls();
         });
     }
