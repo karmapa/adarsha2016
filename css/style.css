@@ -64,11 +64,13 @@ a:hover, a:focus {
     background-color: #6B6B6B;
     color: #fff;
 }
+
 /*-------------------------------------
 *         $REPLACE BOOTSTRAP
 *------------------------------------*/
 
-.form-control:focus {
+.form-control:focus,
+textarea:focus {
 	border-color: #79864f;
 	outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(121,134,79,0.6);
@@ -370,6 +372,9 @@ body.welcome>.container{
 .inner-header .breadcrumb>li+li:before {
     content: ">\00a0";
 }
+.inner-header .breadcrumb .btn-group button.dropdown-toggle {
+	border: none;
+}
 
 .breadcrumb a.home {
 	background: url(../images/img-home.png) no-repeat;
@@ -442,11 +447,14 @@ body.welcome>.container{
 
 /* 功能鍵 */
 .tool {
-	position: absolute;
-	right: 17px;
-    z-index: 6;/*6*/
-    width: 170px;
-    margin-top: 6px;
+    position: absolute;
+    right: 20px;
+    z-index: 3;
+    width: 45px;
+    margin-top: 10px;
+}
+.tool>li {
+	margin: 0;
 }
 .tool.full { top: 5px; z-index: 8;}
 .tool>button,
@@ -480,8 +488,8 @@ body.welcome>.container{
 .tool div.sutra{
     position: fixed;
     width: 100%;
-    top: 189px;
-    background-color: #f8f8f8;
+    top: 140px;
+    background-color: #eff2e4;
     border: #cacaca solid 1px;
     height: 100%;
     overflow: auto;
@@ -493,8 +501,8 @@ body.welcome>.container{
 
 .tool div.sutra::-webkit-scrollbar { width: 12px;}
 .tool div.sutra::-webkit-scrollbar-track { 
-	background-color: #f8f8f8;
-	border-right: 1px solid #f8f8f8;
+	background-color: #eff2e4;
+	border-right: 1px solid #eff2e4;
 }
 .tool div.sutra::-webkit-scrollbar-thumb { 
 	background-color: #A9B286;
@@ -534,7 +542,8 @@ body.welcome>.container{
 	padding: 15px 15px 10px;
     line-height: 30px;
     font-size: 16px;
-    color: #666666;
+    color: #79864f;
+    border-top: 1px solid #BAC690;
 }
 
 .tool #menu_font {
@@ -597,8 +606,8 @@ body.welcome>.container{
 .tool .open>a:focus,
 .tool >li>a.fontToggle.open {
     border: #cacaca solid 1px;
-    border-bottom: #f8f8f8 solid 1px;
-    background-color: #f8f8f8;
+    /* border-bottom: #f8f8f8 solid 1px; */
+    background-color: #FFFFFF;
     z-index: 4;
 }
 
@@ -708,10 +717,10 @@ body.welcome>.container{
 }
 .reader-prev {
 	background-position: 10px 48%;
-    margin-left: -575px;
+    margin-left: -38.5%;
 }
 .reader-next {
-	margin-left: 530px;
+    margin-left: 36%;
     background-position: -48px 48%;
 }
 .reader-prev:hover,.reader-next:hover {
@@ -732,7 +741,7 @@ body.welcome>.container{
 .wrap {
 	z-index: 2;
 	position: relative;
-	width: 900px;
+	width: 90%;
 	margin: auto;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
@@ -998,7 +1007,7 @@ body.welcome>.container{
 	/*padding-bottom: 80%;*/
 }
 .resizer-west-open, .resizer-east-open {background: #fff;}
-.resizer-west-dragging, .resizer-west-open:hover {background: #E6E6E6;}
+.resizer-west-dragging, .resizer-west-open:hover {background: #E6E6E6!important;}
 .resizer-west-closed, .resizer-east-closed {
 	/*background: rgba(241, 241, 241, 0.66);*/
 	background: #fff;
@@ -1017,7 +1026,7 @@ body.welcome>.container{
     top: 0;
     height: 100%;
 	width: 91px;
-    z-index: 7;
+    z-index: 0;
     /*background-color: #fff;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.125);*/
 }
@@ -1069,7 +1078,7 @@ body.welcome>.container{
 #sideTabCont {
     background-color: #eff2e4;
     height: 100%;
-	/*text-align: center;*/
+	text-align: center;
 	/*box-shadow: inset 3px 0 5px rgba(0,0,0,0.125);*/
 }
 #sideTabCont h2 {
@@ -1093,7 +1102,8 @@ body.welcome>.container{
 	height: 100%;
 }
 #sideTabCont .tab-content>.active {
-	height: 150%;
+	/*height: 100%;*/
+	height: 97%;
 	overflow: auto;
 }
 #sideTabCont .tab-content>.tab-pane ul {
@@ -1169,10 +1179,6 @@ body.welcome>.container{
 	padding: 22px 12px 22px;
 }
 
-#sideTabCont #search input  {
-	margin: 0 auto 10px;
-}
-
 #searchTab {
 	border-bottom: none;
     padding: 0;
@@ -1225,35 +1231,8 @@ body.welcome>.container{
 	border-top: #d2d4c7 solid 1px;
     margin-top: -1px;
 	height: 100%;
-	overflow: auto;
 }
 
-#searchTabCont::-webkit-scrollbar { width: 12px;}
-#searchTabCont::-webkit-scrollbar-track { 
-	background-color: #EFF2E4;
-	border-right: 1px solid #EFF2E4;
-}
-#searchTabCont::-webkit-scrollbar-thumb { 
-	background-color: #C3C9B0;
-}
-#searchTabCont::-webkit-scrollbar-thumb:hover { 
-	background-color: #C3C9B0;
-}
-#searchTabCont #searchres {
-	padding: 20px 15px 20px 20px;	
-}
-#searchTabCont #searchres h2 {
-	text-align: left;
-	padding: 5px;
-	margin: 0;
-	line-height: 26px;
-	color: #71882C;
-	cursor: pointer;
-}
-#searchTabCont #searchres h2:hover {
-	background-color: #fff;
-	border-radius: 5px;
-}
 
 /* 左側 #tree */
 
@@ -1261,7 +1240,6 @@ body.welcome>.container{
 	overflow: auto;
     height: 100%;
 	background-color: #fff;
-	padding: 25px 10px;
 }
 #tree::-webkit-scrollbar { width: 12px;}
 #tree::-webkit-scrollbar-track { 
@@ -1543,11 +1521,22 @@ button.btnHide {
 .advancedBox input,
 .advancedBox select {
 	border-radius: 0;
-	font-family: "CTRC-ht","BiauKai","DFKai-SB";/*"Amdo Classic"*/
+	font-family: "Amdo Classic","BiauKai","DFKai-SB";
 	font-size: 16px;
     font-weight: normal;
-    padding-left: 7px;
+    padding: 0px 7px 0px;
+    height: inherit;
 }
+.advancedBox textarea {
+    font-family: "Amdo Classic","BiauKai","DFKai-SB";
+    /*min-height: 141px;*/
+    line-height: 26px;
+    padding: 6px 8px;
+    border-radius: 0;
+    overflow: hidden;
+    width: 550px !important;
+}
+.advancedBox select em { margin: 0 10px;}
 
 .advancedBox .form-actions {
 	text-align: center;
