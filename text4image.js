@@ -2,9 +2,23 @@ var E=React.createElement;
 var text4imagestyles={
     text:{fontSize:"28px",whiteSpace: "pre"}
 }
+
+var imgFromuti=function(uti)
+{
+    var utiParts = uti.split('.');
+    return (pad(utiParts[0],3)+"/"+pad(utiParts[0],3)+"-"+pad(utiParts[1],4)+".jpg");
+}
+var pad=function (num, size) {
+    var s = "000000000" + num;
+    return s.substr(s.length-size);
+}
+
 var Text4ImageComponent=React.createClass({
     imagefilename:function(){
-        return "images/001-001b.jpg";
+        return "../adarsha_img/lijiang/" + imgFromuti(this.props.uti);
+        //this.props.uti
+        //return "../adarsha_img/lijiang/001/001-127b.jpg";
+        //return "images/001-001b.jpg";
     }
     ,render:function(){
         return E("div",{style:text4imagestyles.text},
@@ -24,7 +38,7 @@ var text4image=function(e) {
             ),
             document.getElementById("text4image")
         );
-            
+
         $('#text4imagemodal').modal({
             show: 'true'
         });
