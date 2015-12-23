@@ -1233,6 +1233,32 @@ body.welcome>.container{
 	height: 100%;
 }
 
+#searchTabCont::-webkit-scrollbar { width: 12px;}
+#searchTabCont::-webkit-scrollbar-track { 
+	background-color: #EFF2E4;
+	border-right: 1px solid #EFF2E4;
+}
+#searchTabCont::-webkit-scrollbar-thumb { 
+	background-color: #C3C9B0;
+}
+#searchTabCont::-webkit-scrollbar-thumb:hover { 
+	background-color: #C3C9B0;
+}
+#searchTabCont #searchres {
+	padding: 20px 15px 20px 20px;	
+}
+#searchTabCont #searchres h2 {
+	text-align: left;
+	padding: 5px;
+	margin: 0;
+	line-height: 26px;
+	color: #71882C;
+	cursor: pointer;
+}
+#searchTabCont #searchres h2:hover {
+	background-color: #fff;
+	border-radius: 5px;
+}
 
 /* 左側 #tree */
 
