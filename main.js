@@ -30,24 +30,26 @@ var showtotal=function(total){
 
 var showbatch=function(){
     console.log("match count",searchresult.length)
-        if(tf2){//有全文摘要
-            var uti=[];
-            for (var i=batchstart;i<searchresult.length;i++) {
-                uti.push(searchresult[i].uti);
-                if (uti.length>BATCHSIZE) break;
-            }
-            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
-                displayresult(res);
-            });
-            batchstart+=uti.length;
+    if(tf2){//有全文摘要
+        var uti=[];
+        for (var i=batchstart;i<searchresult.length;i++) {
+            uti.push(searchresult[i].uti);
+            if (uti.length>BATCHSIZE) break;
         }
-        else{//無全文，只列目錄
-            displaytitles(searchresult);
-        };
+        ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
+            displayresult(res);
+        });
+        batchstart+=uti.length;
+    }
+    else{//無全文，只列目錄
+        displaytitles(searchresult);
+    };
+    updateControls();
 }
 
 var updateControls=function(){
-    document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE)?'visible':'hidden';
+    console.log("left : " + (searchresult.length-batchstart));
+    document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE && (searchresult.length-batchstart)>0)?'visible':'hidden';
 }
 
 /* 使用頁碼搜尋 */
@@ -88,7 +90,7 @@ var search=function() {
             showbatch(searchresult);
             console.log(searchresult.length);
             showtotal(searchresult.length);
-            updateControls();
+            //updateControls();
         });
     }
     else{//如果是輸入頁碼
