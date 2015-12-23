@@ -1178,6 +1178,13 @@ body.welcome>.container{
 	font-family: CTRC-uchen;
 	padding: 22px 12px 22px;
 }
+#search>input {
+  width: 93%;
+  margin: 0 auto 10px;
+  border-radius: 0;
+  font-family: CTRC-uchen;
+  padding: 15px 10px 20px;
+}
 
 #searchTab {
 	border-bottom: none;
