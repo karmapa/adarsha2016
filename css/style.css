@@ -1078,7 +1078,7 @@ body.welcome>.container{
 #sideTabCont {
     background-color: #eff2e4;
     height: 100%;
-	text-align: center;
+	/*text-align: center;*/
 	/*box-shadow: inset 3px 0 5px rgba(0,0,0,0.125);*/
 }
 #sideTabCont h2 {
