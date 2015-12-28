@@ -173,6 +173,7 @@ var fetchText=function(vpos){
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
                 //output+="<p>" + data[i].text  + "</p>";
                 output+="<p>" + highlightText(data[i].text,data[i].hits)  + "</p>";
+                output+="<a class=\"btn-modal pic\" id='btn_" + (data[i].uti).replace(".","_") + "' onClick=\"text4image(event)\" title=\"open " + data[i].uti + " images\">image icon</a>";
                 output+="</div>";
             }
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
