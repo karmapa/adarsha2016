@@ -49,49 +49,21 @@ $(function () {
   });
 
 //zoomImg
-  var $ = jQuery;
+ var $ = jQuery;
     $(document).ready(function(){
-          if ( $("#001-001a").length )
+          var $viewbox = $(".viewBox .viewer");
+          if ( $viewbox.length )
           {
-            var iv1 = $("#001-001a").iviewer({
-                 src: "Adarsha img/001-001a.jpg"
+            var iv1 = $viewbox.iviewer({
+                 src: $viewbox.data('image')
             });
-            var iv2 = $("#001-001a-D").iviewer({
-                 src: "Adarsha img/001-001a.jpg"
-            });
-            var iv3 = $("#001-001a-L").iviewer({
-                 src: "Adarsha img/001-001a.jpg"
-            });
-
-
-            var iv4 = $("#001-001b").iviewer({
-                src: "Adarsha img/001-001b.jpg"
-            });
-            var iv5 = $("#001-001b-D").iviewer({
-                src: "Adarsha img/001-001b.jpg"
-            });
-            var iv6 = $("#001-001b-L").iviewer({
-                src: "Adarsha img/001-001b.jpg"
-            });
-
-
-            var iv7 = $("#001-002a").iviewer({
-                src: "Adarsha img/001-002a.jpg"
-            });
-            var iv8 = $("#001-002a-D").iviewer({
-                src: "Adarsha img/001-002a.jpg"
-            });
-            var iv9 = $("#001-002a-L").iviewer({
-                src: "Adarsha img/001-002a.jpg"
-            });
-
-             $("#in").click(function(){ iv1.iviewer('zoom_by', 1); }); 
-             $("#out").click(function(){ iv1.iviewer('zoom_by', -1); }); 
-             $("#fit").click(function(){ iv1.iviewer('fit'); }); 
-             $("#orig").click(function(){ iv1.iviewer('set_zoom', 100); }); 
+             $("#in").click(function(){ iv1.iviewer('zoom_by', 1); });
+             $("#out").click(function(){ iv1.iviewer('zoom_by', -1); });
+             $("#fit").click(function(){ iv1.iviewer('fit'); });
+             $("#orig").click(function(){ iv1.iviewer('set_zoom', 100); });
              $("#update").click(function(){ iv1.iviewer('update_container_info'); });
           };
-          
+
     });
 
 //zoomImg2

@@ -1019,6 +1019,12 @@ body.welcome>.container{
     /*background: rgba(217, 222, 197, 0.56)*/
 }
 
+
+
+
+
+
+
 /* 左側選單 */
 #sideTab {
     position: fixed;
@@ -1269,11 +1275,11 @@ body.welcome>.container{
 }
 
 /* 左側 #tree */
-
+.tab-content>#tree { padding: 20px 15px;}
 .tab-content>#tree.active.in {
 	overflow: auto;
     height: 100%;
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 #tree::-webkit-scrollbar { width: 12px;}
 #tree::-webkit-scrollbar-track { 
