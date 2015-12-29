@@ -131,8 +131,8 @@ var search=function() {
 
     console.log("tf2:" + tf2);
 
-    var isUti = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
-    var isSid = tofind1.match(/(\d+[a-z]?)$/);//確認是否為單經搜尋
+    var isUti = tofind1.match(/^(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
+    var isSid = tofind1.match(/^(\d{1,4})([a-z]?)$/);//確認是否為單經搜尋
 
     if(isSid){//如果是單經搜尋
         searchSid(tofind1);
