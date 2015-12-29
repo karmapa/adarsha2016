@@ -149,6 +149,32 @@ var scrollTo=function(uti){
     $("#mainContent").scrollTop(to-250);
 };
 
+var nextMatch=function(currentvpos){
+    console.log("this vpos :"+currentvpos);
+    for(var i=0;i<searchresult.length;i++)
+    {
+        if(searchresult[i].vpos>currentvpos && i+1<searchresult.length){
+            console.log(i+" vpos :"+searchresult[i].vpos);
+            console.log("next vpos :"+searchresult[i+1].vpos);
+            fetchText(searchresult[i+1].vpos);
+            return;
+        }
+    }
+    console.log("next vpos :"+searchresult[0].vpos);
+    fetchText(searchresult[0].vpos);
+    return;
+};
+
+var highlightText2=function(text,hits,currentvpos){
+    console.log("highlightText");
+    if(!hits || !hits.length)return text;
+    console.log("hits:",hits);
+    return ksa.renderHits(text,hits,function(obj,text){
+        //this is for React.js , convert to HTML
+        return obj.className?"<span onClick='nextMatch(\""+currentvpos+"\")' style='background:red;color:yellow'>"+text+"</span>":text;
+    }).join("");
+};
+
 var highlightText=function(text,hits){
     console.log("highlightText");
     if(!hits || !hits.length)return text;
@@ -172,7 +198,7 @@ var fetchText=function(vpos){
                 output+="<div class='head-content'>";
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
                 //output+="<p>" + data[i].text  + "</p>";
-                output+="<p>" + highlightText(data[i].text,data[i].hits)  + "</p>";
+                output+="<p>" + highlightText2(data[i].text,data[i].hits,data[i].vpos)  + "</p>";
                 output+="<a class=\"btn-modal pic\" id='btn_" + (data[i].uti).replace(".","_") + "' onClick=\"text4image(event)\" title=\"open " + data[i].uti + " images\">image icon</a>";
                 output+="</div>";
             }
