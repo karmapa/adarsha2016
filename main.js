@@ -78,6 +78,28 @@ var updateControls=function(){
     document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE && (searchresult.length-batchstart)>0)?'visible':'hidden';
 }
 
+var filter=function(ranges,regex){
+    ksa.filter({db:db,regex:regex,q:tf2,field:"head",ranges:ranges},function(err,data){
+        batchstart=0;
+        searchresult=data||[];
+        showbatch(searchresult);
+        console.log(searchresult.length);
+        showtotal(searchresult.length);
+        reloadToc();
+        //updateControls();
+    });
+};
+
+/* 使用單經搜尋 */
+var searchSid=function(tofind1){
+    var sid=["J"+tofind1];
+    console.log("searching sid :"+sid);
+    ksa.getFieldRange({db:db,field:"sutra",values:sid},function(err,ranges){
+        console.log("ranges:"+ranges);
+        filter(ranges,"");
+    });
+}
+
 /* 使用頁碼搜尋 */
 var searchUti=function(tofind1){
     var searchUti = tofind1;
@@ -110,21 +132,28 @@ var search=function() {
     console.log("tf2:" + tf2);
 
     var isUti = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
+    var isSid = tofind1.match(/(\d+[a-z]?)$/);//確認是否為單經搜尋
 
-    if(!isUti){//如果不是輸入頁碼
-        ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
-            batchstart=0;
-            searchresult=data||[];
-            showbatch(searchresult);
-            console.log(searchresult.length);
-            showtotal(searchresult.length);
-            reloadToc();
-            //updateControls();
-        });
+    if(isSid){//如果是單經搜尋
+        searchSid(tofind1);
+        return;
     }
-    else{//如果是輸入頁碼
+
+    if(isUti){//如果是輸入頁碼
         searchUti(tofind1);
+        return;
     }
+
+    //如果都不是則為一般搜尋
+    ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
+        batchstart=0;
+        searchresult=data||[];
+        showbatch(searchresult);
+        console.log(searchresult.length);
+        showtotal(searchresult.length);
+        reloadToc();
+        //updateControls();
+    });
 }
 
 var tofind1input=function(e){
@@ -192,8 +221,9 @@ var fetchText=function(vpos){
             scrollTo(currentuti);
             return;
         }
-        ksa.fetch({db:db,uti:res.sibling,q:tf2},function(err,data){
+        ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
+            output+="<h1>"+data[0].values[0]+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
