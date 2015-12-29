@@ -20,11 +20,27 @@ var Text4ImageComponent=React.createClass({
         //return "../adarsha_img/lijiang/001/001-127b.jpg";
         //return "images/001-001b.jpg";
     }
+    ,resize:function(domnode){
+        setTimeout(function(){
+            domnode.iviewer("set_zoom", 100);
+        },200)
+    }
+    ,componentDidMount:function() {
+        var domnode=$(this.refs.imageviewer);
+        domnode.iviewer({src:this.imagefilename(),zoom_max :1000,zoom_min:100,mousewheel: true});
+        this.resize(domnode);
+    }
+    ,componentDidUpdate:function(){
+        var domnode=$(this.refs.imageviewer);
+        domnode.iviewer("loadImage",this.imagefilename());
+        this.resize(domnode);
+    }
     ,render:function(){
-        return E("div",{style:text4imagestyles.text},
-            E("image",{src:this.imagefilename()}),
-
-            this.props.uti,"\n",this.props.text)
+        return E("div",{},
+            E("div",{className:"viewer",style:{height:"330px",width:"1280px"},ref:"imageviewer"}),
+          //  E("image",{src:this.imagefilename()}),
+            E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
+        );
     }
 });
 

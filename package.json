@@ -1,5 +1,8 @@
 {
     "name":"adarsha",
     "version":"0.0.1",
-    "main":"hp.html"
-}
+    "main":"hp.html",
+    "window":{
+    	"title": "Adarsha"
+    }
+  }
