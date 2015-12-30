@@ -223,7 +223,7 @@ var fetchText=function(vpos){
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
-            output+="<h1>"+data[0].values[0]+"</h1>";//經號
+            output+="<h1>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";

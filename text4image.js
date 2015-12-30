@@ -14,6 +14,19 @@ var pad=function (num, size) {
 }
 
 var Text4ImageComponent=React.createClass({
+    prevImage:function(event){
+        console.log("prevImage");
+        ksa.prev({db:db,uti:this.props.uti,count:1},function(err,res){
+            text4imageFetch(res[0].uti);
+        });
+    },
+
+    nextImage:function(event){
+        console.log("nextImage");
+        ksa.next({db:db,uti:this.props.uti,count:1},function(err,res){
+            text4imageFetch(res[0].uti);
+        });
+    },
     imagefilename:function(){
         return "../adarsha_img/lijiang/" + imgFromuti(this.props.uti);
         //this.props.uti
@@ -37,6 +50,9 @@ var Text4ImageComponent=React.createClass({
     }
     ,render:function(){
         return E("div",{},
+            E("button",{className:"prevImage",onClick:this.prevImage},"prev"),
+            E("button",{className:"nextImage",onClick:this.nextImage},"next"),
+            E("br"),
             E("div",{className:"viewer",style:{height:"330px",width:"1280px"},ref:"imageviewer"}),
           //  E("image",{src:this.imagefilename()}),
             E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
@@ -44,9 +60,7 @@ var Text4ImageComponent=React.createClass({
     }
 });
 
-var text4image=function(e) {
-    var uti=e.target.id.substr(4).replace("_",".");
-
+var text4imageFetch=function(uti){
     ksa.fetch({db:db,uti:uti},function(err,data){
         ReactDOM.render(
             React.createElement(
@@ -59,4 +73,10 @@ var text4image=function(e) {
             show: 'true'
         });
     })
+}
+
+var text4image=function(e) {
+    var uti=e.target.id.substr(4).replace("_",".");
+
+    text4imageFetch(uti);
 }
