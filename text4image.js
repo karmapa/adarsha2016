@@ -1,4 +1,3 @@
-var E=React.createElement;
 var text4imagestyles={
     text:{fontSize:"28px",whiteSpace: "pre"}
 }
@@ -13,7 +12,10 @@ var pad=function (num, size) {
     return s.substr(s.length-size);
 }
 
-var Text4ImageComponent=React.createClass({
+var Text4ImageComponent=null;
+
+var systemReady2=function() {
+ Text4ImageComponent=React.createClass({
     prevImage:function(event){
         console.log("prevImage");
         ksa.prev({db:db,uti:this.props.uti,count:1},function(err,res){
@@ -59,6 +61,7 @@ var Text4ImageComponent=React.createClass({
         );
     }
 });
+};
 
 var text4imageFetch=function(uti){
     ksa.fetch({db:db,uti:uti},function(err,data){
@@ -77,6 +80,5 @@ var text4imageFetch=function(uti){
 
 var text4image=function(e) {
     var uti=e.target.id.substr(4).replace("_",".");
-
     text4imageFetch(uti);
 }

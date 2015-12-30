@@ -7,7 +7,7 @@ var toputi,bottomuti;
 var batchstart=0;
 var BATCHSIZE=30;
 var searchresult;
-var E = React.createElement;
+var E=null;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -19,16 +19,6 @@ var onHitClick=function(e,treenode,seq,toc){
     console.log("onHitClick:" + treenode.firstvpos);
     fetchText(treenode.firstvpos);
 }
-
-var openicon=E("img",{src:"images/tree-open.png"});
-var closeicon=E("img",{src:"images/tree-close.png"});
-var nodeicons=[
-    E("img",{src:"images/tree-lv0.png"}),
-    E("img",{src:"images/tree-lv1.png"}),
-    E("img",{src:"images/tree-lv2.png"}),
-    E("img",{src:"images/tree-lv3.png"}),
-    E("img",{src:"images/tree-lv4.png"})
-]
 
 var reloadToc=function(){
     ksa.toc({db:db,q:tf2},function(err,data){
@@ -46,7 +36,6 @@ var reloadToc=function(){
         );
     });
 }
-reloadToc();
 
 var showtotal=function(total){
     document.getElementById("totalfound").innerHTML=total;
@@ -243,7 +232,21 @@ var fetchText=function(vpos){
         });
     });
 }
+var openicion,closeicon,nodeicons;
+var systemReady=function(){
+    E = React.createElement;
+    openicon=E("img",{src:"images/tree-open.png"});
+    closeicon=E("img",{src:"images/tree-close.png"});
+    nodeicons=[
+        E("img",{src:"images/tree-lv0.png"}),
+        E("img",{src:"images/tree-lv1.png"}),
+        E("img",{src:"images/tree-lv2.png"}),
+        E("img",{src:"images/tree-lv3.png"}),
+        E("img",{src:"images/tree-lv4.png"})
+    ]    
+    reloadToc();
+    fetchText(1);    
+}
 
-fetchText(1);
 
 
