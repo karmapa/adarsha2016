@@ -7,7 +7,7 @@ var toputi,bottomuti;
 var batchstart=0;
 var BATCHSIZE=30;
 var searchresult;
-var E = React.createElement;
+var E=null;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -19,16 +19,6 @@ var onHitClick=function(e,treenode,seq,toc){
     console.log("onHitClick:" + treenode.firstvpos);
     fetchText(treenode.firstvpos);
 }
-
-var openicon=E("img",{src:"images/tree-open.png"});
-var closeicon=E("img",{src:"images/tree-close.png"});
-var nodeicons=[
-    E("img",{src:"images/tree-lv0.png"}),
-    E("img",{src:"images/tree-lv1.png"}),
-    E("img",{src:"images/tree-lv2.png"}),
-    E("img",{src:"images/tree-lv3.png"}),
-    E("img",{src:"images/tree-lv4.png"})
-]
 
 var reloadToc=function(){
     ksa.toc({db:db,q:tf2},function(err,data){
@@ -46,7 +36,6 @@ var reloadToc=function(){
         );
     });
 }
-reloadToc();
 
 var showtotal=function(total){
     document.getElementById("totalfound").innerHTML=total;
@@ -223,7 +212,7 @@ var fetchText=function(vpos){
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
-            output+="<h1>"+data[0].values[0]+"</h1>";//經號
+            output+="<h1>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
@@ -232,7 +221,7 @@ var fetchText=function(vpos){
                 output+="<a class=\"btn-modal pic\" id='btn_" + (data[i].uti).replace(".","_") + "' onClick=\"text4image(event)\" title=\"open " + data[i].uti + " images\">image icon</a>";
                 output+="</div>";
             }
-            output=output.replace(/\r?\n/g,"");
+            output=output.replace(/[\r\n]/g,"");
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
@@ -243,7 +232,21 @@ var fetchText=function(vpos){
         });
     });
 }
+var openicion,closeicon,nodeicons;
+var systemReady=function(){
+    E = React.createElement;
+    openicon=E("img",{src:"images/tree-open.png"});
+    closeicon=E("img",{src:"images/tree-close.png"});
+    nodeicons=[
+        E("img",{src:"images/tree-lv0.png"}),
+        E("img",{src:"images/tree-lv1.png"}),
+        E("img",{src:"images/tree-lv2.png"}),
+        E("img",{src:"images/tree-lv3.png"}),
+        E("img",{src:"images/tree-lv4.png"})
+    ]    
+    reloadToc();
+    fetchText(1);    
+}
 
-fetchText(1);
 
 

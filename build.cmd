@@ -1,1 +1,1 @@
-browserify --bare -x react-native -x react-native-android-kdb index.js> ksana-vanilla.js
+browserify --bare -x react -x react-dom -x react-with-addons -x react-native -x react-native-android-kdb index.js> ksana-vanilla.js

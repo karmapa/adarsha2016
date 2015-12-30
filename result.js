@@ -35,7 +35,8 @@ var displaybreadcrumb=function(vpos){
         ReactDOM.render(
             React.createElement(
                 ksana2015breadcrumbtoc.Component,
-                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,theme:theme_bootstrap,vpos:vpos}
+                //theme:theme_bootstrap,
+                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,vpos:vpos}
             ),
             document.getElementById("breadcrumb")
         );
