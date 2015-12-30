@@ -11,7 +11,7 @@ if (typeof window!=="undefined"){
         window.ksana2015treetoc=require("ksana2015-treetoc");
         window.ksana2015breadcrumbtoc=require("ksana2015-breadcrumbtoc");
 
-        //window.theme_bootstrap=require("ksana2015-breadcrumbtoc/theme_bootstrap");
+        window.theme_bootstrap=require("ksana2015-breadcrumbtoc/theme_bootstrap");
 
         window.wylie=require("tibetan/wylie");        
 

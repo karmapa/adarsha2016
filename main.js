@@ -19,7 +19,11 @@ var onHitClick=function(e,treenode,seq,toc){
     console.log("onHitClick:" + treenode.firstvpos);
     fetchText(treenode.firstvpos);
 }
-
+var reloadBreadcrumb=function(vpos){
+    setTimeout(function(){
+        displaybreadcrumb(vpos);
+    },100);
+}
 var reloadToc=function(){
     ksa.toc({db:db,q:tf2},function(err,data){
         ReactDOM.render(
@@ -141,6 +145,7 @@ var search=function() {
         console.log(searchresult.length);
         showtotal(searchresult.length);
         reloadToc();
+        reloadBreadcrumb(0);
         //updateControls();
     });
 }
@@ -226,9 +231,7 @@ var fetchText=function(vpos){
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
             scrollTo(currentuti);
-            setTimeout(function(){
-                displaybreadcrumb(vpos);
-            },100);
+            reloadBreadcrumb(vpos);
         });
     });
 }

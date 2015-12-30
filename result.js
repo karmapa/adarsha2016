@@ -31,12 +31,12 @@ var onBreadcrumbSelect=function(itemidx,vpos){
 }
 
 var displaybreadcrumb=function(vpos){
-    ksa.toc({db:db},function(err,data){
+    ksa.toc({db:db,q:tf2},function(err,data){
         ReactDOM.render(
             React.createElement(
                 ksana2015breadcrumbtoc.Component,
-                //theme:theme_bootstrap,
-                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,vpos:vpos}
+                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
+                 hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos,theme:theme_bootstrap}
             ),
             document.getElementById("breadcrumb")
         );
