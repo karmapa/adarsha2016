@@ -19,18 +19,18 @@ var systemReady2=function() {
     prevImage:function(event){
         console.log("prevImage");
         ksa.prev({db:db,uti:this.props.uti,count:1},function(err,res){
-            text4imageFetch(res[0].uti);
+            if(!err)text4imageFetch(res[0].uti);
         });
     },
 
     nextImage:function(event){
         console.log("nextImage");
         ksa.next({db:db,uti:this.props.uti,count:1},function(err,res){
-            text4imageFetch(res[0].uti);
+            if(!err)text4imageFetch(res[0].uti);
         });
     },
     imagefilename:function(){
-        return "../adarsha_img/lijiang/" + imgFromuti(this.props.uti);
+        return image_url_prefix + imgFromuti(this.props.uti);
         //this.props.uti
         //return "../adarsha_img/lijiang/001/001-127b.jpg";
         //return "images/001-001b.jpg";
