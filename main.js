@@ -232,7 +232,7 @@ var fetchText=function(vpos){
                 output+="<a class=\"btn-modal pic\" id='btn_" + (data[i].uti).replace(".","_") + "' onClick=\"text4image(event)\" title=\"open " + data[i].uti + " images\">image icon</a>";
                 output+="</div>";
             }
-            output=output.replace(/\r?\n/g,"");
+            output=output.replace(/[\r\n]/g,"");
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
