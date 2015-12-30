@@ -636,7 +636,7 @@ body.welcome>.container{
 .tool >li>a.fontToggle.open {
     border: #cacaca solid 1px;
     /* border-bottom: #f8f8f8 solid 1px; */
-    background-color: #FFFFFF;
+    background-color: #f8f8f8;/*#FFFFFF*/
     z-index: 4;
 }
 
@@ -1113,6 +1113,16 @@ body.welcome>.container{
     height: 100%;
     background-color: #fff;
 }
+span.button-pin-west {display: none;}
+span.button-close-west {
+	left: -6px;
+	top: -1px;
+}
+.toggler-west-closed {
+  background: url(../img/go-rt-off.png) no-repeat center;
+  left: -6px!important;
+  top: -2px!important;
+}
 
 #sideTabCont {
     background-color: #eff2e4;
@@ -1308,16 +1318,17 @@ body.welcome>.container{
 }
 
 /* 左側 #tree */
-.tab-content>#tree { padding: 20px 15px;}
+.tab-content>#tree { /*padding: 20px 15px 0;*/}
 .tab-content>#tree.active.in {
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
     height: 100%;
-	/*background-color: #fff;*/
+	background-color: #fff;/*EFF2E4*/
 }
 #tree::-webkit-scrollbar { width: 12px;}
 #tree::-webkit-scrollbar-track { 
-	background-color: #eff2e4;
-	border-right: 1px solid #eff2e4;
+	background-color: #fff;/*EFF2E4*/
+	border-right: 1px solid #fff;/*EFF2E4*/
 }
 #tree::-webkit-scrollbar-thumb { 
 	background-color: #b9bfa4;
@@ -1414,7 +1425,42 @@ body.welcome>.container{
 .tree3 { background: url(../images/img-tree3.png) no-repeat 0 5px;}
 .tree4 { background: url(../images/img-tree4.png) no-repeat 0 5px;}
 .tree5 { background: url(../images/img-tree5.png) no-repeat 0 5px;}
+#tree {
+    color: #71882C;
+    line-height: 34px;
+	font-family: "Amdo Classic","BiauKai","DFKai-SB";
+}
+#tree .treenode_lv0 { 
+	/*margin-left: -15px;*/
+	padding: 20px 0 0;
+	background: #fff;
+	text-align: center;
+	font-size: 20px !important;
+}
+#tree .treenode_lv1 {
+	font-size: 16px !important;
+	padding: 10px 30px;
+	background: #EFF2E4;
+	left: 0!important;
+	border-bottom: #C9CDBA solid 1px;
+	border-top: #C9CDBA solid 1px;
+	border-right: #C9CDBA solid 1px;
+	text-align: left;
+}
 
+#tree .treenode_lv0>a { display: none;}
+#tree .treenode_lv1+div {margin-top:-1px; }
+#tree .treenode_lv1:hover {
+	/*background: #fff;fff*/
+	border-left: #C9CDBA solid 3px;/*C9CDBA*/
+}
+#tree .treenode_lv0>div:first-child { padding-top: 15px;}
+
+#tree div>img {margin-right: 5px;}
+#tree div>a:hover { background: transparent !important;}
+#tree div>span {padding: 2px 5px; border-color: transparent !important;}
+#tree div>span:hover { background: transparent !important; }
+#tree div>span:focus {  background: #444 !important; }
 
 
 /* modal-pic */
@@ -1782,7 +1828,7 @@ button.btnHide {
 	border: none;
 }
 #picTabCont .viewBox {
-    height: 340px;
+    height: 350px;
 }
 #picTabCont .viewBox .container { 
 	position: relative; 
