@@ -85,6 +85,20 @@ textarea:focus {
 .row .col-lg-1:nth-child(12n + 13)
 { /*margin-left:0px;*/clear:both;}
 
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {  background-color: #9EA878; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #E9EFD4;}
+
+.pagination>.active>a, 
+.pagination>.active>span, 
+.pagination>.active>a:hover, 
+.pagination>.active>span:hover, 
+.pagination>.active>a:focus, 
+.pagination>.active>span:focus {
+    background-color: #79864f;
+    border-color: #79864f;
+}
+
 /*-------------------------------------
 *               $LAYOUT
 *------------------------------------*/
@@ -374,6 +388,7 @@ body.welcome>.container{
 }
 .inner-header .breadcrumb .btn-group button.dropdown-toggle {
 	border: none;
+	background-color: transparent;
 }
 
 .breadcrumb a.home {
@@ -382,6 +397,20 @@ body.welcome>.container{
 	width: 20px;
 	height: 20px;
 	text-indent: -9999em;
+}
+#breadcrumb>.btn-group>div:first-child:before,
+#breadcrumb>.btn-group>div+div:before {
+    margin-top: 5px;
+    padding: 0 5px;
+    color: #ccc;
+    content: ">\00a0";
+}
+
+#breadcrumb>.btn-group>div:last-child:before {
+	content: "";
+}
+#breadcrumb .open>.dropdown-menu {
+	text-align: left;
 }
 
 /* 內文 */
@@ -616,6 +645,10 @@ body.welcome>.container{
 }
 .open>.dropdown-menu li {
 	margin: 0;
+}
+
+.open>.dropdown-menu>li>a {
+  padding: 10px 20px;
 }
 
 .tool>li>a.paragraph {
@@ -1520,6 +1553,7 @@ button.btnHide {
 /* modal-page */
 .modal-page {
     padding-top: 3%;
+    height: 130%;
 }
 .modal-page>.container {
 	border: none;
@@ -1533,7 +1567,7 @@ button.btnHide {
     color: #979797;
     font-size: 19px;
     text-align: center;
-    display: none;
+    /*display: none;*/
 }
 .modal-backdrop {
 	z-index: 0;
@@ -1583,7 +1617,8 @@ button.btnHide {
 	margin: 25px 0 0;
 }
 
-.advancedBox .form-actions button {
+.advancedBox .form-actions button,
+.advancedBox .form-actions a {
 	border-radius: 0;
 	font-family: Arial;
 	width: 165px;
@@ -1610,6 +1645,48 @@ button.btnHide {
 	background-color: #5B653A;
 }
 
+/* advanced result */
+.resultBox { 
+	margin: 40px auto 0;
+	width: 85%;
+	overflow: auto;
+}
+.resultBox ul li {
+	list-style: none;
+    font-family: "Amdo Classic","BiauKai","DFKai-SB";
+    font-size: 17px;
+    line-height: 35px;
+    color: #666666;
+    border-bottom: #B7BBAA solid 1px;
+    padding: 20px;
+}
+.resultBox ul li a {
+	border-radius: 5px;
+    margin-left: 25px;
+}
+.resultBox ul li a:hover {
+    background-color: #E9F5C3;
+}
+.resultBox ul li span {
+	font-family: "CTRC-Uchen","BiauKai","DFKai-SB";
+}
+
+
+/* pageSet */
+.pageSet {text-align: center;}
+.pageSet ul li {
+	padding: 0;
+	margin: 0;
+}
+.pageSet ul li a {
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-radius: 0;
+}
+.pageSet ul li+li a {margin-right:-1px;}
+.pageSet ul li:first-child,
+.pageSet ul li:last-child { padding-top: 5px;}
+
 /* modal-pic */
 .modal-page.pic {
 	/*border: #cacaca solid 7px;*/
@@ -1621,6 +1698,7 @@ button.btnHide {
 	text-align: left;
     float: left;
     margin: 17px 10px;
+    display: none;
 }
 .modal-page.pic header {
 	background-color: #f7f7f7;
