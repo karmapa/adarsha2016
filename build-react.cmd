@@ -1,0 +1,1 @@
+browserify -r react -r react-dom -u react-native> react-bundle.js
