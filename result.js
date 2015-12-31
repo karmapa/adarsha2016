@@ -36,7 +36,9 @@ var displaybreadcrumb=function(vpos){
             React.createElement(
                 ksana2015breadcrumbtoc.Component,
                 {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
-                 hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos}
+                 hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos,
+                 separator:">",
+                 buttonClass:"btn btn-link"}
             ),
             document.getElementById("breadcrumb")
         );
