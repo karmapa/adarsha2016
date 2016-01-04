@@ -96,7 +96,7 @@ var searchSid=function(tofind1){
 /* 使用頁碼搜尋 */
 var searchUti=function(tofind1){
     var searchUti = tofind1;
-    var isLong = tofind1.match(/(\d{1,3})\.(\d{1,3}[ab]$)/);
+    var isLong = tofind1.match(/(\d{1,3}[a-z]?)\.(\d{1,3}[ab]$)/);
     if(!isLong)searchUti=searchUti+"a";//如果不是完整頁碼則補a
 
     ksa.fetch({db:db,uti:searchUti,q:tf2},function(err,data){
@@ -124,7 +124,7 @@ var search=function() {
 
     console.log("tf2:" + tf2);
 
-    var isUti = tofind1.match(/^(\d{1,3})\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
+    var isUti = tofind1.match(/^(\d{1,3}[a-z]?)\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
     var isSid = tofind1.match(/^(\d{1,4})([a-z]?)$/);//確認是否為單經搜尋
 
     if(isSid){//如果是單經搜尋
