@@ -1946,3 +1946,63 @@ button.btnHide {
 .loginBox a:hover {
 	text-decoration: underline;
 }
+
+
+/* modal-pic */
+#text4imagemodal .modal-body { 
+	position: relative;
+	height: 100%;
+}
+#text4image {
+	width: 1170px;
+	margin: auto;
+}
+#text4image .iviewer_cursor {
+	width: 100% !important;
+	height: 250px!important;
+}
+#text4image .iviewer_cursor img{
+  /* width: 100% !important;
+  margin-top: 4%; */
+  top: inherit;
+  left: inherit;
+  max-width: none;
+  width: inherit;
+  height: inherit ;
+  /*overflow: inherit ;*/
+}
+
+/* 更換頁面 */
+.prevImage,.nextImage {
+	background-image: url(../images/btn-reader.png);
+	width: 44px;
+	height: 75%;
+	display: block;
+    background-repeat: no-repeat;
+    color: transparent;
+    text-indent: -9999em;
+    position: fixed;
+    border-radius: 4px;
+    border: none;
+    background-position-y: center;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    outline: 0;
+    top: 10%;
+    /*margin-top: 60px;
+    */
+}
+.prevImage {
+	left: 15px;
+	background-position: 10px 48%;
+    /*margin-left: -38.5%;*/
+}
+.nextImage {
+	right: 15px;
+    /*margin-left: 36%;*/
+    background-position: -48px 48%;/**/
+}
+.prevImage:hover,.nextImage:hover {
+	background-color: #F7F7F7;
+}
