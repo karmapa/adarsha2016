@@ -138,7 +138,7 @@ var search=function() {
     }
 
     //如果都不是則為一般搜尋
-    ksa.filter({db:db,regex:tf1,q:tf2,field:"head"},function(err,data){
+    ksa.filter({db:db,regex:tf1,q:tf2,field:""},function(err,data){
         batchstart=0;
         searchresult=data||[];
         showbatch(searchresult);
