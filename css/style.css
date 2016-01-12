@@ -38,7 +38,7 @@
 */
 
 a,ol,li,h1,h2,h3,h4,h5,p,th,td { font-family: Amdo Classic; }
-
+body { color: #71882C; }
 /*-------------------------------------
 *               $BASE
 *------------------------------------*/
@@ -64,7 +64,6 @@ a:hover, a:focus {
     background-color: #6B6B6B;
     color: #fff;
 }
-
 /*-------------------------------------
 *         $REPLACE BOOTSTRAP
 *------------------------------------*/
@@ -86,8 +85,11 @@ textarea:focus {
 { /*margin-left:0px;*/clear:both;}
 
 
-.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {  background-color: #9EA878; }
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #E9EFD4;}
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:hover, 
+.dropdown-menu>.active>a:focus {  background: #9EA878 !important; }
+.dropdown-menu>li>a:hover, 
+.dropdown-menu>li>a:focus { background: #E9EFD4 !important;}
 
 .pagination>.active>a, 
 .pagination>.active>span, 
@@ -255,7 +257,9 @@ body.welcome>.container{
 .navbar-header .navbar-right>li.ka>a {background-position-x: -59px;}
 .navbar-header .navbar-right>li.home>a {background-position-x: -116px;}
 .navbar-header .navbar-right>li.login>a {background-position-x: -173px;}
-
+.navbar-header .navbar-right>li.ka,
+.navbar-header .navbar-right>li.home,
+.navbar-header .navbar-right>li.login { display: none;}
 
 /* 大典選單 */
 .mainMenu.navbar-nav {
@@ -390,7 +394,9 @@ body.welcome>.container{
 	border: none;
 	background-color: transparent;
 }
-
+.breadcrumb .btn-link,
+.breadcrumb .btn-link:hover,
+.breadcrumb .btn-link:focus { color: #899170; text-decoration: none;}
 .breadcrumb a.home {
 	background: url(../images/img-home.png) no-repeat;
 	display: inline-block;
@@ -412,12 +418,20 @@ body.welcome>.container{
 #breadcrumb .open>.dropdown-menu {
 	text-align: left;
 }
+#breadcrumb .btn-link,
+#breadcrumb .btn-link:hover,
+#breadcrumb .btn-link:focus {
+	color: #899170;
+	text-decoration: none;
+    outline: 0;
+}
 
 /* 內文 */
 #mainContent {
 	padding: 3px 10px 20px;
 	text-align: center;
-	position: relative;
+	position: relative !important;
+	top: 0 !important;
 	/*min-height: 2000px;*/
 	min-height:initial;
     background-color: #fff;
@@ -452,7 +466,6 @@ body.welcome>.container{
 #mainFrame::-webkit-scrollbar-thumb:hover { 
 	background-color: #AFACAC;
 }
-
 /* 內文全屏 
 #mainContent.full {
 	position: fixed !important;
@@ -648,8 +661,10 @@ body.welcome>.container{
 }
 
 .open>.dropdown-menu>li>a {
-  padding: 10px 20px;
+	padding: 10px 20px;
+	
 }
+
 
 .tool>li>a.paragraph {
 	background-position-x:-58px;
@@ -733,6 +748,12 @@ body.welcome>.container{
 
 
 /* 更換頁面 */
+.reader-nav{
+	position: fixed;
+    height: 100%;
+    width: 78%;
+}
+
 .reader-prev,.reader-next {
 	background-image: url(../images/btn-reader.png);
     background-repeat: no-repeat;
@@ -747,13 +768,18 @@ body.welcome>.container{
     border-radius: 5px;
     margin-top: 60px;
     z-index: 3;
+    position: absolute;
 }
 .reader-prev {
 	background-position: 10px 48%;
-    margin-left: -38.5%;
+    /*margin-left: -38.5%;*/
+    margin-left: 0;
+    left: 0;
 }
 .reader-next {
-    margin-left: 36%;
+	margin-left:0;
+	right: 0;
+    /*margin-left: 36%;*/
     background-position: -48px 48%;
 }
 .reader-prev:hover,.reader-next:hover {
@@ -1231,7 +1257,7 @@ span.button-close-west {
   width: 93%;
   margin: 0 auto 10px;
   border-radius: 0;
-  font-family: CTRC-uchen;
+  font-family: CTRC-uchen,"BiauKai","DFKai-SB";
   padding: 15px 10px 20px;
 }
 
@@ -1952,14 +1978,16 @@ button.btnHide {
 #text4imagemodal .modal-body { 
 	position: relative;
 	height: 100%;
+	color: #444;
 }
 #text4image {
 	width: 1170px;
 	margin: auto;
 }
 #text4image .iviewer_cursor {
+	/*height: 320px !important;
 	width: 100% !important;
-	height: 250px!important;
+	height: 250px!important;*/
 }
 #text4image .iviewer_cursor img{
   /* width: 100% !important;
@@ -2006,3 +2034,9 @@ button.btnHide {
 .prevImage:hover,.nextImage:hover {
 	background-color: #F7F7F7;
 }
+
+.iviewer_zoom_zero,.iviewer_zoom_fit,.iviewer_zoom_status {
+	display: none;
+}
+#text4image .iviewer_zoom_in { left: inherit; right: 15px !important;}
+#text4image .iviewer_zoom_out { left: inherit; right: 50px !important;}
