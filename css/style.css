@@ -479,6 +479,7 @@ body.welcome>.container{
 #mainContent.full {
     position: fixed !important;
     z-index: 7 !important;
+    top: 62px !IMPORTANT;
     left: 0 !important;
     height: auto !important;
     width: 100% !important;
@@ -800,6 +801,7 @@ body.welcome>.container{
 	margin-left: 0;
     right: 4%;
 }
+.full .reader-nav { width: 100%;}
 
 
 /* 內文 */
