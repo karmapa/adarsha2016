@@ -664,7 +664,13 @@ body.welcome>.container{
 	padding: 10px 20px;
 	
 }
-
+.open>.dropdown-menu>li>a.highlight {
+    background: #C3C9B0;
+    cursor: pointer;
+}
+.open>.dropdown-menu>li>a span.result {
+	color: red;
+}
 
 .tool>li>a.paragraph {
 	background-position-x:-58px;
@@ -1343,6 +1349,14 @@ span.button-close-west {
 	border-radius: 5px;
 }
 
+#searchTabCont #searchres span.highlight {
+    background: #858D6D;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0 2px;
+    border-radius: 5px;
+}
+
 /* 左側 #tree */
 .tab-content>#tree { /*padding: 20px 15px 0;*/}
 .tab-content>#tree.active.in {
@@ -1351,6 +1365,17 @@ span.button-close-west {
     height: 100%;
 	background-color: #fff;/*EFF2E4*/
 }
+
+.tab-content>#tree.active.in span.result {
+    color: red;
+    font-size: 65%;
+    cursor: pointer;
+    border-radius: 5px;
+    background: none;
+
+}
+
+
 #tree::-webkit-scrollbar { width: 12px;}
 #tree::-webkit-scrollbar-track { 
 	background-color: #fff;/*EFF2E4*/
