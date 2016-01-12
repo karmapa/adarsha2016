@@ -417,7 +417,24 @@ body.welcome>.container{
 }
 #breadcrumb .open>.dropdown-menu {
 	text-align: left;
+    max-height: 500px;
+    overflow: auto;
 }
+#breadcrumb .open>.dropdown-menu::-webkit-scrollbar { width: 8px;}
+#breadcrumb .open>.dropdown-menu::-webkit-scrollbar-track { 
+	background-color: #fff;
+	border-right: 1px solid #fff;
+}
+#breadcrumb .open>.dropdown-menu::-webkit-scrollbar-thumb { 
+	background-color: #cacaca;
+}
+#breadcrumb .open>.dropdown-menu::-webkit-scrollbar-thumb:hover { 
+	background-color: #cacaca;
+}
+
+
+
+
 #breadcrumb .btn-link,
 #breadcrumb .btn-link:hover,
 #breadcrumb .btn-link:focus {
@@ -1012,6 +1029,13 @@ body.welcome>.container{
 .btn-pic:active {
 	border-color: #79864f;
     background-position-x: -30px;
+}
+.head-content p span.highlight {
+    background: #858D6D;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0 2px;
+    border-radius: 5px;
 }
     
 /* 註釋 */
