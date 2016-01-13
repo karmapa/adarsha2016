@@ -2066,6 +2066,12 @@ button.btnHide {
     font-family: "Amdo Classic","BiauKai","DFKai-SB";
     font-size: 28px;
 }
+#text4image .textBox .title {
+    display: block;
+    border-bottom: #000 solid 1px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
 
 /* 更換頁面 */
 .prevImage,.nextImage {
