@@ -57,7 +57,8 @@ var systemReady2=function() {
             E("br"),
             E("div",{className:"viewer",style:{height:"330px",width:"1280px"},ref:"imageviewer"}),
           //  E("image",{src:this.imagefilename()}),
-            E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
+            //E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
+            E("div",{className:"textBox"},this.props.uti,"\n",this.props.text)
         );
     }
 });
