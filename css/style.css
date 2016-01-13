@@ -2065,12 +2065,15 @@ button.btnHide {
 	border: none;
     font-family: "Amdo Classic","BiauKai","DFKai-SB";
     font-size: 20px;
+	color: #676767;
+	line-height: 40px;
 }
 #text4image .textBox .title {
-    display: block;
-    border-bottom: #000 solid 1px;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+	display: block;
+	border-bottom: #9E9E9E solid 1px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-family: OpenSans-Regular;
 }
 
 /* 更換頁面 */
