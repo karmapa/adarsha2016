@@ -7,9 +7,15 @@ var imgFromuti=function(uti)
     var utiParts = uti.split('.');
     return (pad(utiParts[0],3)+"/"+pad(utiParts[0],3)+"-"+pad(utiParts[1],4)+".jpg");
 }
-var pad=function (num, size) {
+var pad=function (num, size) {//000000000108e 13 3
     var s = "000000000" + num;
-    return s.substr(s.length-size);
+    if(s[s.length-size-1]!="0"){
+        return s.substr(s.length-size-1);
+    }
+    else
+    {
+        return s.substr(s.length-size);
+    }
 }
 
 var Text4ImageComponent=null;
@@ -58,7 +64,7 @@ var systemReady2=function() {
             E("div",{className:"viewer",style:{height:"330px",width:"1280px"},ref:"imageviewer"}),
           //  E("image",{src:this.imagefilename()}),
             //E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
-            E("div",{className:"textBox"},this.props.uti,"\n",this.props.text)
+            E("div",{className:"textBox"},E("span",{className:"title"},this.props.uti),"\n",this.props.text)
         );
     }
 });
