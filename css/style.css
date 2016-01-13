@@ -2060,6 +2060,13 @@ button.btnHide {
 
 }
 
+#text4image .textBox{
+	padding-top: 20px;
+	border: none;
+    font-family: "Amdo Classic","BiauKai","DFKai-SB";
+    font-size: 28px;
+}
+
 /* 更換頁面 */
 .prevImage,.nextImage {
 	background-image: url(../images/btn-reader.png);
