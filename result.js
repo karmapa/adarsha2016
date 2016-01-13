@@ -10,7 +10,7 @@ var displayresult=function(result){
 
     var t=ksa.renderHits(result[i].text,result[i].hits,function(obj,text){
         //this is for React.js , convert to HTML
-        return obj.className?"<span style='background:red;color:yellow'>"+text+"</span>":abridgeText(text);
+        return obj.className?"<span class='highlight'>"+text+"</span>":abridgeText(text);
     }).join("");
 
         out+="<h5 onClick='fetchText(" + result[i].vpos + ")'>"+result[i].uti+"<br>"+t+"</h5>";

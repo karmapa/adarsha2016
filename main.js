@@ -194,7 +194,7 @@ var highlightText2=function(text,hits,currentvpos){
     console.log("hits:",hits);
     return ksa.renderHits(text,hits,function(obj,text){
         //this is for React.js , convert to HTML
-        return obj.className?"<span onClick='nextMatch(\""+currentvpos+"\")' style='background:red;color:yellow'>"+text+"</span>":text;
+        return obj.className?"<span onClick='nextMatch(\""+currentvpos+"\")' class='highlight'>"+text+"</span>":text;
     }).join("");
 };
 
@@ -246,9 +246,9 @@ var systemReady=function(){
         E("img",{src:"images/tree-lv2.png"}),
         E("img",{src:"images/tree-lv3.png"}),
         E("img",{src:"images/tree-lv4.png"})
-    ]    
+    ]
     reloadToc();
-    fetchText(1);    
+    fetchText(1);
 }
 
 
