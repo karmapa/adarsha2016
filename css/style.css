@@ -773,9 +773,9 @@ body.welcome>.container{
 
 /* 更換頁面 */
 .reader-nav{
-	position: fixed;
+	/*position: fixed;
     height: 100%;
-    width: 78%;
+    width: 78%;*/
 }
 
 .reader-prev,.reader-next {
@@ -791,18 +791,19 @@ body.welcome>.container{
     background-color: transparent;
     border-radius: 5px;
     margin-top: 60px;
-    z-index: 3;
+    z-index: 1;/*3*/
     position: absolute;
 }
+
 .reader-prev {
 	background-position: 10px 48%;
     /*margin-left: -38.5%;*/
     margin-left: 0;
-    left: 0;
+    left: 15px;/*0*/
 }
 .reader-next {
 	margin-left:0;
-	right: 0;
+	right: 15px;
     /*margin-left: 36%;*/
     background-position: -48px 48%;
 }
@@ -810,9 +811,10 @@ body.welcome>.container{
 	background-color: #F7F7F7;
 }
 
+.full .reader-prev,.full .reader-next {z-index: 8;}
 .full .reader-prev {
 	margin-left: 0;
-    left: 4%;
+    /*left: 4%;*/
 }
 .full .reader-next {
 	margin-left: 0;
@@ -2032,10 +2034,15 @@ button.btnHide {
 	color: #444;
 }
 #text4image {
-	width: 1170px;
-	margin: auto;
+	/*width: 1170px;
+	margin: auto;*/
+    width: 100%;
+}
+#text4image >div >div {
+    white-space: initial !important;
 }
 #text4image .iviewer_cursor {
+    width: 100%  !important;
 	/*height: 320px !important;
 	width: 100% !important;
 	height: 250px!important;*/
@@ -2046,9 +2053,11 @@ button.btnHide {
   top: inherit;
   left: inherit;
   max-width: none;
-  width: inherit;
+  width: 100%;  
   height: inherit ;
-  /*overflow: inherit ;*/
+  /*width: inherit;
+  overflow: inherit ;*/
+
 }
 
 /* 更換頁面 */
