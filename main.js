@@ -4,6 +4,7 @@ var name="head";
 var uti="1.1a";
 var timer1,timer2,tf1,tf2;
 var toputi,bottomuti;
+var prevbatch=0;
 var batchstart=0;
 var BATCHSIZE=30;
 var searchresult;
@@ -45,19 +46,11 @@ var showtotal=function(total){
     document.getElementById("totalfound").innerHTML=total;
 }
 
-var showbatch=function(){
-    console.log("match count",searchresult.length)
+var showprevbatch=function(){
+    console.log("showprevbatch match count",searchresult.length)
     if(tf2){//有全文摘要
-        if((searchresult.length-batchstart)>0){//如果下一頁內容
-            var uti=[];
-            for (var i=batchstart;i<searchresult.length;i++) {
-                uti.push(searchresult[i].uti);
-                if (uti.length>BATCHSIZE) break;
-            }
-            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
-                displayresult(res);
-            });
-            batchstart+=uti.length;
+        if(prevbatch-BATCHSIZE>=0){//如果有上一頁內容
+            tf2Batch(prevbatch-BATCHSIZE);
         }
     }
     else{//無全文，只列目錄
@@ -66,9 +59,49 @@ var showbatch=function(){
     updateControls();
 }
 
+var showbatch=function(){
+    console.log("showbatch match count",searchresult.length)
+    if(tf2){//有全文摘要
+        if((searchresult.length-batchstart)>0){//如果下一頁內容
+            tf2Batch(batchstart);
+            /*
+            var uti=[];
+            for (var i=batchstart;i<searchresult.length;i++) {
+                uti.push(searchresult[i].uti);
+                if (uti.length>=BATCHSIZE) break;
+            }
+            ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
+                displayresult(res);
+            });
+            prevbatch=batchstart;
+            batchstart+=uti.length;*/
+        }
+    }
+    else{//無全文，只列目錄
+        displaytitles(searchresult);
+    };
+    updateControls();
+}
+
+var tf2Batch=function(batch){
+    console.log("batch:"+batch);
+    var uti=[];
+    for (var i=batch;i<searchresult.length;i++) {
+        uti.push(searchresult[i].uti);
+        if (uti.length>=BATCHSIZE) break;
+    }
+    ksa.fetch({db:db,q:tf2,uti:uti},function(err,res){
+        displayresult(res);
+    });
+    prevbatch=batch;
+    console.log("prevbatch:"+prevbatch);
+    batchstart=batch+uti.length;
+}
+
 var updateControls=function(){
     console.log("left : " + (searchresult.length-batchstart));
     document.getElementById("btnnext").style.visibility=(tf2 && searchresult.length>BATCHSIZE && (searchresult.length-batchstart)>0)?'visible':'hidden';
+    document.getElementById("btnprev").style.visibility=(tf2 && searchresult.length>BATCHSIZE && (prevbatch-BATCHSIZE)>=0)?'visible':'hidden';
 }
 
 var filter=function(ranges,regex){
