@@ -106,6 +106,7 @@ var updateControls=function(){
 
 var filter=function(ranges,regex){
     ksa.filter({db:db,regex:regex,q:tf2,field:"head",ranges:ranges},function(err,data){
+        prevbatch=0;
         batchstart=0;
         searchresult=data||[];
         showbatch(searchresult);
@@ -172,6 +173,7 @@ var search=function() {
 
     //如果都不是則為一般搜尋
     ksa.filter({db:db,regex:tf1,q:tf2,field:""},function(err,data){
+        prevbatch=0;
         batchstart=0;
         searchresult=data||[];
         showbatch(searchresult);
