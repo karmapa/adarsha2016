@@ -176,13 +176,22 @@
             </li>
 
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle pageInfo" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#" class="dropdown-toggle pageInfo" data-toggle="dropdown" onClick="showSutraInfo()" role="button" aria-haspopup="true" aria-expanded="false">
                   Dropdown
                   <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu sutra">
                     <div class="container">
-                        <table class="table table-condensed">
+                      <div id="sutrainfo"></div>
+                    </div>
+                </div><!--/.sutra-->
+                <!--<ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                  <li><img src="images/img-info.jpg" height="1520" width="841"></li>
+                </ul>-->
+            </li>
+
+                  <!--
+                    <table class="table table-condensed">
                           <tbody>
                             <tr>
                               <th>མདོ་མིང་།</th>
@@ -281,13 +290,7 @@
 
                           </tbody>
                         </table>
-
-                    </div>
-                </div><!--/.sutra-->
-                <!--<ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
-                  <li><img src="images/img-info.jpg" height="1520" width="841"></li>
-                </ul>-->
-            </li>
+                   -->
 
             <li>
                 <a href="#" class="fontToggle" role="button" data-click-state="1">
@@ -405,13 +408,14 @@
 <script src="react-bundle.js"></script>
 <script src="setting.js"></script>
 <script src="text4image.js"></script>
+<script src="sutrainfo.js"></script>
 <script src="abridge.js"></script>
 <script src="result.js"></script>
 <script src="nav.js"></script>
 <script src="main.js"></script>
 
 <script src="ksana-vanilla.js"></script>
-
+<script src="biographyForWeb.js"></script>
 
 </body>
 </html>

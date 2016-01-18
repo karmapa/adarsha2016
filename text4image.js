@@ -57,7 +57,7 @@ var systemReady2=function() {
         this.resize(domnode);
     }
     ,render:function(){
-        return E("div",{},
+        return E("div",{className:"container"},
             E("button",{className:"prevImage",onClick:this.prevImage},"prev"),
             E("button",{className:"nextImage",onClick:this.nextImage},"next"),
             E("br"),
