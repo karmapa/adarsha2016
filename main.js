@@ -26,7 +26,7 @@ var reloadBreadcrumb=function(vpos){
         displaybreadcrumb(vpos);
     },100);
 }
-var reloadToc=function(){
+var reloadToc=function(cb){
     ksa.toc({db:db,q:tf2},function(err,data){
         ReactDOM.render(
             E(
@@ -41,6 +41,7 @@ var reloadToc=function(){
             document.getElementById("tree")
         );
     });
+    cb();
 }
 
 var showtotal=function(total){
@@ -291,8 +292,9 @@ var systemReady=function(){
         E("img",{src:"images/tree-lv3.png"}),
         E("img",{src:"images/tree-lv4.png"})
     ]
-    reloadToc();
-    fetchText(1);
+    reloadToc(function(){
+        fetchText(1);
+    });
 }
 
 
