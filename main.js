@@ -174,12 +174,15 @@ var search=function() {
 
     fetched=false;
     //如果都不是則為一般搜尋
-    ksa.filter({db:db,regex:tf1,q:tf2,field:""},function(err,data){
+    var ffield="";
+    if(!tf2)ffield="head";
+    ksa.filter({db:db,regex:tf1,q:tf2,field:ffield},function(err,data){
         prevbatch=0;
         batchstart=0;
         searchresult=data||[];
         showbatch(searchresult);
         console.log(searchresult.length);
+        console.log("searchresult.length:"+searchresult.length);
         showtotal(searchresult.length);
         reloadToc();
         reloadBreadcrumb(0);
@@ -250,10 +253,12 @@ var fetchText=function(vpos){
         var currentuti=res.sibling[res.idx];
         if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
+            reloadBreadcrumb(vpos+300);//vpos為此頁起點，但目錄的vpos在起點之後 為避免麵包屑誤差而補充300
             return;
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
+            var vposend = data[res.idx].vpos_end;
             output+="<h1>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
@@ -268,7 +273,8 @@ var fetchText=function(vpos){
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
             scrollTo(currentuti);
-            reloadBreadcrumb(vpos);
+            console.log("vposend:"+vposend);
+            reloadBreadcrumb(vposend);
             fetched=true;
         });
     });
