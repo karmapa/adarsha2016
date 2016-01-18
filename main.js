@@ -293,7 +293,9 @@ var systemReady=function(){
         E("img",{src:"images/tree-lv4.png"})
     ]
     reloadToc(function(){
-        fetchText(1);
+        setTimeout(function(){
+            fetchText(1);
+        },500);
     });
 }
 
