@@ -9,6 +9,7 @@ var batchstart=0;
 var BATCHSIZE=30;
 var searchresult;
 var E=null;
+var fetched=false;
 
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
@@ -171,6 +172,7 @@ var search=function() {
         return;
     }
 
+    fetched=false;
     //如果都不是則為一般搜尋
     ksa.filter({db:db,regex:tf1,q:tf2,field:""},function(err,data){
         prevbatch=0;
@@ -246,7 +248,7 @@ var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         console.log("fetchText:" + vpos);
         var currentuti=res.sibling[res.idx];
-        if(toputi==res.sibling[0]){
+        if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
             return;
         }
@@ -267,6 +269,7 @@ var fetchText=function(vpos){
             bottomuti=res.sibling[res.sibling.length-1];
             scrollTo(currentuti);
             reloadBreadcrumb(vpos);
+            fetched=true;
         });
     });
 }
