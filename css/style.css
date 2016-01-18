@@ -2111,8 +2111,9 @@ button.btnHide {
 	background-color: #F7F7F7;
 }
 
-.iviewer_zoom_zero,.iviewer_zoom_fit,.iviewer_zoom_status {
+/*.iviewer_zoom_zero,.iviewer_zoom_fit,.iviewer_zoom_status {
 	display: none;
 }
 #text4image .iviewer_zoom_in { left: inherit; right: 15px !important;}
 #text4image .iviewer_zoom_out { left: inherit; right: 50px !important;}
+*/
