@@ -114,7 +114,7 @@ var filter=function(ranges,regex){
         showbatch(searchresult);
         console.log(searchresult.length);
         showtotal(searchresult.length);
-        reloadToc();
+        reloadToc(function(){});
         //updateControls();
     });
 };
@@ -185,7 +185,7 @@ var search=function() {
         console.log(searchresult.length);
         console.log("searchresult.length:"+searchresult.length);
         showtotal(searchresult.length);
-        reloadToc();
+        reloadToc(function(){});
         reloadBreadcrumb(0);
         //updateControls();
     });
@@ -286,11 +286,11 @@ var systemReady=function(){
     openicon=E("img",{src:"images/tree-open.png"});
     closeicon=E("img",{src:"images/tree-close.png"});
     nodeicons=[
-        E("img",{src:"images/tree-lv0.png"}),
-        E("img",{src:"images/tree-lv1.png"}),
-        E("img",{src:"images/tree-lv2.png"}),
-        E("img",{src:"images/tree-lv3.png"}),
-        E("img",{src:"images/tree-lv4.png"})
+        "images/tree-lv0.png",
+        "images/tree-lv1.png",
+        "images/tree-lv2.png",
+        "images/tree-lv3.png",
+        "images/tree-lv4.png"
     ]
     reloadToc(function(){
         setTimeout(function(){
