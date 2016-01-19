@@ -36,6 +36,7 @@ var reloadToc=function(cb){
                     ,closed:closeicon
                     ,nodeicons:nodeicons
                     ,onSelect:onSelect
+                    ,captionClass:"sutra"
                     ,onHitClick:onHitClick}
             ),
             document.getElementById("tree")

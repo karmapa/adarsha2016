@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<style>
+	#inputarea {flex:2}
+	#rightPanel  {flex:3}
+	#tname {font-size:200%;}
+	.container {display:flex}
+	.hl {color:red;}
+</style>
+<body>
+<div class="container">
+<div id="inputarea">
+	Tibetan name<input id="tname" value="འདུལ"></input><br/>
+    A name<input id="aname" value=""></input><br/>
+	Author<input id="author" value="པ"></input><br/>
+	<button onClick="doAdvSearch()">Submit</button>
+</div>
+<div id="rightPanel">
+<div id="result"></div>
+<div>
+    <nav>
+      <ul id="batches" class="pagination">
+        <!--<li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>-->
+      </ul>
+    </nav>
+</div>
+</div>
+</div>
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="biographyForWeb.js"></script>
+<script src="react-bundle.js"></script>
+<script src="adv-search.js"></script>
+
+<script src="ksana-vanilla.js"></script>
+</html>
