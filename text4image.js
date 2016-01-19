@@ -57,14 +57,14 @@ var systemReady2=function() {
         this.resize(domnode);
     }
     ,render:function(){
-        return E("div",{className:"container"},
+        return E("div",{},
             E("button",{className:"prevImage",onClick:this.prevImage},"prev"),
             E("button",{className:"nextImage",onClick:this.nextImage},"next"),
             E("br"),
-            E("div",{className:"viewer",style:{height:"330px",width:"1280px"},ref:"imageviewer"}),
+            E("div",{className:"viewer"},E("div",{className:"container",style:{height:"330px",width:"1280px"},ref:"imageviewer"})),
           //  E("image",{src:this.imagefilename()}),
             //E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
-            E("div",{className:"textBox"},E("span",{className:"title"},this.props.uti),"\n",this.props.text)
+            E("div",{className:"textBox"},E("div",{className:"container"},E("span",{className:"title"},this.props.uti),"\n",this.props.text))
         );
     }
 });
