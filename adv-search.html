@@ -14,10 +14,61 @@
 <body>
 <div class="container">
 <div id="inputarea">
-	Tibetan name<input id="tname" value="འདུལ"></input><br/>
-    A name<input id="aname" value=""></input><br/>
-	Author<input id="author" value="པ"></input><br/>
-	<button onClick="doAdvSearch()">Submit</button>
+    <table>
+        <tr>
+            <th>སྡེ་ཚན།&nbsp;〈部〉:</th>
+            <td>
+                <select id="s_division" name="select" class="form-control">
+                    <!--<option value="opt1">-- ALL --</option>
+                    <option value="opt2">འདུལ་བ། &nbsp;&nbsp;Vinaya  律部</option>
+                    <option value="opt3">ཤེར་ཕྱིན། འབུམ། &nbsp;&nbsp; Śatasāhasrikāprajñāpāramitā 大般若經</option>
+                    <option value="opt4">མདོ་སྡེ། &nbsp;&nbsp;Sūtram 經部 </option>
+                    <option value="opt5">ཕལ་པོ་ཆེ། &nbsp;&nbsp;Buddhāvataṃsaka  華嚴部 </option>
+                    <option value="opt6">དཀོན་བརྩེགས། &nbsp;&nbsp;Ratnakūṭa 寶積部</option>
+                    <option value="opt7">རྒྱུད་འབུམ། &nbsp;&nbsp;Tantra 密續部</option>
+                    <option value="opt8">དྲི་མེད་འོད། &nbsp;&nbsp;Vimalaprabhā 時輪經疏</option>-->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>མདོ་མིང་།〈經名〉:</th><td><input id="names" value="འདུལ"></input></td>
+        </tr>
+        <tr>
+            <th>ཐེག་པ།  〈乘法〉:</th><td><input id="yana" value=""></input></td>
+        </tr>
+        <tr>
+            <th>འཁོར་ལོ། 〈哪一轉法輪〉:</th><td><input id="chakra" value=""></input></td>
+        </tr>
+        <tr>
+            <th>གནས་ཕུན་སུམ་ཚོགས་པ། 〈說法處〉:</th><td><input id="location" value=""></input></td>
+        </tr>
+        <tr>
+            <th>ལོ་ཙཱ་བ། 〈譯師〉:</th><td><input id="translator" value=""></input></td>
+        </tr>
+        <tr>
+            <th>ཞུ་དག་པ། 〈校對者〉:</th><td><input id="reviser" value=""></input></td>
+        </tr>
+        <!--
+        <tr>
+            <th>མདོ་མིང་།〈經名〉:</th><td><input id="tname" value="འདུལ"></input></td>
+        </tr>
+        <tr>
+            <th>མདོ་མིང་གཞན།〈別名〉:</th><td><input id="aname" value=""></input></td>
+        </tr>
+        <tr>
+            <th>རྒྱ་གར་མདོ་མིང་། 〈梵文經名〉:</th><td><input id="sname" value=""></input></td>
+        </tr>
+        <tr>
+            <th>རྒྱ་གར་མདོ་མིང་། 〈梵文經名〉:</th><td><input id="cname" value=""></input></td>
+        </tr>
+        <tr>
+            <th>Author</th><td><input id="author" value="པ"></input></td>
+        </tr>
+        -->
+        <tr>
+            <td colspan="2"><button onClick="doAdvSearch()">Submit</button></td>
+        </tr>
+    </table>
 </div>
 <div id="rightPanel">
 <div id="result"></div>

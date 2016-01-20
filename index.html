@@ -371,7 +371,7 @@
 
 		<!--<iframe id="mainFrame" name="mainFrame" class="ui-layout-center embed-responsive-item" width="100%" height="600" frameborder="0" scrolling="auto" src="1-1a.html"></iframe>-->
 
-        <!-- Modal -->
+        <!-- text4image Modal -->
         <div id="text4imagemodal" class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -385,6 +385,88 @@
             </div>
         </div><!-- myModal -->
 
+        <!-- advSearch Modal -->
+        <div id="advSearchmodal" class="modal fade" id="advModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body" >
+                      <div class="container">
+                        <h1>Advanced Search</h1>
+                        <div class="advancedBox">
+                          <div class="form-group">
+                              <label class="col-sm-3">སྡེ་ཚན།&nbsp;〈大典〉: </label>
+                              <div class="col-sm-7">
+                                  <select name="select" class="form-control">
+                                      <option value="opt1">-- ALL --</option>
+                                      <option value="opt2">བཀའ་འགྱུར། &nbsp;&nbsp;甘珠爾</option>
+                                      <option value="opt3">བསྟན་འགྱུར། &nbsp;&nbsp; 丹珠爾</option>
+                                      <option value="opt4">བོད་མ། &nbsp;&nbsp; 藏傳佛典 </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">སྡེ་ཚན།&nbsp;〈部〉: </label>
+                              <div class="col-sm-7">
+                                  <select id="s_division" name="select" class="form-control">
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3"> མདོ་མིང་། &nbsp;〈經名〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="names" type="text" class="form-control" placeholder="འཕགས་པ་བསྐལ་པ་བཟང་པོ་པ་ཞེས་བྱ་བ་ཐེག་པ་ཆེན་པོའི་མདོ།">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ཐེག་པ། &nbsp;〈乘法〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="yana" type="text" class="form-control" placeholder="ཐེག་ཆེན།">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">དཀའ། འཁོར་ལོ།&nbsp;〈哪一轉法輪〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="chakra" type="text" class="form-control" placeholder="ཐ་མ། གསུམ་པ།">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">གནས་ཕུན་སུམ་ཚོགས་པ།&nbsp;〈說法處〉: </label>
+                              <div class="col-sm-7">
+                                  <textarea id="location" type="text" class="form-control" placeholder="མཉན་ཡོད་ན་བཞུགས་ཏེ། དབྱར་གནས་པར་བཞུགས་བཞུགས་ནས། དབྱར་ཟླ་གསུམ་འདས་པ་དང་། ཡངས་པ་ཅན་གྱི་གྲོང་ཁྱེར་ག་ལ་བ་དེར།"></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ལོ་ཙཱ་བ།&nbsp;〈譯師〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="translator" type="text" class="form-control" placeholder="རྒྱ་གར་གྱི་མཁན་པོ་བིདྱཱ་ཀ་ར་སིང་ཧ་དང་། ལོཙྪ་བ་བན་དེ་དཔལ་གྱི་དབྱངས་ཀྱིས་བསྒྱུར།">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ཞུ་དག་པ།&nbsp;〈校對者〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="reviser" type="text" class="form-control" placeholder="ཞུ་ཆེན་གྱི་ལོཙྪ་བ་བན་དེ་དཔལ་བརྩེགས་ཀྱིས་ཞུས་ཏེ་གཏན་ལ་ཕབ་པ།།">
+                              </div>
+                          </div>
+                          <div class="form-actions">
+                              <!--<button type="cancel" class="btn btn-cancel">Cancel</button>-->
+
+                              <a type="submit" onClick="doAdvSearch()" class="btn btn-submit">Submit</a>
+                          </div>
+                        </div><!--/.advancedBox -->
+                        <div class="resultBox">
+                          <ul id="advResult">
+                          </ul>
+                          <nav class="pageSet">
+                            <ul id="advPag" class="pagination">
+                            </ul>
+                          </nav><!--/.pageSet -->
+                        </div><!--/.resultBox -->
+                      </div><!--/.container -->
+                    </div><!--/.modal-body-->
+                </div><!--/.modal-content-->
+            </div>
+        </div><!-- myModal -->
 
 	</div><!--/.inner-Content-->
 
@@ -412,9 +494,9 @@
 <script src="abridge.js"></script>
 <script src="result.js"></script>
 <script src="nav.js"></script>
+<script src="biographyForWeb.js"></script>
 <script src="advanceSearch.js"></script>
 <script src="main.js"></script>
-<script src="biographyForWeb.js"></script>
 
 <script src="ksana-vanilla.js"></script>
 

@@ -298,6 +298,7 @@ var systemReady=function(){
             fetchText(1);
         },500);
     });
+    initialAdvSearch();
 }
 
 
