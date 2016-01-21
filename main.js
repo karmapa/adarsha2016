@@ -272,7 +272,6 @@ var fetchText=function(vpos){
             var vposend = data[res.idx].vpos_end;
             var currentSutraID = "J1";//經號
             if(data[0].values[0]!=undefined)currentSutraID=data[0].values[0];
-            $("#bSutraID").html(currentSutraID);
             output+="<h1 id='sutraid'>"+currentSutraID+"</h1>";
             //output+="<h1 id='sutraid'>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
@@ -287,9 +286,10 @@ var fetchText=function(vpos){
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
-            scrollTo(currentuti);
             console.log("vposend:"+vposend);
             reloadBreadcrumb(vposend);
+            scrollTo(currentuti);
+            //$("#bSutraID").html(currentSutraID);
             fetched=true;
         });
     });

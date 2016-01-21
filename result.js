@@ -30,17 +30,29 @@ var onBreadcrumbSelect=function(itemidx,vpos){
     fetchText(vpos);
 }
 
+var renderBreadcrumb=function(data,vpos,sid){
+    var sutraid=function(){
+        return React.createElement("span",{id:"bSutraID"},sid);
+    }
+    ReactDOM.render(
+        React.createElement(
+            ksana2015breadcrumbtoc.Component,
+            {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
+             hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos,
+             separator:">",
+             append:sutraid(),
+             buttonClass:"btn btn-link"}
+        ),
+        document.getElementById("breadcrumb")
+    );
+}
+
 var displaybreadcrumb=function(vpos){
+
     ksa.toc({db:db,q:tf2},function(err,data){
-        ReactDOM.render(
-            React.createElement(
-                ksana2015breadcrumbtoc.Component,
-                {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
-                 hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos,
-                 separator:">",
-                 buttonClass:"btn btn-link"}
-            ),
-            document.getElementById("breadcrumb")
-        );
+        ksa.fetch({db:db,vpos:(vpos),fields:"sutra"},function(err,res){
+            sutraid=res[0].values[0];
+            renderBreadcrumb(data,vpos,sutraid);
+        });
     });
 };
