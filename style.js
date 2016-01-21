@@ -1,5 +1,5 @@
 var fontSize=parseInt(localStorage.getItem("fontsize")||17);
-var lineheight=parseInt(localStorage.getItem("lineheight")||25);
+var lineheight=parseInt(localStorage.getItem("lineheight")||35);
 var sheet=document.getElementsByTagName("STYLE")[0].sheet;
 
 var setFont=function(sChange,hChange){

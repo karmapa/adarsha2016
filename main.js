@@ -276,7 +276,7 @@ var fetchText=function(vpos){
             //output+="<h1 id='sutraid'>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
-                output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
+                if((data[i].uti).indexOf("_")==-1)output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
                 //output+="<p>" + data[i].text  + "</p>";
                 output+="<p>" + highlightText2(data[i].text,data[i].hits,data[i].vpos)  + "</p>";
                 output+="<a class=\"btn-modal pic\" id='btn_" + (data[i].uti).replace(".","_") + "' onClick=\"text4image(event)\" title=\"open " + data[i].uti + " images\">image icon</a>";
