@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="images/favicon.ico"/>
 <link rel="stylesheet" href="css/resize.css">
 <link rel="stylesheet" href="css/iviewer.css">
-
+<style></style>
 <!--[if lt ie 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -303,12 +303,12 @@
                 <ul id="menu_font" class="dropdown-menu">
                   <!--<li><img src="images/img-tool.jpg" height="176" width="193"></li>-->
                     <li>size
-                        <a id="jfontsize-p" href="#">+</a>
-                        <a id="jfontsize-m" href="#">-</a>
+                        <a id="jfontsize-p" onclick="setFont(1,0)" href="#">+</a>
+                        <a id="jfontsize-m" onclick="setFont(-1,0)"href="#">-</a>
                     </li>
                     <li>spacing
-                        <a href="#">+</a>
-                        <a href="#">-</a>
+                        <a onclick="setFont(0,2)" href="#">+</a>
+                        <a onclick="setFont(0,-2)" href="#">-</a>
                     </li>
                     <!--<li><a id="jfontsize-d" href="#">A</a></li> -->
 
@@ -490,6 +490,7 @@
 <script src="js/jquery.mousewheel.min.js" ></script>
 
 <script src="/socket.io/socket.io.js"></script>
+
 <script src="react-bundle.js"></script>
 <script src="setting.js"></script>
 <script src="text4image.js"></script>
@@ -500,7 +501,7 @@
 <script src="biographyForWeb.js"></script>
 <script src="advanceSearch.js"></script>
 <script src="main.js"></script>
-
+<script src="style.js"></script>
 <script src="ksana-vanilla.js"></script>
 
 </body>

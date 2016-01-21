@@ -296,6 +296,7 @@ var fetchText=function(vpos){
 }
 var openicion,closeicon,nodeicons;
 var systemReady=function(){
+    setFont(0,0);
     E = React.createElement;
     openicon=E("img",{src:"images/tree-open.png"});
     closeicon=E("img",{src:"images/tree-close.png"});
