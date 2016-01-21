@@ -11,6 +11,15 @@ var searchresult;
 var E=null;
 var fetched=false;
 
+var kdbArray=["jiangkangyur","tengyur","tibetan-masterpiece"];
+
+var changeKdb=function(kdb){
+    db=kdbArray[kdb];
+    //$("#navbar").aria-expanded=false;
+    systemReady();
+    search();
+}
+
 var onSelect=function(e,treenode,seq,toc){
     console.log("fetching by vpos",treenode.vpos);
     fetchText(treenode.vpos);
@@ -31,7 +40,7 @@ var reloadToc=function(cb){
         ReactDOM.render(
             E(
                 ksana2015treetoc.Component,
-                {toc:data.toc,hits:data.hits,treename:"jiangkangyur"
+                {toc:data.toc,hits:data.hits,treename:db
                     ,opened:openicon
                     ,closed:closeicon
                     ,nodeicons:nodeicons
@@ -261,7 +270,11 @@ var fetchText=function(vpos){
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
             var vposend = data[res.idx].vpos_end;
-            output+="<h1 id='sutraid'>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
+            var currentSutraID = "J1";//經號
+            if(data[0].values[0]!=undefined)currentSutraID=data[0].values[0];
+            $("#bSutraID").html(currentSutraID);
+            output+="<h1 id='sutraid'>"+currentSutraID+"</h1>";
+            //output+="<h1 id='sutraid'>"+(data[0].values[0]==undefined?"J1":data[0].values[0])+"</h1>";//經號
             for(var i=0;i<data.length;i++){
                 output+="<div class='head-content'>";
                 output+="<h2 style='cursor:pointer' onClick='text4image(event)' id='uti_" + (data[i].uti).replace(".","_") + "'>"  + data[i].uti   + "</h2>";
