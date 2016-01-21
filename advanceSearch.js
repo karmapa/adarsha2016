@@ -122,9 +122,13 @@ var goPage=function(page){
     showPagination();
 }
 
+var advGoSid=function(Sid){
+    $('#advSearchmodal').modal('hide');
+}
+
 var showPage=function(){
     var Rtn="";
-    var names=$("#names").val();
+    var names=wylie.fromWylieWithWildcard($("#names").val());
     /*var tname=$("#tname").val();
     var aname=$("#aname").val();
     var author=$("#author").val();*/
@@ -133,7 +137,7 @@ var showPage=function(){
         if(i==advBatchStart*advBatchSize+advBatchSize)break;
         Rtn+="<li>"
         + "<span>"+advResult[i].sutraid+"</span>"
-        +"<a href='#'>"+advResult[i].tname.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
+        +"<a onClick=\"advGoSid('"+advResult[i].sutraid+"')\" href='#'>"+advResult[i].tname.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
         +"</li>";
         /*+",tname:"+advResult[i].tname.replace(names,"<span class='hl'>"+names+"</span>")
         +",aname:"+advResult[i].aname.replace(names,"<span class='hl'>"+names+"</span>")
@@ -149,7 +153,7 @@ var doAdvSearch=function(){
     var singleFilters = ["yana","chakra","location","translator","reviser"];
 
     var division=$("#s_division").val();
-    var names=$("#names").val();
+    var names=wylie.fromWylieWithWildcard($("#names").val());
 
     var res;
 
@@ -165,7 +169,7 @@ var doAdvSearch=function(){
     for(var i=0;i<singleFilters.length;i+=1){
         var column=singleFilters[i];
         if(column){
-            res=filterS(column,$("#"+column).val(),res);
+            res=filterS(column, wylie.fromWylieWithWildcard($("#"+column).val()),res);
         }
     }
 

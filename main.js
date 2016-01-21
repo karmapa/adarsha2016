@@ -139,6 +139,13 @@ var searchSid=function(tofind1){
     });
 }
 
+var gotoSid=function(sid){
+    ksa.getFieldRange({db:db,field:"sutra",values:sid},function(err,ranges){
+        console.log("ranges:"+ranges);
+        fetchText(ranges[0]);
+    });
+}
+
 /* 使用頁碼搜尋 */
 var searchUti=function(tofind1){
     var searchUti = tofind1;
@@ -172,6 +179,10 @@ var search=function() {
 
     var isUti = tofind1.match(/^(\d{1,3}[a-z]?)\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
     var isSid = tofind1.match(/^(\d{1,4})([a-z]?)$/);//確認是否為單經搜尋
+
+    if(isSid && !tf2){//如果是跳單經
+        //gotoSid(tofind1);
+    }
 
     if(isSid){//如果是單經搜尋
         searchSid(tofind1);
