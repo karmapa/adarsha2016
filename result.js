@@ -52,6 +52,7 @@ var displaybreadcrumb=function(vpos){
     ksa.toc({db:db,q:tf2},function(err,data){
         ksa.fetch({db:db,vpos:(vpos),fields:"sutra"},function(err,res){
             sutraid=res[0].values[0];
+            if(res[0].values[0]!=undefined)sutraid=res[0].values[0];
             renderBreadcrumb(data,vpos,sutraid);
         });
     });
