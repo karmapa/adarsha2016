@@ -18,7 +18,7 @@ var showSutraInfo=function(){
     var out = "";
     out = "<table class=\"table table-condensed\">";
     //var sutrainfo=biography.divisions[0].sutras[0];
-    var sutrainfo = getInfo(document.getElementById('sutraid').innerHTML);
+    var sutrainfo = getInfo(document.getElementById('bSutraID').innerHTML);
     for(var i in sutrainfo){
         if(sutrainfo[i]){
             out += "<tr><th>"+(fieldNames[i]||i)+"</th><td>"+sutrainfo[i]+"</td></tr>";

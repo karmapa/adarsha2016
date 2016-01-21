@@ -294,6 +294,20 @@ var fetchText=function(vpos){
         });
     });
 }
+
+var updateHashTag=function(sid){
+    window.location.hash="#sid="+sid;
+}
+
+var getSutraidFromHash=function(){
+    var hash=window.location.hash;
+    if(!hash)return;
+    var param=hash.substr(1).split("=");
+    if(param[0]=="sid"){
+        console.log(param[1]);
+    }
+}
+
 var openicion,closeicon,nodeicons;
 var systemReady=function(){
     setFont(0,0);
