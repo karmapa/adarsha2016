@@ -32,7 +32,7 @@ var onBreadcrumbSelect=function(itemidx,vpos){
 
 var renderBreadcrumb=function(data,vpos,sid){
     var sutraid=function(){
-        return React.createElement("span",{id:"bSutraID"},sid);
+        return React.createElement("span",{key:sid,id:"bSutraID"},sid);
     }
     ReactDOM.render(
         React.createElement(

@@ -48,7 +48,7 @@ var systemReady2=function() {
     }
     ,componentDidMount:function() {
         var domnode=$(this.refs.imageviewer);
-        domnode.iviewer({src:this.imagefilename(),zoom_max :1000,zoom_min:100,mousewheel: true});
+        domnode.iviewer({src:this.imagefilename(),zoom_max :1000,zoom_min:50,mousewheel: true});
         this.resize(domnode);
     }
     ,componentDidUpdate:function(){
