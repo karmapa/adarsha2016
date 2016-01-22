@@ -208,7 +208,7 @@ var search=function() {
             reloadToc(function(){
                 reloadBreadcrumb(0);
             });
-        },500);
+        },100);
         //updateControls();
     });
 }
