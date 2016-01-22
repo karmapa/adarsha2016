@@ -2000,13 +2000,6 @@ button.btnHide {
 	position: relative;
 }
 
-.iviewer_cursor { 
-	background: #F7F7F7; 
-	-moz-box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
-	-webkit-box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
-	box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
-}
-
 #picTabCont .textBox dl dt{
 	font-family: OpenSans-Regular;
 	font-weight: normal;
@@ -2111,6 +2104,7 @@ button.btnHide {
 	height: 100%;
 	color: #444;
 }
+
 #text4image {
 	/*width: 1170px;
 	margin: auto;*/
@@ -2120,6 +2114,7 @@ button.btnHide {
     white-space: initial !important;
     overflow: hidden;
 }
+
 #text4image .iviewer_cursor {
     width: 100%  !important;
 	/*height: 320px !important;
@@ -2138,7 +2133,23 @@ button.btnHide {
   overflow: inherit ;*/
 
 }
-
+/*.iviewer_cursor*/
+#text4image .viewBox { 
+	background: #F7F7F7; 
+	-moz-box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
+	-webkit-box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
+	box-shadow: inset 0px 0px 2px 3px rgba(234, 234, 234, 0.45);
+    padding: 0;
+    width: 1240px;
+    
+}
+#text4image .showBox {
+	height:330px;
+    width:1280px;
+}
+/*#text4image .container {
+    
+}*/
 #text4image .textBox{
 	padding-top: 20px;
 	border: none;
@@ -2146,6 +2157,7 @@ button.btnHide {
     font-size: 20px;
 	color: #676767;
 	line-height: 40px;
+	width: 1240px;
 }
 #text4image .textBox .title {
 	display: block;
