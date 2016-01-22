@@ -655,7 +655,7 @@ body.welcome>.container{
     padding: 10px 0;
     border-radius: 0;
     border: transparent solid 1px;
-    display: block;
+    display: inline-block;
     width: 37px;
 }
 .tool>li>a:hover,
@@ -692,6 +692,7 @@ body.welcome>.container{
 
 .tool>li>a.paragraph {
 	background-position-x:-58px;
+	display: none;
 }
 .nav-pills>li.active>a, 
 .nav-pills>li.active>a:hover, 
@@ -768,9 +769,6 @@ body.welcome>.container{
 .toolBox a {}
 
 
-
-
-
 /* 更換頁面 */
 .reader-nav{
 	/*position: fixed;
@@ -822,6 +820,18 @@ body.welcome>.container{
 }
 .full .reader-nav { width: 100%;}
 
+.tool .reader-prev { 
+	background-image: url(../images/btn-read.png);
+    background-position: 12px 11px;
+    margin: 0;
+    left: 0;
+}
+.tool .reader-next { 
+	background-image: url(../images/btn-read.png);
+	background-position: 12px -25px;
+    margin: 0;
+    left: 0;
+}
 
 /* 內文 */
 .wrap {
@@ -1518,7 +1528,7 @@ span.button-close-west {
 }
 #tree .treenode_lv1 {
 	font-size: 16px !important;
-	padding: 10px 30px;
+	padding: 10px 30px 10px 10px;
 	background: #EFF2E4;
 	left: 0!important;
 	border-bottom: #C9CDBA solid 1px;
@@ -1536,9 +1546,34 @@ span.button-close-west {
 #tree .treenode_lv0>div:first-child { padding-top: 15px;}
 
 #tree div>img {margin-right: 5px;}
-#tree div>a:hover { background: transparent !important;}
-#tree div>span {padding: 2px 5px; border-color: transparent !important;}
-#tree div>span:hover { background: transparent !important; }
+#tree div>a {
+	float: left;
+	display: initial;
+}   
+#tree div>a>img { text-indent: 0!important;} 
+#tree div>a>span {display: block;}
+#tree div>a:hover { /*background: transparent !important;*/}
+#tree div>span {
+	padding: 2px 5px; border-color: transparent !important;
+	border-bottom-color:transparent !important;
+/*
+    padding: 2px 5px 2px 55px;
+    border-color: transparent !important;
+    
+    
+    */
+}
+#tree div>span.sutra {
+	background-position: 0 6px;
+    padding-left: 30px;
+    text-indent: 0 !important;
+    display: inline-block;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 82%;
+    margin-left: -10px;
+}
+#tree div>span:hover { /*background: transparent !important; */}
 #tree div>span:focus {  background: #444 !important; }
 
 
@@ -2040,6 +2075,7 @@ button.btnHide {
 }
 #text4image >div >div {
     white-space: initial !important;
+    overflow: hidden;
 }
 #text4image .iviewer_cursor {
     width: 100%  !important;
