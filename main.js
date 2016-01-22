@@ -31,9 +31,7 @@ var onHitClick=function(e,treenode,seq,toc){
     fetchText(treenode.firstvpos);
 }
 var reloadBreadcrumb=function(vpos){
-    setTimeout(function(){
-        displaybreadcrumb(vpos);
-    },100);
+    displaybreadcrumb(vpos);
 }
 var reloadToc=function(cb){
     ksa.toc({db:db,q:tf2},function(err,data){
@@ -50,8 +48,8 @@ var reloadToc=function(cb){
             ),
             document.getElementById("tree")
         );
+        cb();
     });
-    cb();
 }
 
 var showtotal=function(total){
@@ -206,8 +204,11 @@ var search=function() {
         console.log(searchresult.length);
         console.log("searchresult.length:"+searchresult.length);
         showtotal(searchresult.length);
-        reloadToc(function(){});
-        reloadBreadcrumb(0);
+        setTimeout(function(){
+            reloadToc(function(){
+                reloadBreadcrumb(0);
+            });
+        },500);
         //updateControls();
     });
 }
@@ -275,7 +276,7 @@ var fetchText=function(vpos){
         var currentuti=res.sibling[res.idx];
         if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
-            reloadBreadcrumb(vpos);//vpos為此頁起點，但目錄的vpos在起點之後 為避免麵包屑誤差而補充300
+            reloadBreadcrumb(vpos);//vpos為此頁起點
             return;
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
@@ -333,9 +334,7 @@ var systemReady=function(){
         "images/tree-lv4.png"
     ]
     reloadToc(function(){
-        setTimeout(function(){
-            fetchText(20);
-        },500);
+        fetchText(20);
     });
     initialAdvSearch();
 }
