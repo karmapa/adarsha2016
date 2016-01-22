@@ -38,7 +38,7 @@ var renderBreadcrumb=function(data,vpos,sid){
         React.createElement(
             ksana2015breadcrumbtoc.Component,
             {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
-             hits:data.hits,treenodeHits:ksa.treenodehits,vpos:vpos,
+             hits:data.vhits,treenodeHits:ksa.treenodehits,vpos:vpos,
              separator:">",
              append:sutraid(),
              buttonClass:"btn btn-link"}
