@@ -142,7 +142,7 @@ var searchSid=function(tofind1){
 var gotoSid=function(sid){
     ksa.getFieldRange({db:db,field:"sutra",values:sid},function(err,ranges){
         console.log("ranges:"+ranges);
-        fetchText(ranges[0]);
+        fetchText(ranges[0][0]);
     });
 }
 

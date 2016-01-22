@@ -123,6 +123,7 @@ var goPage=function(page){
 }
 
 var advGoSid=function(Sid){
+    gotoSid(Sid);
     $('#advSearchmodal').modal('hide');
 }
 
