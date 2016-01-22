@@ -322,13 +322,36 @@
             <div id="sideTabCont" class="tab-content">
 
                 <div class="tab-pane fade" id="search">
-                    <input id="tofind1" style="font-size:200%" type="text" class="form-control" placeholder="目錄" onInput="tofind1input(event)">
-                    <input id="tofind2" style="font-size:200%" type="text" class="form-control" placeholder="全文" onInput="tofind2input(event)">
+                    <input id="tofind1" style="font-size:200%" type="text" class="form-control" placeholder="Pb No, Title Id, Catalog Search" onInput="tofind1input(event)">
+                    <input id="tofind2" style="font-size:200%" type="text" class="form-control" placeholder="Content Search" onInput="tofind2input(event)">
                     <span id="totalfound"></span>
                     <button id="btnprev" style="visibility:hidden" onclick="showprevbatch()">Prev</button>
                     <button id="btnnext" style="visibility:hidden" onclick="showbatch()">Next</button>
                     <div id="searchTabCont" class="tab-content">
-                    <div id="searchres" style="font-size:200%">qqqq</div>
+                    <div id="searchres" style="font-size:200%">Wildcards Search Rule:<br/>
+                      . (dot) and (star) these two wildcards match single unknow syllable.<br/>
+                      example:<br/>
+                      search:rdzogs.sangs/ རྫོགས.སངས(1 syllable in between)<br/>
+                      result:<br/>
+                      -->rdzogs pa’i sangs…../རྫོགས་པའི་སངས་་་་་་<br/>
+                      -->rdgogs par sangs…../རྫོགས་པར་སངས་་་་་<br/>
+                      example:<br/>
+                      search:rdzogs.2sangs/ རྫོགས.2སངས(2 syllable in between)<br/>
+                      result:<br/>
+                      -->rdzogs par//rdzogs sangs…../རྫོགས་པར། །རྫོགས་སངས་་་་་་<br/>
+                      -->rdgogs//ngas ni sangs…../རྫོགས། །ངས་ནི་སངས་་་་་<br/>
+                      example:<br/>
+                      search:rdzogssangs/ རྫོགསསངས(1 or non syllable in between)<br/>
+                      result:<br/>
+                      -->rdzogs pa’i sangs…../རྫོགས་པའི་སངས་་་་་་<br/>
+                      -->rdgogs sangs…../རྫོགས་སངས་་་་་<br/>
+                      example:<br/>
+                      search:de3pa/དེ3*པ(1 or 2 or 3 or non syllable in between)<br/>
+                      result:<br/>
+                      -->de dag gis smras pa…./དེ་དག་གིས་སྨྲས་པ་་་་་་<br/>
+                      -->de la smras pa.../དེ་ལ་སྨྲས་པ་་་་་<br/>
+                      -->de gang yin pa…./དེ་གང་ཡིན་པ་་་་་་
+                    </div>
 
                     </div><!--#searchTabCont-->
                 </div><!--/#search -->
