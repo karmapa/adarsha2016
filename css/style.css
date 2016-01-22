@@ -774,6 +774,7 @@ body.welcome>.container{
 	/*position: fixed;
     height: 100%;
     width: 78%;*/
+    display: none;
 }
 
 .reader-prev,.reader-next {
@@ -788,7 +789,7 @@ body.welcome>.container{
     background-position-y: center;
     background-color: transparent;
     border-radius: 5px;
-    margin-top: 60px;
+    margin-top: 22px;/*60px*/
     z-index: 1;/*3*/
     position: absolute;
 }
@@ -808,17 +809,46 @@ body.welcome>.container{
 .reader-prev:hover,.reader-next:hover {
 	background-color: #F7F7F7;
 }
+.inner-header .reader-nav { display: inherit;}
+.inner-header .reader-prev,
+.inner-header .reader-next {
+    height: 55px;
+    margin-top: 27px;
+	background-image: url(../images/btn-reader-inner.png);
+	border: transparent solid 1px;
+}
+.inner-header .reader-prev:hover,
+.inner-header .reader-next:hover {
+	border: #DEDEDE solid 1px;
+    border-radius: 0;
+    background-color: #fff;
+}
+.inner-header .reader-prev {
+    background-position: -2px 2px;
+    left: 15px;
+}
+.inner-header .reader-next {
+    background-position: -55px 2px;
+    right: 30px;
+}
+
 
 .full .reader-prev,.full .reader-next {z-index: 8;}
 .full .reader-prev {
 	margin-left: 0;
-    /*left: 4%;*/
+    left: 4%;
 }
 .full .reader-next {
 	margin-left: 0;
     right: 4%;
 }
-.full .reader-nav { width: 100%;}
+.full .reader-nav { width: 100%; display: inherit; z-index: 10;}
+.full .reader-prev,.full .reader-next {
+	margin-top:60px;
+	height: 75%;
+	position: fixed;
+}
+
 
 .tool .reader-prev { 
 	background-image: url(../images/btn-read.png);
@@ -1372,8 +1402,19 @@ span.button-close-west {
 	background-color: #C3C9B0;
 }
 #searchTabCont #searchres {
-	padding: 20px 15px 20px 20px;	
+	padding: 20px 15px 20px 20px;
+	font-family: CTRC-uchen,"BiauKai","DFKai-SB";
+    font-size: 18px;
+    color: #5C634A;
 }
+#searchTabCont #searchres h5 {
+    line-height: 32px;
+    font-family: "Amdo Classic","BiauKai","DFKai-SB";
+    font-size: 16px;
+    border-bottom: #A9B286 solid 1px;
+    padding-bottom: 10px;
+}
+
 #searchTabCont #searchres h2 {
 	text-align: left;
 	padding: 5px;
@@ -1391,8 +1432,10 @@ span.button-close-west {
     background: #858D6D;
     color: #FFFFFF;
     cursor: pointer;
-    padding: 0 2px;
-    border-radius: 5px;
+    padding: 0 1px;
+    border-radius: 2px;
+    height: 29px;
+    display: inline-block;
 }
 
 /* 左側 #tree */

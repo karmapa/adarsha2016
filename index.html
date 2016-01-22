@@ -137,18 +137,22 @@
     </nav>
 
     <div class="inner-header">
-		<ol id="breadcrumb" class="breadcrumb">
-      <!--
-            <li><a href="#" class="home" title="home">home</a></li>
-			<li><a href="#">འཇང་བཀའ་འགྱུར།</a></li>
-			<li><a href="#">འདུལ་བ།</a></li>
-			<li><a href="#">ཀ</a></li>
-			<li><a href="#">འདུལ་བ་གཞི། ༼ཀ༽</a></li>
-			<li><a href="#">རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</a></li>
-			<li class="active"><a href="#">ཤཱ་རིའི་བུའི་སྡེ་ཚན།།</a></li>
-      -->
-		</ol>
-    <!-- <div id="bSutraID"></div> -->
+      <div class="reader-nav">
+          <a href="#" onclick="prevfile()" class="reader-prev">prev</a>
+          <a href="#" onclick="nextfile()" class="reader-next">next</a>
+      </div><!--/.reader-nav-->
+  		<ol id="breadcrumb" class="breadcrumb">
+        <!--
+              <li><a href="#" class="home" title="home">home</a></li>
+  			<li><a href="#">འཇང་བཀའ་འགྱུར།</a></li>
+  			<li><a href="#">འདུལ་བ།</a></li>
+  			<li><a href="#">ཀ</a></li>
+  			<li><a href="#">འདུལ་བ་གཞི། ༼ཀ༽</a></li>
+  			<li><a href="#">རབ་ཏུ་འབྱུང་བའི་གཞི་འཆད་པ།</a></li>
+  			<li class="active"><a href="#">ཤཱ་རིའི་བུའི་སྡེ་ཚན།།</a></li>
+        -->
+  		</ol>
+      <!-- <div id="bSutraID"></div> -->
 
 	</div><!--/.inner-header -->
 
@@ -328,7 +332,7 @@
                     <button id="btnprev" style="visibility:hidden" onclick="showprevbatch()">Prev</button>
                     <button id="btnnext" style="visibility:hidden" onclick="showbatch()">Next</button>
                     <div id="searchTabCont" class="tab-content">
-                    <div id="searchres" style="font-size:200%">Wildcards Search Rule:<br/>
+                    <div id="searchres">Wildcards Search Rule:<br/>
                       . (dot) and (star) these two wildcards match single unknow syllable.<br/>
                       example:<br/>
                       search:rdzogs.sangs/ རྫོགས.སངས(1 syllable in between)<br/>
@@ -371,19 +375,19 @@
 		</div><!--/.ui-layout-west-->
 
 
-    <div class="reader-nav">
+    <!--<div class="reader-nav">
         <a href="#" onclick="prevfile()" class="reader-prev">prev</a>
         <a href="#" onclick="nextfile()" class="reader-next">next</a>
-    </div><!--/.reader-nav-->
+    </div>/.reader-nav-->
 
 
 		<div id="mainContent">
 
 
-            <!--<div class="reader-nav">
+            <div class="reader-nav">
                 <a href="#" onclick="prevfile()" class="reader-prev">prev</a>
                 <a href="#" onclick="nextfile()" class="reader-next">next</a>
-            </div>/.reader-nav-->
+            </div><!--/.reader-nav-->
 
             <div class="wrap">
                 <div id="contents"></div>
