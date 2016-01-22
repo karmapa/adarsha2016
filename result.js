@@ -49,6 +49,7 @@ var renderBreadcrumb=function(data,vpos,sid){
 
 var displaybreadcrumb=function(vpos){
 
+    vpos += 300;
     ksa.toc({db:db,q:tf2},function(err,data){
         ksa.fetch({db:db,vpos:(vpos),fields:"sutra"},function(err,res){
             sutraid=res[0].values[0];

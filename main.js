@@ -275,7 +275,7 @@ var fetchText=function(vpos){
         var currentuti=res.sibling[res.idx];
         if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
-            reloadBreadcrumb(vpos+300);//vpos為此頁起點，但目錄的vpos在起點之後 為避免麵包屑誤差而補充300
+            reloadBreadcrumb(vpos);//vpos為此頁起點，但目錄的vpos在起點之後 為避免麵包屑誤差而補充300
             return;
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
@@ -298,7 +298,7 @@ var fetchText=function(vpos){
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
             console.log("vposend:"+vposend);
-            reloadBreadcrumb(data[res.idx].vpos + 300);
+            reloadBreadcrumb(data[res.idx].vpos);
             scrollTo(currentuti);
             //$("#bSutraID").html(currentSutraID);
             fetched=true;
