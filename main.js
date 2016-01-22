@@ -40,7 +40,7 @@ var reloadToc=function(cb){
         ReactDOM.render(
             E(
                 ksana2015treetoc.Component,
-                {toc:data.toc,hits:data.hits,treename:db
+                {toc:data.toc,hits:data.vhits,treename:db
                     ,opened:openicon
                     ,closed:closeicon
                     ,nodeicons:nodeicons
