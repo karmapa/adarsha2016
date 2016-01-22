@@ -1,5 +1,19 @@
 var fieldNames={
-    sname:"མདོ་མིང་།"
+    division:"སྡེ་ཚན།",
+    tname:"མདོ་མིང་།",
+    aname:"མདོ་མིང་གཞན།",
+    sname:"རྒྱ་གར་མདོ་མིང་།",
+    cname:"རྒྱ་ནག་མདོ་མིང་།",
+    subject:"བརྗོད་བྱ།",
+    yana:"ཐེག་པ།",
+    chakra:"འཁོར་ལོ།",
+    location:"གནས་ཕུན་སུམ་ཚོགས་པ།",
+    purpose:"ཆོས་ཀྱི་དགོས་དོན།",
+    collect:"བསྡུས་པའི་དོན། ལེའུ།",
+    relation:"མཚམས་སྦྱར་བའི་གོ་རིམ།",
+    debate:"རྒལ་ལན།",
+    translator:"ལོ་ཙཱ་བ།",
+    reviser:"ཞུ་དག་པ།"
 }
 
 var getInfo=function(sutraid){
