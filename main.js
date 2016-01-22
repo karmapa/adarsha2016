@@ -298,7 +298,7 @@ var fetchText=function(vpos){
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
             console.log("vposend:"+vposend);
-            reloadBreadcrumb(vposend);
+            reloadBreadcrumb(data[res.idx].vpos + 300);
             scrollTo(currentuti);
             //$("#bSutraID").html(currentSutraID);
             fetched=true;
