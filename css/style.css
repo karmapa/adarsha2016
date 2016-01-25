@@ -818,7 +818,7 @@ body.welcome>.container{
 .inner-header .reader-prev,
 .inner-header .reader-next {
     height: 55px;
-    margin-top: 27px;
+    margin-top: 26px;
 	background-image: url(../images/btn-reader-inner.png);
 	border: transparent solid 1px;
 }
@@ -830,7 +830,9 @@ body.welcome>.container{
 }
 .inner-header .reader-prev {
     background-position: -2px 2px;
-    left: 15px;
+    /*left: 15px;*/
+    right: 75px;
+    left: inherit;
 }
 .inner-header .reader-next {
     background-position: -55px 2px;
@@ -1576,7 +1578,7 @@ span.button-close-west {
 }
 #tree .treenode_lv1 {
 	font-size: 16px !important;
-	padding: 10px 30px 10px 10px;
+	padding: 10px;
 	background: #EFF2E4;
 	left: 0!important;
 	border-bottom: #C9CDBA solid 1px;
