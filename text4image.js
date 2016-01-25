@@ -57,6 +57,13 @@ var systemReady2=function() {
         this.resize(domnode);
     }
     ,render:function(){
+        var breakL=function(text){
+            var regex = "\n";
+            return text.split(regex).map(function(line) {
+                return E("p",{},line);
+            });
+        };
+
         return E("div",{},
             E("button",{className:"prevImage",onClick:this.prevImage},"prev"),
             E("button",{className:"nextImage",onClick:this.nextImage},"next"),
@@ -68,7 +75,7 @@ var systemReady2=function() {
             ),
           //  E("image",{src:this.imagefilename()}),
             //E("div",{style:text4imagestyles.text},this.props.uti,"\n",this.props.text)
-            E("div",{className:"textBox container"},E("span",{className:"title"},this.props.uti),"\n",this.props.text)
+            E("div",{className:"textBox container"},E("span",{className:"title"},this.props.uti),"\n",breakL(this.props.text))
         );
     }
 });
