@@ -158,6 +158,7 @@ body.welcome>.container{
 	width: 100%;
 	position: relative;
 	z-index: 5;
+	/*border-bottom: #E2E2E2 solid 1px;*/
 }
 
 .navbar-header:before, 
@@ -265,6 +266,7 @@ body.welcome>.container{
 .mainMenu.navbar-nav {
 	width: 80%;
 	margin: 20px auto 25px;
+    float: inherit;
 }
 .mainMenu.navbar-nav>li {
 	/*width: 33%;*/
@@ -288,6 +290,7 @@ body.welcome>.container{
 .mainMenu.navbar-nav>.active>a:focus {
     border: #979797 solid 1px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .mainMenu.navbar-nav>li>a em{
@@ -551,7 +554,7 @@ body.welcome>.container{
     top: 140px;
     background-color: #eff2e4;
     border: #cacaca solid 1px;
-    height: 100%;
+    height: 87%;
     overflow: auto;
 }
 
@@ -672,7 +675,8 @@ body.welcome>.container{
 }
 
 .tool>li>a.pageInfo{
-	 background-position-x:-94px;
+	 background:url(../images/btn-tool.png) no-repeat -94px 11px;
+	 display: -moz-inline-block;
 }
 .open>.dropdown-menu li {
 	margin: 0;
@@ -701,7 +705,8 @@ body.welcome>.container{
     background-color: #f8f8f8;
 }
 .tool>li>a.fullPage {
-	background-position-x:-23px;
+	background:url(../images/btn-tool.png) no-repeat -23px 11px;
+	display: -moz-inline-block;
 }
 
 
