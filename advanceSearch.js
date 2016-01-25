@@ -138,7 +138,7 @@ var showPage=function(){
         if(i==advBatchStart*advBatchSize+advBatchSize)break;
         Rtn+="<li>"
         + "<span>"+advResult[i].sutraid+"</span>"
-        +"<a onClick=\"advGoSid('"+advResult[i].sutraid+"')\" href='#'>"+advResult[i].tname.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
+        +"<a onClick=\"advGoSid('"+(advResult[i].sutraid).replace("(","").replace(")","")+"')\" href='#'>"+advResult[i].tname.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
         +"</li>";
         /*+",tname:"+advResult[i].tname.replace(names,"<span class='hl'>"+names+"</span>")
         +",aname:"+advResult[i].aname.replace(names,"<span class='hl'>"+names+"</span>")
