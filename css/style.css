@@ -1616,8 +1616,8 @@ span.button-close-west {
     padding-left: 30px;
     text-indent: 0 !important;
     display: inline-block;
-    word-wrap: break-word;
-    word-break: break-all;
+    /*word-wrap: break-word;
+    word-break: break-all;*/
     width: 82%;
     margin-left: -10px;
 }
