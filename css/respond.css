@@ -43,7 +43,8 @@
 	#sideTab li a.btn-search { position: inherit; top: 88px; left: 5px;}
 	#sideTab li a.btn-tree { position: inherit; top: 35px; left: 67px;}
 	.inner-Content { margin-left: 0;}
-	.inner-header .reader-prev { left: 135px;}
+	.inner-header .reader-next { right: 20px;}
+	.inner-header .reader-prev { /*left: 135px;*/ right:65px; }
 }
 @media(max-width:1365px){
 	.reader-nav { width: 75%; }
