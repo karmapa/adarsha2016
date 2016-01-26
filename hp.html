@@ -19,6 +19,7 @@
 <!--CSS-->
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.maximage.min.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/respond.css">
 <link rel="shortcut icon" href="images/favicon.ico"/> 
@@ -32,6 +33,14 @@
 
 </head>
 <body class="welcome">
+
+<div id="maximage">
+    <img src="images/bg-welcome.jpg" alt="">
+    <img src="images/bg-welcome-2.jpg" alt="">
+    <img src="images/bg-welcome-3.jpg" alt="">
+    <img src="images/bg-welcome-4.jpg" alt="">
+    <img src="images/bg-welcome-5.jpg" alt="">
+</div>
 
 <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -47,9 +56,10 @@
 
 			<a class="navbar-brand logo" href="hp.html">ADARSHA</a>
 			<ul class="nav nav-pills navbar-right">
-				<li class="advanced" title="Advanced Search"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="advanced.html">Advanced Search</a></li>
-                <li class="ka" title="Toggle Wylie Transliteration"><a href="#" title="homepage ka content">ka</a></li>
-				<li class="home" title="Contact US"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="http://www.dharma-treasure.org/en/contact-us/">home</a></li>
+				<li class="advanced" title="Advanced Search"><a class=""  onClick="advanceSearch()">Advanced Search</a></li>
+                <!-- <li class="ka" title="Toggle Wylie Transliteration"><a onClick="toggleWylie()">ka</a></li> -->
+                <li class="about" title="About"><a onClick="showAbout()">About</a></li>
+                <li class="home" title="Contact US"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="http://www.dharma-treasure.org/en/contact-us/">home</a></li>
                 <li class="login" title="Login"><a class="btn-modal" data-toggle="modal" data-target="#picModal" data-url="login.html">login</a></li>
 			</ul>
 
@@ -148,41 +158,162 @@
 			
 		</div><!--/.mainContent-->
 
-		<!-- Modal -->
-        <div class="modal fade" id="picModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<!-- About Modal -->
+        <div id="aboutmodal" class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        ...
-                    </div>
+                      <h1>About ADARSHA</h1>
+                      <div class="textBox row">
+                        <h2>--Brief Introduction--</h2>
+                        <ul class="col-lg-8 col-md-8">
+                          <li>1. A software that has the ability to read and conduct searches of ancient documents in a digital format. There are three main categories of texts: (a) Kangyur (Buddha’s Words); (b) Tengyur (commentaries on Buddha’s Words); and (c) Tibetan Buddhist scriptures.</li>
+                          <li>2. The software features a fast search engine and simple user interface that meets the needs and habits of the common user in searching and reading material. There is the provision of Wylie input and summaries of scriptures for the convenience of use by the academic community.</li>
+                          <li>3. His Holiness the 17th Karmapa Orgyen Trinley Dorje named the software ADARSHA (Sanskrit) which has the meaning of a “clear mirror” with the hope that readers are able to see their own minds as a reflection through studying the scriptures and clearly be able to see the nature of mind just like looking at the clear reflection of a mirror.</li>
+                        </ul>
+                        <p class="col-lg-4 col-md-4" style="text-align:right">
+                          <img src="images/img-about-01.jpg" alt="about">  
+                        </p>
+                        
+
+                        <br clear="both">
+                        <h2>--Features--</h2>
+                        <ul class="col-lg-12">
+                          <li style="width: 100%;">1. Search: features a 樹狀 table of contents for selection and also gradual search by entering in the name of the scripture, 目錄 (table of contents?) or text as search entries.</li>
+                          <li style="width: 100%;">2. View texts: display that allows simple view of text with the ability to adjust text size and spacing etc.</li>
+                        </ul>
+                        
+                        
+                        <p class="col-lg-9 col-md-9">Development Team<br>
+                        Dharma Treasure Corp.<br>
+                        contact us:dharma.treasure.corp@gmail.com<br>
+                        https://adarsha.dharma-treasure.org<br><br>
+                        Copyright (C) 2016
+                        </p>
+
+                        <p class="col-lg-3 col-md-3" style="text-align:center">
+                        <img src="images/img-about-02.jpg" alt="logo"></p>
+
+                      </div>
+                    </div><!--/.modal-body-->
                 </div><!--/.modal-content-->
             </div>
-        </div><!-- myModal -->
+        </div><!-- About Modal END -->
+
+
+        <!-- advSearch Modal -->
+        <div id="advSearchmodal" class="modal fade" id="advModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body" >
+                      <div class="container">
+                        <h1>Advanced Search</h1>
+                        <div class="advancedBox">
+                          <!--<div class="form-group">
+                              <label class="col-sm-3">སྡེ་ཚན།&nbsp;〈大典〉: </label>
+                              <div class="col-sm-7">
+                                  <select name="select" class="form-control">
+                                      <option value="opt1">-- ALL --</option>
+                                      <option value="opt2">བཀའ་འགྱུར། &nbsp;&nbsp;甘珠爾</option>
+                                      <option value="opt3">བསྟན་འགྱུར། &nbsp;&nbsp; 丹珠爾</option>
+                                      <option value="opt4">བོད་མ། &nbsp;&nbsp; 藏傳佛典 </option>
+                                  </select>
+                              </div>
+                          </div>-->
+                          <div class="form-group">
+                              <label class="col-sm-3">སྡེ་ཚན།&nbsp;〈部〉: </label>
+                              <div class="col-sm-7">
+                                  <select id="s_division" name="select" class="form-control">
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3"> མདོ་མིང་། &nbsp;〈經名〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="names" type="text" class="form-control" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ཐེག་པ། &nbsp;〈乘法〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="yana" type="text" class="form-control" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">དཀའ། འཁོར་ལོ།&nbsp;〈哪一轉法輪〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="chakra" type="text" class="form-control" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">གནས་ཕུན་སུམ་ཚོགས་པ།&nbsp;〈說法處〉: </label>
+                              <div class="col-sm-7">
+                                  <textarea id="location" type="text" class="form-control" placeholder=""></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ལོ་ཙཱ་བ།&nbsp;〈譯師〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="translator" type="text" class="form-control" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3">ཞུ་དག་པ།&nbsp;〈校對者〉: </label>
+                              <div class="col-sm-7">
+                                  <input id="reviser" type="text" class="form-control" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-actions">
+                              <!--<button type="cancel" class="btn btn-cancel">Cancel</button>-->
+
+                              <a type="submit" onClick="doAdvSearch()" class="btn btn-submit">Submit</a>
+                          </div>
+                        </div><!--/.advancedBox -->
+                        <div class="resultBox">
+                          <ul id="advResult">
+                          </ul>
+                          <nav class="pageSet">
+                            <ul id="advPag" class="pagination">
+                            </ul>
+                          </nav><!--/.pageSet -->
+                        </div><!--/.resultBox -->
+                      </div><!--/.container -->
+                    </div><!--/.modal-body-->
+                </div><!--/.modal-content-->
+            </div>
+        </div><!-- advSearchmodal END -->
 
     </div> <!-- /container -->
 
 
 
 
-
-
-
-
-
-
 <!--JS--> 
-<script src="js/jquery-2.1.4.min.js"></script> 
+<script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.cycle.all.js"></script>
+<script src="js/jquery.maximage.js"></script>
 <script src="js/respond.js"></script>
 <script src="js/script.js"></script>
+<script src="advanceSearch.js"></script>
+<script src="main.js"></script>
 
-<script>
 
+<script type="text/javascript">
 var ngui = require('nw.gui');
 var nwin = ngui.Window.get();
 //nwin.enterFullscreen();
 nwin.maximize();
 </script>
+
+<script type="text/javascript">
+    $(function(){
+        // Trigger maximage
+        jQuery('#maximage').maximage();
+    });
+</script>
+
 </body>
 </html>

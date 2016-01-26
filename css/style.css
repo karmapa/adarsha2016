@@ -121,12 +121,12 @@ body>.container {
 	*display: table; /* For IE7 Hack */
 	*height: 100%; /* For IE7 Hack */
 }
-body.welcome {
+/*body.welcome {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background: linear-gradient(top,rgba(0,0,0,0.15),rgba(0,0,0,0.15)),url(../images/bg-welcome.jpg) top center no-repeat;
     background: -webkit-linear-gradient(top,rgba(0,0,0,0.15),rgba(0,0,0,0.15)),url(../images/bg-welcome.jpg) top center no-repeat;
-}
+}*/
 body.welcome>.container{
 	background-color: transparent;
 	border-color: transparent;
@@ -1784,6 +1784,7 @@ button.btnHide {
 }
 
 /* advanced search */
+#advSearchmodal h1 { margin-top: 40px;}
 .advancedBox {
 	width: 85%;
     margin: auto;
@@ -1818,7 +1819,7 @@ button.btnHide {
     padding: 6px 8px;
     border-radius: 0;
     overflow: hidden;
-    width: 550px !important;
+    width: 535px !important;
 }
 .advancedBox select em { margin: 0 10px;}
 
@@ -2216,6 +2217,8 @@ button.btnHide {
 #text4image .iviewer_zoom_in { left: inherit; right: 15px !important;}
 #text4image .iviewer_zoom_out { left: inherit; right: 50px !important;}
 */
+
+
 /* About Page */
 #aboutmodal .modal-body {
 	background-size: cover;
