@@ -258,7 +258,6 @@ body.welcome>.container{
 .navbar-header .navbar-right>li.ka>a {background-position-x: -59px;}
 .navbar-header .navbar-right>li.home>a {background-position-x: -116px;}
 .navbar-header .navbar-right>li.login>a {background-position-x: -173px;}
-.navbar-header .navbar-right>li.ka,
 .navbar-header .navbar-right>li.home,
 .navbar-header .navbar-right>li.login { display: none;}
 
