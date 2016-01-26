@@ -129,7 +129,7 @@ var filter=function(ranges,regex){
 
 /* 使用單經搜尋 */
 var searchSid=function(tofind1){
-    var sid=["J"+tofind1];
+    var sid=tofind1;
     console.log("searching sid :"+sid);
     ksa.getFieldRange({db:db,field:"sutra",values:sid},function(err,ranges){
         console.log("ranges:"+ranges);
@@ -140,6 +140,7 @@ var searchSid=function(tofind1){
 var gotoSid=function(sid){
     ksa.getFieldRange({db:db,field:"sutra",values:sid},function(err,ranges){
         console.log("ranges:"+ranges);
+        if(err){console.log("gotosid err");}
         fetchText(ranges[0][0]);
     });
 }
@@ -176,10 +177,12 @@ var search=function() {
     console.log("tf2:" + tf2);
 
     var isUti = tofind1.match(/^(\d{1,3}[a-z]?)\.(\d{1,3}[ab]?$)/);//確認是否以頁碼搜尋
-    var isSid = tofind1.match(/^(\d{1,4})([a-z]?)$/);//確認是否為單經搜尋
+    var isSid = tofind1.match(/^([A-Z])(\d{1,4})([a-z]?)$/);//確認是否為單經搜尋
 
     if(isSid && !tf2){//如果是跳單經
-        //gotoSid(tofind1);
+        console.log("gotoSid:"+tofind1);
+        gotoSid(tofind1);
+        return;
     }
 
     if(isSid){//如果是單經搜尋
@@ -206,7 +209,7 @@ var search=function() {
         showtotal(searchresult.length);
         setTimeout(function(){
             reloadToc(function(){
-                reloadBreadcrumb(0);
+                //reloadBreadcrumb(0);
             });
         },100);
         //updateControls();
@@ -281,7 +284,7 @@ var fetchText=function(vpos){
         }
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
-            var vposend = data[res.idx].vpos_end;
+            //var vposend = data[res.idx].vpos_end;
             /*var currentSutraID = "J1";//經號
             if(data[0].values[0]!=undefined)currentSutraID=data[0].values[0];
             output+="<h1 id='sutraid'>"+currentSutraID+"</h1>";*/
@@ -298,7 +301,7 @@ var fetchText=function(vpos){
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
-            console.log("vposend:"+vposend);
+            //console.log("vposend:"+vposend);
             reloadBreadcrumb(data[res.idx].vpos);
             scrollTo(currentuti);
             //$("#bSutraID").html(currentSutraID);
@@ -316,8 +319,10 @@ var getSutraidFromHash=function(){
     if(!hash)return;
     var param=hash.substr(1).split("=");
     if(param[0]=="sid"){
-        console.log(param[1]);
+        //console.log(param[1]);
+        return param[1];
     }
+    return "";
 }
 
 var openicion,closeicon,nodeicons;
@@ -334,7 +339,14 @@ var systemReady=function(){
         "images/tree-lv4.png"
     ]
     reloadToc(function(){
-        fetchText(20);
+        var Sid = getSutraidFromHash();
+        var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
+        if(isSid){
+            gotoSid(Sid);
+        }
+        else{
+            fetchText(20);
+        }
     });
     initialAdvSearch();
 }
