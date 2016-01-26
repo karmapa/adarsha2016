@@ -16,7 +16,9 @@ var kdbArray=["jiangkangyur","tengyur","tibetan-masterpiece"];
 var changeKdb=function(kdb){
     db=kdbArray[kdb];
     //$("#navbar").aria-expanded=false;
-    systemReady();
+    reloadToc(function(){
+        fetchText(20);
+    });
     search();
 }
 

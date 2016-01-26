@@ -39,7 +39,7 @@ var renderBreadcrumb=function(data,vpos,sid){
     ReactDOM.render(
         React.createElement(
             ksana2015breadcrumbtoc.Component,
-            {toc:data.toc,treename:"jiangkangyur",onSelect:onBreadcrumbSelect,
+            {toc:data.toc,treename:db,onSelect:onBreadcrumbSelect,
              hits:data.vhits,treenodeHits:ksa.treenodehits,vpos:vpos,
              separator:">",
              append:sutraid(),
