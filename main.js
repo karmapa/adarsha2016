@@ -235,6 +235,7 @@ var tofind2input=function(e){
 };
 
 var scrollTo=function(uti){
+    if (uti.substr(0,1)==="_")return ;//suppress jquery warning
     $("#mainContent").scrollTop(0);
     console.log("scrollingTo:" + uti);
     /*$("#uti_" + uti.replace(".","_")).scrollTop();*/
@@ -286,8 +287,8 @@ var highlightText=function(text,hits){
 var toggleWylie=function(){
     var output=document.getElementById('contents').innerHTML;
     if(toWylie){
-        console.log("toWylie:false");
-        toWylie=false;
+        //console.log("toWylie:false");
+        setWylie(false);
         //output=wylie.fromWylie(output);
         //document.getElementById('contents').innerHTML=output;
         search();
@@ -296,7 +297,8 @@ var toggleWylie=function(){
         },300);
     }else{
         console.log("toWylie:true");
-        toWylie=true;
+        setWylie(true);
+        
         //output=wylie.toWylie(output);
         //document.getElementById('contents').innerHTML=output;
         search();
@@ -345,18 +347,27 @@ var fetchText=function(vpos){
 }
 
 var updateHashTag=function(sid){
-    window.location.hash="#sid="+sid;
+    window.location.hash="#sid="+sid+"&db="+db;
 }
 
-var getSutraidFromHash=function(){
+var getSutraidFromHashAndSetDb=function(){
+    var sid=null;
     var hash=window.location.hash;
     if(!hash)return;
-    var param=hash.substr(1).split("=");
-    if(param[0]=="sid"){
-        //console.log(param[1]);
-        return param[1];
+    hash=hash.substr(1);
+    var params=hash.split("&");
+    for (var i=0;i<params.length;i+=1) {
+        var param=params[i].split("=");
+        if(param[0]==="sid"){
+            //console.log(param[1]);
+            sid=param[1];
+        }
+        if (param[0]==="db") {
+            db=param[1];//replacing global db, bad practice
+        }
+
     }
-    return "";
+    return sid;
 }
 
 var openicion,closeicon,nodeicons;
@@ -372,8 +383,9 @@ var systemReady=function(){
         "images/tree-lv3.png",
         "images/tree-lv4.png"
     ]
+    var Sid = getSutraidFromHashAndSetDb();//set db in this function
     reloadToc(function(){
-        var Sid = getSutraidFromHash();
+        
         if(!Sid){
             fetchText(20);
             return;

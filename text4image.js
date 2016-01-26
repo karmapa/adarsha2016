@@ -36,7 +36,7 @@ var systemReady2=function() {
         });
     },
     imagefilename:function(){
-        return image_url_prefix + imgFromuti(this.props.uti);
+        return image_url_prefix() + imgFromuti(this.props.uti);
         //this.props.uti
         //return "../adarsha_img/lijiang/001/001-127b.jpg";
         //return "images/001-001b.jpg";
