@@ -43,7 +43,8 @@ var systemReady2=function() {
     }
     ,resize:function(domnode){
         setTimeout(function(){
-            domnode.iviewer("set_zoom", 100);
+            domnode.iviewer("update");  //重算最適框
+            domnode.iviewer("fit", true);  //不設 100%，設為全圖顯示
         },200)
     }
     ,componentDidMount:function() {
