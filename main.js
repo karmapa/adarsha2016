@@ -256,9 +256,13 @@ var nextMatch=function(currentvpos){
 
 var highlightText2=function(text,hits,currentvpos){
     console.log("highlightText");
-    if(!hits || !hits.length)return text;
+    if(!hits || !hits.length){
+        if(toWylie)text=wylie.toWylie(text);
+        return text;
+    }
     console.log("hits:",hits);
     return ksa.renderHits(text,hits,function(obj,text){
+        if(toWylie)text=wylie.toWylie(text);
         //this is for React.js , convert to HTML
         return obj.className?"<span onClick='nextMatch(\""+currentvpos+"\")' class='highlight'>"+text+"</span>":text;
     }).join("");
@@ -279,15 +283,21 @@ var toggleWylie=function(){
     if(toWylie){
         console.log("toWylie:false");
         toWylie=false;
-        output=wylie.fromWylie(output);
-        document.getElementById('contents').innerHTML=output;
+        //output=wylie.fromWylie(output);
+        //document.getElementById('contents').innerHTML=output;
         search();
+        setTimeout(function(){
+            fetchText(250);
+        },300);
     }else{
         console.log("toWylie:true");
         toWylie=true;
-        output=wylie.toWylie(output);
-        document.getElementById('contents').innerHTML=output;
+        //output=wylie.toWylie(output);
+        //document.getElementById('contents').innerHTML=output;
         search();
+        setTimeout(function(){
+            fetchText(100);
+        },300);
     }
 }
 
@@ -317,7 +327,6 @@ var fetchText=function(vpos){
             }
             output=output.replace(/[\r\n]/g,"");
 
-            if(toWylie)output=wylie.toWylie(output);
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];
