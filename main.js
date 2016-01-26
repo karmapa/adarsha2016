@@ -370,6 +370,11 @@ var getSutraidFromHashAndSetDb=function(){
     return sid;
 }
 
+var showAbout=function(){
+    $('#aboutmodal').modal({
+        show: 'true'
+    });
+}
 var openicion,closeicon,nodeicons;
 var systemReady=function(){
     setFont(0,0);
