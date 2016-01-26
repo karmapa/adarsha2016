@@ -34,6 +34,8 @@ var renderBreadcrumb=function(data,vpos,sid){
     var sutraid=function(){
         return React.createElement("span",{key:sid,id:"bSutraID"},sid);
     }
+    var conv=null;
+    if(toWylie)conv=wylie.toWylie;
     ReactDOM.render(
         React.createElement(
             ksana2015breadcrumbtoc.Component,
@@ -41,6 +43,7 @@ var renderBreadcrumb=function(data,vpos,sid){
              hits:data.vhits,treenodeHits:ksa.treenodehits,vpos:vpos,
              separator:">",
              append:sutraid(),
+             conv:conv,
              buttonClass:"btn btn-link"}
         ),
         document.getElementById("breadcrumb")

@@ -35,6 +35,8 @@ var reloadBreadcrumb=function(vpos){
 }
 var reloadToc=function(cb){
     ksa.toc({db:db,q:tf2},function(err,data){
+        var conv=null;
+        if(toWylie)conv=wylie.toWylie;
         ReactDOM.render(
             E(
                 ksana2015treetoc.Component,
@@ -43,6 +45,7 @@ var reloadToc=function(cb){
                     ,closed:closeicon
                     ,nodeicons:nodeicons
                     ,onSelect:onSelect
+                    ,conv:conv
                     ,captionClass:"sutra"
                     ,onHitClick:onHitClick}
             ),
@@ -369,6 +372,10 @@ var systemReady=function(){
     ]
     reloadToc(function(){
         var Sid = getSutraidFromHash();
+        if(!Sid){
+            fetchText(20);
+            return;
+        }
         var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
         if(isSid){
             gotoSid(Sid);
