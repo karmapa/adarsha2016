@@ -136,9 +136,14 @@ var showPage=function(){
 
     for(var i=advBatchStart*advBatchSize;i<advResult.length;i+=1){
         if(i==advBatchStart*advBatchSize+advBatchSize)break;
+        var text = advResult[i].tname;
+        if(toWylie){
+            text=wylie.toWylie(text);
+            names=wylie.toWylie(names);
+        }
         Rtn+="<li>"
         + "<span>"+advResult[i].sutraid+"</span>"
-        +"<a onClick=\"advGoSid('"+(advResult[i].sutraid).replace("(","").replace(")","")+"')\" href='#'>"+advResult[i].tname.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
+        +"<a onClick=\"advGoSid('"+(advResult[i].sutraid).replace("(","").replace(")","")+"')\" href='#'>"+text.replace(names,"<span class='highlight'>"+names+"</span>")+"</a>"
         +"</li>";
         /*+",tname:"+advResult[i].tname.replace(names,"<span class='hl'>"+names+"</span>")
         +",aname:"+advResult[i].aname.replace(names,"<span class='hl'>"+names+"</span>")
