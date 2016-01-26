@@ -273,6 +273,24 @@ var highlightText=function(text,hits){
         return obj.className?"<span style='background:red;color:yellow'>"+text+"</span>":text;
     }).join("");
 }
+
+var toggleWylie=function(){
+    var output=document.getElementById('contents').innerHTML;
+    if(toWylie){
+        console.log("toWylie:false");
+        toWylie=false;
+        output=wylie.fromWylie(output);
+        document.getElementById('contents').innerHTML=output;
+        search();
+    }else{
+        console.log("toWylie:true");
+        toWylie=true;
+        output=wylie.toWylie(output);
+        document.getElementById('contents').innerHTML=output;
+        search();
+    }
+}
+
 var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         console.log("fetchText:" + vpos);
@@ -298,6 +316,8 @@ var fetchText=function(vpos){
                 output+="</div>";
             }
             output=output.replace(/[\r\n]/g,"");
+
+            if(toWylie)output=wylie.toWylie(output);
             document.getElementById('contents').innerHTML=output;/* innerHTML是很慢的動作，盡量避免執行多次 */
             toputi=res.sibling[0];
             bottomuti=res.sibling[res.sibling.length-1];

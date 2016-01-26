@@ -6,15 +6,15 @@ var displayresult=function(result){
     }
     var out="";
     for (var i=0;i<result.length;i++) {
+        var t=ksa.renderHits(result[i].text,result[i].hits,function(obj,text){
+            if(toWylie)text=wylie.toWylie(text);
+            //this is for React.js , convert to HTML
+            return obj.className?"<span class='highlight'>"+text+"</span>":abridgeText(text);
+        }).join("");
 
-
-    var t=ksa.renderHits(result[i].text,result[i].hits,function(obj,text){
-        //this is for React.js , convert to HTML
-        return obj.className?"<span class='highlight'>"+text+"</span>":abridgeText(text);
-    }).join("");
-
-        out+="<h5 onClick='fetchText(" + result[i].vpos + ")'>"+result[i].uti+"<br>"+t+"</h5>";
+            out+="<h5 onClick='fetchText(" + result[i].vpos + ")'>"+result[i].uti+"<br>"+t+"</h5>";
     }
+    //if(toWylie)out=wylie.toWylie(out);
     document.getElementById("searchres").innerHTML=out;
 }
 var displaytitles=function(titles){
