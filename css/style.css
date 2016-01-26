@@ -2216,3 +2216,45 @@ button.btnHide {
 #text4image .iviewer_zoom_in { left: inherit; right: 15px !important;}
 #text4image .iviewer_zoom_out { left: inherit; right: 50px !important;}
 */
+/* About Page */
+#aboutmodal .modal-body {
+	background-size: cover;
+    background-repeat: no-repeat;
+    background: linear-gradient(top,rgba(0,0,0,0.35),rgba(0,0,0,0.15)),url(../images/bg-about.jpg) top center no-repeat;
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0.35),rgba(0,0,0,0.15)),url(../images/bg-about.jpg) top center no-repeat;
+}
+#aboutmodal .modal-body h1 {
+    display: block;
+    background: url(../images/title-about.png) no-repeat center;
+    text-indent: -9999em;
+    height: 75px;
+    width: 380px;
+    margin: 50px auto 20px;
+    border: none;
+    border-bottom: #fff solid 1px;
+}
+#aboutmodal .modal-body .textBox {
+	border: #fff solid 3px;
+    width: 43%;
+    margin: 0;
+    margin: auto;
+	background-color: #fff;
+    padding: 25px 35px 25px 35px;
+    position: relative;
+}
+#aboutmodal .modal-body h2,
+#aboutmodal .modal-body ul li,
+#aboutmodal .modal-body p {
+    font-size: 14px;
+    font-family: Arial;
+    color: #79864f;
+    display: block;
+    text-align: left;
+}
+#aboutmodal .modal-body img {  max-width: 100%;}
+#aboutmodal .modal-body ul li {
+	margin-bottom: 5px;
+	list-style: none;
+	padding: 0;
+    margin-left: 0;
+}

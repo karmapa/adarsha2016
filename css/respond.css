@@ -52,6 +52,7 @@
 
 @media(max-width:1300px){ 
 	/*.reader-prev { margin-left: -33%;}*/
+	#aboutmodal .modal-body .textBox {width: 80%;}
 }
 @media(max-width:1265px){
 	.reader-nav { width: 73%; }
