@@ -258,6 +258,7 @@ body.welcome>.container{
 .navbar-header .navbar-right>li.ka>a {background-position-x: -59px;}
 .navbar-header .navbar-right>li.home>a {background-position-x: -116px;}
 .navbar-header .navbar-right>li.login>a {background-position-x: -173px;}
+.navbar-header .navbar-right>li.about>a {background-position-x: -230px;}
 .navbar-header .navbar-right>li.home,
 .navbar-header .navbar-right>li.login { display: none;}
 
@@ -2028,9 +2029,10 @@ button.btnHide {
 
 /* Login */
 .modal-page.login {
-	background: url(../images/bg-login.jpg) center top;
+	background: url(../images/bg-login.jpg) center top no-repeat;
     background-size: cover;
     padding-top: 13%;
+    height: inherit;
 }
 .modal-page.login>.container {
 	background: transparent;
