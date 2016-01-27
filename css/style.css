@@ -1223,12 +1223,12 @@ body.welcome>.container{
 span.button-pin-west {display: none;}
 span.button-close-west {
 	left: -6px;
-	top: -1px;
+	top: 1px;
 }
 .toggler-west-closed {
-  background: url(../img/go-rt-off.png) no-repeat center;
-  left: -6px!important;
-  top: -2px!important;
+	background: url(../img/go-rt-on.gif) no-repeat center;
+	left: -6px!important;
+	top: 1px!important;
 }
 
 #sideTabCont {
@@ -2247,16 +2247,23 @@ button.btnHide {
 }
 #aboutmodal .modal-body h2,
 #aboutmodal .modal-body ul li,
-#aboutmodal .modal-body p {
+#aboutmodal .modal-body p{
     font-size: 14px;
     font-family: Arial;
     color: #79864f;
     display: block;
     text-align: left;
 }
+#aboutmodal .modal-body a {
+	font-size: 14px;
+    font-family: Arial;
+    color: #79864f;
+    text-decoration: underline;
+    padding-left: 0;
+}
 #aboutmodal .modal-body img {  max-width: 100%;}
 #aboutmodal .modal-body ul li {
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 	list-style: none;
 	padding: 0;
     margin-left: 0;
