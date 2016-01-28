@@ -435,9 +435,6 @@ body.welcome>.container{
 	background-color: #cacaca;
 }
 
-
-
-
 #breadcrumb .btn-link,
 #breadcrumb .btn-link:hover,
 #breadcrumb .btn-link:focus {
@@ -445,6 +442,8 @@ body.welcome>.container{
 	text-decoration: none;
     outline: 0;
 }
+
+#breadcrumb #bSutraID { margin-left: 10px;}
 
 /* 內文 */
 #mainContent {
@@ -511,15 +510,15 @@ body.welcome>.container{
 /* 功能鍵 */
 .tool {
     position: absolute;
-    right: 20px;
+    right: 15px;
     z-index: 3;
     width: 45px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .tool>li {
 	margin: 0;
 }
-.tool.full { top: 5px; z-index: 8;}
+.tool.full { top: 0; z-index: 8;}
 .tool>button,
 .tool>.btn+.dropdown-toggle {
 	background: url(../images/btn-tool.png) no-repeat 12px 11px;
@@ -653,7 +652,7 @@ body.welcome>.container{
 
 /*功能鍵-暫時*/
 .tool>li>a {
-    background: url(../images/btn-tool.png) no-repeat -127px 11px;
+    background: url(../images/btn-tool.png) no-repeat -134px 6px;
     text-indent: -9999em;
     padding: 10px 0;
     border-radius: 0;
@@ -675,7 +674,7 @@ body.welcome>.container{
 }
 
 .tool>li>a.pageInfo{
-	 background:url(../images/btn-tool.png) no-repeat -94px 11px;
+	 background:url(../images/btn-tool.png) no-repeat -100px 6px;
 	 display: -moz-inline-block;
 }
 .open>.dropdown-menu li {
@@ -705,7 +704,7 @@ body.welcome>.container{
     background-color: #f8f8f8;
 }
 .tool>li>a.fullPage {
-	background:url(../images/btn-tool.png) no-repeat -23px 11px;
+	background:url(../images/btn-tool.png) no-repeat -29px 6px;
 	display: -moz-inline-block;
 }
 
@@ -891,6 +890,9 @@ body.welcome>.container{
 	display: inline-block;
     margin: 20px auto 0;
     padding: 15px 30px;
+}
+.wrap .content {
+	padding-top: 40px;
 }
 .head-content {
 	text-align: left;
