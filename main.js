@@ -298,7 +298,7 @@ var toggleWylie=function(){
     }else{
         console.log("toWylie:true");
         setWylie(true);
-        
+
         //output=wylie.toWylie(output);
         //document.getElementById('contents').innerHTML=output;
         search();
@@ -390,17 +390,27 @@ var systemReady=function(){
     ]
     var Sid = getSutraidFromHashAndSetDb();//set db in this function
     reloadToc(function(){
-        
+
+        console.log("QQQQ");
         if(!Sid){
-            fetchText(20);
-            return;
-        }
-        var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
-        if(isSid){
-            gotoSid(Sid);
+            var DailyUti = localStorage.getItem("DailyUti");
+            console.log("DailyUti:"+DailyUti);
+            if(DailyUti){
+                searchUti(DailyUti);
+            }
+            else{
+                fetchText(20);
+                return;
+            }
         }
         else{
-            fetchText(20);
+            var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
+            if(isSid){
+                gotoSid(Sid);
+            }
+            else{
+                fetchText(20);
+            }
         }
     });
     initialAdvSearch();
