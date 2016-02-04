@@ -312,11 +312,11 @@ var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         console.log("fetchText:" + vpos);
         var currentuti=res.sibling[res.idx];
-        if(toputi==res.sibling[0] && fetched){
+        /*if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
             reloadBreadcrumb(vpos);//vpos為此頁起點
             return;
-        }
+        }*/
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
             //var vposend = data[res.idx].vpos_end;
