@@ -298,7 +298,7 @@ var toggleWylie=function(){
     }else{
         console.log("toWylie:true");
         setWylie(true);
-        
+
         //output=wylie.toWylie(output);
         //document.getElementById('contents').innerHTML=output;
         search();
@@ -312,11 +312,11 @@ var fetchText=function(vpos){
     ksa.sibling({db:db,vpos:vpos},function(err,res){
         console.log("fetchText:" + vpos);
         var currentuti=res.sibling[res.idx];
-        if(toputi==res.sibling[0] && fetched){
+        /*if(toputi==res.sibling[0] && fetched){
             scrollTo(currentuti);
             reloadBreadcrumb(vpos);//vpos為此頁起點
             return;
-        }
+        }*/
         ksa.fetch({db:db,uti:res.sibling,q:tf2,fields:"sutra"},function(err,data){
             var output="";
             //var vposend = data[res.idx].vpos_end;
@@ -390,17 +390,27 @@ var systemReady=function(){
     ]
     var Sid = getSutraidFromHashAndSetDb();//set db in this function
     reloadToc(function(){
-        
+
+        console.log("QQQQ");
         if(!Sid){
-            fetchText(20);
-            return;
-        }
-        var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
-        if(isSid){
-            gotoSid(Sid);
+            var DailyUti = localStorage.getItem("DailyUti");
+            console.log("DailyUti:"+DailyUti);
+            if(DailyUti){
+                searchUti(DailyUti);
+            }
+            else{
+                fetchText(20);
+                return;
+            }
         }
         else{
-            fetchText(20);
+            var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
+            if(isSid){
+                gotoSid(Sid);
+            }
+            else{
+                fetchText(20);
+            }
         }
     });
     initialAdvSearch();

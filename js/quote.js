@@ -33,4 +33,8 @@ $( document ).ready(function() {
 
         index = Math.floor(Math.random() * quote.length);
         $("#textBox").append(quote[index]);
+
+        var uti = (quote[index].split("<br>"))[0];
+        localStorage.setItem("DailyUti",uti);
+        console.log("DailyUti:"+uti);
 });
