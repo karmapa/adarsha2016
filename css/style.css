@@ -221,8 +221,8 @@ body.welcome>.container{
 	background: url(../images/logo.png);
 	display: block;
 	text-indent: -9999em;
-	width: 181px;
-	height: 41px;
+	width: 226px;
+	height: 54px;
 	top:0;
 	right:0;
 	bottom:0;
@@ -254,11 +254,11 @@ body.welcome>.container{
 	background-color: transparent;
 	border: #79864f solid 1px;
 }
-.navbar-header .navbar-right>li.advanced>a {background-position-x: -2px;}
-.navbar-header .navbar-right>li.ka>a {background-position-x: -59px;}
-.navbar-header .navbar-right>li.home>a {background-position-x: -116px;}
-.navbar-header .navbar-right>li.login>a {background-position-x: -173px;}
-.navbar-header .navbar-right>li.about>a {background-position-x: -230px;}
+.navbar-header .navbar-right>li.advanced>a { background: url(../images/top-menu.png) -2px 0;}
+.navbar-header .navbar-right>li.ka>a { background: url(../images/top-menu.png) -59px 0;}
+.navbar-header .navbar-right>li.home>a {background: url(../images/top-menu.png) -116px 0;}
+.navbar-header .navbar-right>li.login>a {background: url(../images/top-menu.png) -173px 0;}
+.navbar-header .navbar-right>li.about>a {background: url(../images/top-menu.png) -230px 0;}
 .navbar-header .navbar-right>li.home,
 .navbar-header .navbar-right>li.login { display: none;}
 
@@ -322,7 +322,7 @@ body.welcome>.container{
 	min-height: inherit;
 }
 .welcome .mainContent h1 {
-    display: block;
+    display: none;
     background: url(../images/welcome-h1.png) no-repeat center;
     text-indent: -9999em;
     height: 130px;
@@ -333,8 +333,8 @@ body.welcome>.container{
 	background: #fff;
 	padding: 25px 30px;
 	width: 410px;
-	min-height: 350px;
-	margin: auto;
+	/*min-height: 350px;*/
+    margin: 15% auto 20px;
     font-family: Amdo Classic;
 }
 .quote h2 {
@@ -349,8 +349,8 @@ body.welcome>.container{
     font-size: 17px;
     line-height: 30px;
 	text-align: left;
-	min-height: 170px;
-	/*overflow: hidden;*/
+	/*min-height: 170px;
+	overflow: hidden;*/
     margin-bottom: 34px;
     color: #666666;
 }
