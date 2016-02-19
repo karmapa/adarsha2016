@@ -336,6 +336,7 @@ body.welcome>.container{
 	/*min-height: 350px;*/
     margin: 15% auto 20px;
     font-family: Amdo Classic;
+    display: none;
 }
 .quote h2 {
     /*font-family: Arial;*/
@@ -368,7 +369,27 @@ body.welcome>.container{
 .quote a:active {
 	background-color: #555F36;
 }
+/*.welcome .mainContent {
+    border: #fff solid 1px;
+    padding: 9px;
+    width: 43%;
+    margin: 16% auto;
+}*/
+.quoteBox {
+    background: #fff ;
+    height: 325px;
+    text-align: center;
+    padding-top: 30px;
+    /*background-size: contain;*/
+}
 
+@media(max-width:1199px){
+    .quoteBox img { width: 100%}
+    .quoteBox { padding: 30px 25px; height: inherit; }
+}
+@media(max-width:991px){
+
+}
 
 /* breadcrumb */
 .inner-header {
