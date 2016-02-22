@@ -393,15 +393,15 @@ var systemReady=function(){
 
         console.log("QQQQ");
         if(!Sid){
-            var DailyUti = localStorage.getItem("DailyUti");
-            console.log("DailyUti:"+DailyUti);
-            if(DailyUti){
+            //var DailyUti = localStorage.getItem("DailyUti");
+            //console.log("DailyUti:"+DailyUti);
+            /*if(DailyUti){
                 searchUti(DailyUti);
             }
-            else{
+            else{*/
                 fetchText(20);
                 return;
-            }
+            //}
         }
         else{
             var isSid = Sid.match(/^([A-Z])(\d{1,4})([a-z]?)$/);
