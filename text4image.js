@@ -5,7 +5,7 @@ var text4imagestyles={
 var imgFromuti=function(uti)
 {
     var utiParts = uti.split('.');
-    return (pad(utiParts[0],3)+"/"+pad(utiParts[0],3)+"-"+pad(utiParts[1],4)+".jpg");
+    return db + (pad(utiParts[0], 3) + "/" + pad(utiParts[0], 3) + "-" + pad(utiParts[1], 4) + ".jpg");
 }
 var pad=function (num, size) {//000000000108e 13 3
     var s = "000000000" + num;
@@ -36,7 +36,7 @@ var systemReady2=function() {
         });
     },
     imagefilename:function(){
-        return image_url_prefix() + imgFromuti(this.props.uti);
+        return 'http://files.dharma-treasure.org/' + db + '/' + imgFromuti(this.props.uti);
         //this.props.uti
         //return "../adarsha_img/lijiang/001/001-127b.jpg";
         //return "images/001-001b.jpg";
